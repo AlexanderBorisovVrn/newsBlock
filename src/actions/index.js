@@ -1,2 +1,2 @@
-import {newsLoaded,newsRequest} from './actions';
-export {newsLoaded,newsRequest};
+import {newsError,fetchNews} from './actions';
+export {newsError,fetchNews};

@@ -4,9 +4,11 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
+  console.log(action.type);
+  
   switch (action.type) {
     case 'NEWS_REQUESTED':
-      return state;
+      return initialState
     case 'NEWS_LOADED':
       return state = {
         loading: false,
