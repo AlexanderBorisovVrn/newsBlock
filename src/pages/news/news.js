@@ -18,7 +18,6 @@ const News = ({news, loading, error, fetchNews}) => {
   }
 
 
-
   if (!loading) {
 
     return (

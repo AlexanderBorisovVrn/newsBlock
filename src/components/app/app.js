@@ -7,16 +7,14 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className='app'>
-      <Header/>
-      <Switch>
-        <Route path='/news' component={News}/>
-        <Route
-          path='/article'
-          render={()=><p>Article</p>}
-          exact/>
-      </Switch>
-    </div>
+      <div className='app'>
+        <Header/>
+        <Switch>
+          <Route path='/news' component={News}/>
+          <Route path='/article' render={() =>{return <p>Article</p>}} exact/>
+        </Switch>
+        <Autorization/>
+      </div>
   )
 }
 

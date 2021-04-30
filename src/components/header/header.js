@@ -40,7 +40,7 @@ const Header = () => {
             <span>василь</span>
           </div>
           <div className='profile__img-wrap'>
-            <img alt='' src='' className='profile__img' src='https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'/>
+            <img alt=''className='profile__img' src='https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'/>
           </div>
         </button>
       </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
 body,
 html {
   height: 100%;
@@ -7,14 +9,31 @@ html {
 
 body {
   margin: 0;
-  background: #FA3663
+
 }
+
 .loader-title{
 display: flex;
 justify-content: center;
 margin-top: 5rem;
 color:rgba(26, 119, 173, 0.616);
 text-transform: uppercase;
+letter-spacing: 5px;
+font-family: 'Freckle Face', cursive;
+animation: move 2s infinite alternate ;
+}
+
+
+@keyframes move {
+  0%{
+    color:rgba(26, 119, 173, 0.616);
+  }
+  50% {
+     color:rgb(173, 26, 63);
+  }
+  100%{
+    color:rgba(26, 119, 173, 0.616);
+  }
 }
 
 .loader {
@@ -78,7 +97,7 @@ text-transform: uppercase;
   height: 36px;
   width: 36px;
   border-radius: 2px;
-  background-color: rgb(31, 11, 211)
+  background-color: rgba(41, 25, 182, 0.623)
 }
 
 .l_square span:nth-child(1) {

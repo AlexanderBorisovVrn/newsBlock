@@ -2,7 +2,6 @@ import React from 'react';
 import './loader.scss';
 
 const Loader = () => {
-
   return (
     <div className='loader-wrap'>
       <h1 className='loader-title'>loading...</h1>
