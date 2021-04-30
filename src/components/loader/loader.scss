@@ -9,6 +9,13 @@ body {
   margin: 0;
   background: #FA3663
 }
+.loader-title{
+display: flex;
+justify-content: center;
+margin-top: 5rem;
+color:rgba(26, 119, 173, 0.616);
+text-transform: uppercase;
+}
 
 .loader {
   height: 100%;
@@ -71,7 +78,7 @@ body {
   height: 36px;
   width: 36px;
   border-radius: 2px;
-  background-color: #FFFFFF
+  background-color: rgb(31, 11, 211)
 }
 
 .l_square span:nth-child(1) {

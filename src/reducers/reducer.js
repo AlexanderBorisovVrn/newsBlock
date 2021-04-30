@@ -1,6 +1,7 @@
 const initialState = {
   loading: true,
-  news: []
+  news: [],
+  error:null
 }
 
 const reducer = (state = initialState, action) => {
@@ -13,7 +14,13 @@ const reducer = (state = initialState, action) => {
       return state = {
         loading: false,
         news: action.payload
-      }
+      };
+      case 'NEWS_ERROR':
+        return state={
+          loading:false,
+          error:action.payload,
+          news:[]
+        }
     default:
       return state;
   }
