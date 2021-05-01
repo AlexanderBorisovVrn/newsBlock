@@ -1,10 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './autorization.scss'
 
 const Autorization = () => {
-
+const clazz = 'autorization hide'
   return (
-    <section className='autorization'>
+    <section className={clazz}>
       <div className='autorization__inner'>
         <form className='autorization__form'>
           <h1 className='autorization__title'>Вход</h1>
@@ -21,5 +22,7 @@ const Autorization = () => {
     </section>
   )
 }
+
+
 
 export default Autorization;

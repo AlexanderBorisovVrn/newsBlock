@@ -11,7 +11,7 @@ const fetchNews = (newsService,dispatch) =>()=>{
     .then(newsList => {
     dispatch(newsLoaded(newsList))
     })
-    .catch(err=>newsError(err))
+    .catch(err=>dispatch(newsError(err)))
 };
 
 export {fetchNews,newsError}

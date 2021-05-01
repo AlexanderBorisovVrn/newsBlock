@@ -81,7 +81,10 @@
 }
 
 input[type=checkbox] {
-  display: none;
+  position: absolute;
+  appearance: none;
+  -moz-appearance: none;
+-webkit-appearance: none;
 }
 
 .remember-me {
@@ -113,7 +116,8 @@ input[type=checkbox]:checked+.remember-me::before {
   content: '\2713';
 }
 
-input[type=checkbox]:hover+.remember-me::before {
+input[type=checkbox]:hover,
+input[type=checkbox]:focus+.remember-me::before {
   border-color: rgba(255, 51, 0, 0.87);
   color: rgba(255, 51, 0, 0.87);
 }

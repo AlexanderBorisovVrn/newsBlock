@@ -1,25 +1,25 @@
 import React, {useEffect, useCallback} from 'react';
 import './news.scss';
 import {connect} from 'react-redux';
-import {withNewsService} from '../../components/hoc/';
+import {withNewsService} from '../../hoc';
 import {compose} from 'redux';
-import {fetchNews} from '../../actions/';
-import ArticleCard from '../../components/article-card';
-import Loader from '../../components/loader';
+import {fetchNews} from '../../../actions';
+import ArticleCard from '../../article-card';
+import Loader from '../../loader';
 
-const News = ({news, loading, error, fetchNews}) => {
+const News = ({news, loading, fetchNews}) => {
 
   useEffect(() => {
     fetchNews()
   }, [fetchNews]);
 
+  
+
   if (loading) {
     return <Loader/>
   }
 
-
   if (!loading) {
-
     return (
       <section className='news'>
         <div className='wrap'>
@@ -41,7 +41,7 @@ const mapStateToProps = ({loading, news, error}) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const {newsService} = ownProps;
   return {
-    fetchNews: fetchNews(newsService, dispatch)
+    fetchNews: fetchNews(newsService, dispatch),
   }
 
 }
