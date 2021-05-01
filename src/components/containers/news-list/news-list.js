@@ -1,5 +1,5 @@
-import React, {useEffect, useCallback} from 'react';
-import './news.scss';
+import React, {useEffect} from 'react';
+import './news-list.scss';
 import {connect} from 'react-redux';
 import {withNewsService} from '../../hoc';
 import {compose} from 'redux';
@@ -7,7 +7,7 @@ import {fetchNews} from '../../../actions';
 import ArticleCard from '../../article-card';
 import Loader from '../../loader';
 
-const News = ({news, loading, fetchNews}) => {
+const NewsList = ({news, loading, fetchNews}) => {
 
   useEffect(() => {
     fetchNews()
@@ -21,9 +21,9 @@ const News = ({news, loading, fetchNews}) => {
 
   if (!loading) {
     return (
-      <section className='news'>
+      <section className='news-list'>
         <div className='wrap'>
-          <div className='news__inner'>
+          <div className='news-list__inner'>
             {news.map(article => {
               return <ArticleCard article={article} key={article.id}/>
             })}
@@ -46,4 +46,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 }
 
-export default compose(withNewsService, connect(mapStateToProps, mapDispatchToProps))(News);
+export default compose(withNewsService, connect(mapStateToProps, mapDispatchToProps))(NewsList);
