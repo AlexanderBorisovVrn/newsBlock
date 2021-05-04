@@ -2,7 +2,8 @@ const initialState = {
   loading: true,
   news: [],
   error:null,
-  isLoggedI:false
+  isLoggedI:false,
+  currntId:null
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,8 +22,10 @@ const reducer = (state = initialState, action) => {
         return state={
           loading:false,
           error:action.payload,
-          news:[]
-        }
+          news:[],
+          currntId:null
+        };
+       
     default:
       return state;
   }

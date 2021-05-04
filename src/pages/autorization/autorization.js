@@ -13,7 +13,7 @@ const clazz = 'autorization hide'
           <input placeholder='Password' className='autorization__password'/>
           <div className='autorization__remember'>
             <input type='checkbox' id='remember-me'/>
-            <label  for='remember-me' className='remember-me'>Запомнить меня</label>
+            <label  htmlFor='remember-me' className='remember-me'>Запомнить меня</label>
           </div>
           <button type='button' className='autorization__btn'>Войти</button>
         </form>

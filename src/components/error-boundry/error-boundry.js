@@ -14,6 +14,10 @@ export default class ErrorBoundry extends Component {
     if (this.state.error) {
       return <ErrorIndicator/>
     }
-    return <div className='error'>{this.props.children}</div>
+    return (
+      <React.Fragment>
+        {this.props.children}
+      </React.Fragment>
+    )
   }
 }
