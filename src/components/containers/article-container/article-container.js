@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {compose} from 'redux';
+import {withNewsService} from '../../hoc'
 import Article from '../../article/';
 
 
@@ -18,4 +20,7 @@ const mapStateToProps = ({news})=>{
 
 
 
-export default connect(mapStateToProps)(ArticleContainer)
+export default compose(
+  withNewsService,
+  connect(mapStateToProps)
+)(ArticleContainer)
