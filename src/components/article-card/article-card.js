@@ -3,10 +3,9 @@ import './article-card.scss';
 import {Link} from 'react-router-dom';
 
 
-const ArticleCards = ({article}) => {
+const ArticleCards = ({article,path}) => {
   //отображает превью статей  
-  const {title, prevTxt, img,id}=article;
-    let path = `/article/${id}`
+  const {title, prevTxt, img}=article;
       return (
     <article className='article-card'>
       <Link to={path}>

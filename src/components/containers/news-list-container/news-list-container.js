@@ -21,7 +21,8 @@ const NewsListContainer = ({news, loading, fetchNews}) => {
     return (
       <React.Fragment>
         {news.map(article => {
-          return <ArticleCard article={article} key={article.id}/>
+          const {id} = article;
+          return <ArticleCard article={article} key={id} path={`/article/${id}`}/>
         })
 }
       </React.Fragment>

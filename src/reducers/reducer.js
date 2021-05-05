@@ -3,7 +3,7 @@ const initialState = {
   news: [],
   error:null,
   isLoggedI:false,
-  currntId:null
+  article:null
 }
 
 const reducer = (state = initialState, action) => {
@@ -23,8 +23,12 @@ const reducer = (state = initialState, action) => {
           loading:false,
           error:action.payload,
           news:[],
-          currntId:null
         };
+        case 'ARTICLE_LOADED':
+          return{
+            ...state,
+            article:action.payload
+          }
        
     default:
       return state;
