@@ -1,5 +1,5 @@
 import React from 'react';
-import './news.scss';
+import './news-page.scss';
 import {NewsListContainer} from '../../components/containers';
 
 const News = () => {

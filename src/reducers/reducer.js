@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) => {
         case 'ARTICLE_LOADED':
           return{
             ...state,
+            loading: false,
             article:action.payload
           }
        

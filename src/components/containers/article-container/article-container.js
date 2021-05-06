@@ -1,39 +1,33 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
+import Loader from '../../loader/';
 import {withNewsService} from '../../hoc'
-import {fetchNews} from '../../../actions/';
+import {fetchArticle} from '../../../actions/';
 import Article from '../../article/';
 
-const ArticleContainer = ({news, itemId, fetchNews}) => {
-  // получаем itemId из Url роутером ищем по нему статью в news передаем сатью в
-  // Article
-  const getArticleFromStore = () => {
-    const articleIdx = news.findIndex(item => item.id === itemId);
-    return <Article article={news[articleIdx]}/>
-  }
+const ArticleContainer = ({fetchArticle, article}) => {
+//делает запрос через action creator fetchArticle 
+//помещает статью в state, оттуда передает в Article
+  useEffect(() => {
+    fetchArticle()
+  }, [fetchArticle]);
 
-  if (news.length===0) {
-    console.log('news dont exist',news);
-    fetchNews();
-    return getArticleFromStore()
+  if (!article) {
+    return <Loader/>
   } else {
-    console.log('news exist',news);
-    
-    return getArticleFromStore()
+    return <Article article={article}/>
   }
 
-  //путь на основе индекса
-
 }
 
-const mapStateToProps = ({news}) => {
-  return {news}
+const mapStateToProps = ({article}) => {
+
+  return {article}
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const {newsService} = ownProps;
+const mapDispatchToProps = (dispatch, {newsService, itemId}) => {
   return {
-    fetchNews: fetchNews(newsService, dispatch)
+    fetchArticle: fetchArticle(newsService, itemId, dispatch)
   }
 }
 export default compose(withNewsService, connect(mapStateToProps, mapDispatchToProps))(ArticleContainer)

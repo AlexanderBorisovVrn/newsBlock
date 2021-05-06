@@ -95,6 +95,6 @@ export default class NewsService{
 
   getArticle=(id)=>{
     const article = news.findIndex(item=>item.id===id);
-   return new Promise(resolve=>setTimeout(()=>resolve(article),2000))
+   return new Promise(resolve=>setTimeout(()=>resolve(news[article]),1000))
   }
 }

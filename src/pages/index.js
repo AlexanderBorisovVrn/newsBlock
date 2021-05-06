@@ -1,3 +1,4 @@
-import News from './news/news';
+import News from './news-page/news-page';
+import NewsArticlePage from './news-article-page/news-article-page';
 
-export  {News};
+export  {News,NewsArticlePage};

@@ -1,10 +1,9 @@
 import React from 'react';
 import Header from '../header';
 import './app.scss';
-import {ArticleContainer} from '../containers';
 import Autorization from '../../pages/autorization';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {News} from '../../pages';
+import {News,NewsArticlePage} from '../../pages';
 
 const App = () => {
   return (
@@ -14,8 +13,8 @@ const App = () => {
         <Route path='/news' component={News}/>
         <Route
           path='/article/:idx'
-          render={({match}) => {
-          return <ArticleContainer itemId={+match.params.idx}/>
+          render={() => {
+           return <NewsArticlePage/>
         }}/>
       </Switch>
       <Autorization/>

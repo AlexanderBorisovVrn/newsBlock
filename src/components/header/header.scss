@@ -1,3 +1,6 @@
+$header-height:5rem;
+$header-color:rgb(4, 26, 66);
+
 @mixin flexible {
   display: flex;
   align-items: center;
@@ -6,11 +9,9 @@
 
 .header {
   display: flex;
-  height: 5rem;
+  height: $header-height;
   min-width: 100%;
-  background-color: rgba(2, 0, 12, 0.664);
-
-
+  background-color: $header-color;
 
   a {
     text-decoration: none;
@@ -62,16 +63,14 @@
 }
 
 .profile {
-  @include flexible();
-  justify-content: flex-start;
-   padding: 10px;
+  position: relative;
   min-width: 12%;
-  outline: none;
-  border: none;
   background-color: inherit;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.247);
+  &__wrapper {
+    @include flexible();
+    padding: 10px;
+    justify-content: flex-start;
   }
 
   &__name {
@@ -90,17 +89,18 @@
     height: 3rem;
     width: 3rem;
     border: none;
-      img{
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-   
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
 
     &::after {
       position: absolute;
-      right:-25px;
+      right: -25px;
       top: calc(50% - 10px);
       width: 20px;
       height: 20px;
@@ -110,4 +110,39 @@
       color: #ffff;
     }
   }
+
+  &__in {
+    position: absolute;
+    @include flexible();
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px;
+    min-width: 10rem;
+    height: 6rem;
+    background-color: $header-color;
+    right: 0;
+    bottom: -6rem;
+  }
+
+  &__sign-in,
+  &__sign-up {
+    @include flexible();
+    min-width: 30%;
+    height: 3rem;
+    padding: 5px;
+    border-radius: 3px;
+    color: #ffff;
+    text-transform: uppercase;
+    background-color: rgb(163, 161, 161);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__sign-up {
+    margin-right: 10px;
+    background-color: rgb(243, 96, 11);
+  }
+
 }

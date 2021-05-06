@@ -25,7 +25,7 @@ const fetchArticle = (newsService, id, dispatch) => () => {
   newsService
     .getArticle(id)
     .then(article => {
-      dispatch(articleLoaded(article))
+       dispatch(articleLoaded(article))
     })
     .catch(err => dispatch(newsError(err)))
 };

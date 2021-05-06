@@ -7,7 +7,6 @@ import ArticleCard from '../../article-card';
 import Loader from '../../loader';
 
 const NewsListContainer = ({news, loading, fetchNews}) => {
-  //получает данные и передает в карточку новости отображает лоадер при загрзке
 
   useEffect(() => {
     fetchNews()
