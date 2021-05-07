@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './header.scss';
-import Profile from '../sing-buttons';
+import Profile from '../sign-buttons';
 import {Link} from 'react-router-dom';
 import img from './logo.png';
 
