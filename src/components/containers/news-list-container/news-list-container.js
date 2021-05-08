@@ -15,8 +15,7 @@ const NewsListContainer = ({news, loading, fetchNews}) => {
   if (loading) {
     return <Loader/>
   }
-
-  if (!loading) {
+  else {
     return (
       <React.Fragment>
         {news.map(article => {
@@ -29,7 +28,12 @@ const NewsListContainer = ({news, loading, fetchNews}) => {
   }
 }
 
-const mapStateToProps = ({loading, news}) => {
+const mapStateToProps = ({
+  data: {
+    loading,
+    news
+  }
+}) => {
   return {loading, news}
 }
 

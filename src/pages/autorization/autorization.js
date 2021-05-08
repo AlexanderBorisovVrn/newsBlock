@@ -1,9 +1,9 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { useState } from 'react';
 import './autorization.scss'
 
 const Autorization = () => {
-const clazz = 'autorization hide'
+  const [isHide,setHide]=useState('hide')
+const clazz = `autorization ${isHide}`
   return (
     <section className={clazz}>
       <div className='autorization__inner'>

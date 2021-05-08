@@ -20,7 +20,7 @@ const fetchNews = (newsService, dispatch) => () => {
     })
     .catch(err => dispatch(newsError(err)))
 };
-const fetchArticle = (newsService, id, dispatch) => () => {
+const fetchArticle = (newsService, id, dispatch) => () => { 
   dispatch(newsRequest())
   newsService
     .getArticle(id)

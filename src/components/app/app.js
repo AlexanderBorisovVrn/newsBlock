@@ -10,7 +10,7 @@ const App = () => {
     <div className='app'>
       <Header/>
       <Switch>
-        <Route path='/news' component={News}/>
+        <Route path='/news/' component={News} exact/>
         <Route
           path='/article/:idx'
           render={() => {

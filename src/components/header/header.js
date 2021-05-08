@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './header.scss';
 import Profile from '../sign-buttons';
 import {Link} from 'react-router-dom';

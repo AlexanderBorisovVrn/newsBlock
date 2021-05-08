@@ -1,26 +1,7 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useRef} from 'react';
 import './profile.scss'
+import {useHover} from '../hooks';
 
-const useHover = (ref) => {
-  const [isHovering,
-    setHovering] = useState(false);
-  const on = () => setHovering(true);
-  const off = () => setHovering(false);
-
-  useEffect(() => {
-    if (!ref.current) {
-      return
-    }
-    const node = ref.current;
-    node.addEventListener('mouseenter', on);
-    node.addEventListener('mouseleave', off)
-    return () => {
-      node.removeEventListener('mouseleave', off)
-      node.removeEventListener('mouseenter', on);
-    };
-  }, []);
-  return isHovering;
-}
 
 const Profile = () => {
   const ref = useRef();
