@@ -1,8 +1,10 @@
-import fetchData from './fetchingData';
+import fetchData from './fetchData';
+import login from './login';
 import { combineReducers } from 'redux';
 
 const reducer = combineReducers({
-   data:fetchData
-})
+    data:fetchData,
+    login
+  })
 
 export default reducer;

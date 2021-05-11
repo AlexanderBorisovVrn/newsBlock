@@ -1,0 +1,46 @@
+.profile-about {
+  display: flex;
+
+  &__inner {
+    flex: 1 0 60%;
+    min-height: 25rem;
+    padding: 0 2rem;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+  }
+
+
+  &__field {
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.438);
+
+    & label {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    & input {
+      margin-left: 5px;
+    }
+  }
+}
+
+#lorem1,
+#lorem2,
+#lorem3 {
+  margin-right: 20px;
+}
+
+
+
+legend {
+  font-size: 20px;
+}

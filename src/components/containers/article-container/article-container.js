@@ -14,7 +14,7 @@ const ArticleContainer = ({newsService,itemId}) => {
 
   useEffect(() => {
     fetchArticle(newsService,itemId,dispatch)()
-  }, [fetchArticle]);
+  }, [newsService,itemId,dispatch]);
 
   if (!loading) {
     return <Article article={article}/>

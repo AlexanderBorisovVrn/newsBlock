@@ -2,7 +2,8 @@ const news = [
   {
     id: 1,
     title: 'Neque porro quisquam est qui dolorem',
-    img:'https://images.unsplash.com/photo-1616514169928-a1e40c6f791c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    img: 'https://images.unsplash.com/photo-1616514169928-a1e40c6f791c?ixlib=rb-1.2.1&ixid' +
+        '=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
     prevTxt: "Aenean hendrerit posuere augue, nec efficitur dui cursus cursus. Nunc pellentesq" +
         "ue condimentum odio nec tempus.",
     txt: "Integer hendrerit scelerisque sem, non dictum ipsum tempor ac. Aliquam nec volut" +
@@ -22,7 +23,8 @@ const news = [
         " ipsum."
   }, {
     id: 2,
-    img:'https://images.unsplash.com/photo-1542490101-4be93d1756e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    img: 'https://images.unsplash.com/photo-1542490101-4be93d1756e0?ixlib=rb-1.2.1&ixid=Mn' +
+        'wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
     title: "Class aptent taciti sociosqu ad litora torquent per conubia nostra",
     prevTxt: "Maecenas eget massa nec lacus venenatis sodales vel ac nisl. Nullam tincidunt at" +
         " justo et varius. Quisque nec posuere felis, at facilisis sapien. Aenean blandit" +
@@ -36,7 +38,8 @@ const news = [
         "ectetur sem vitae mattis."
   }, {
     id: 3,
-    img:'https://images.unsplash.com/photo-1554728667-662368ae729a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    img: 'https://images.unsplash.com/photo-1554728667-662368ae729a?ixlib=rb-1.2.1&ixid=Mn' +
+        'wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
     title: "Sed eget feugiat nulla. Sed ut erat eros.",
     prevTxt: "Duis tortor felis, fermentum ac accumsan a, blandit et elit. Suspendisse purus m" +
         "i, pellentesque eu aliquam ac.",
@@ -53,10 +56,26 @@ const news = [
         "lorem justo, ullamcorper eget rutrum non, placerat in neque. Etiam ultricies con" +
         "sectetur sapien sed malesuada. Praesent eget imperdiet nulla. Nam auctor molesti" +
         "e ligula. Integer facilisis risus nec urna commodo, et pulvinar nunc aliquam. Ve" +
-        "stibulum euismod nibh sit amet ornare dapibus."
+        "stibulum euismod nibh sit amet ornare dapibus.Волжский клуб стал для белорусског" +
+        "о нападающего родным, а Самара — близким городом. Сергей пришёл в «Крылья» в 201" +
+        "1-м и успешно играл в РПЛ, проведя больше 200 матчей. Корниленко оставался с ком" +
+        "андой даже в тяжёлые времена. В июле 2019 года белорус объявил, что заканчивает " +
+        "карьеру, чтобы стать тренером первой команды. Сергей вошёл в штаб Миодрага Божов" +
+        "ича и даже попрощался с болельщиками. Корниленко нанёс первый удар по мячу в мат" +
+        "че с ЦСКА, а потом отправился на фанатский сектор «Крыльев».«Могу заявить, что б" +
+        "ольше за «Крылья» не сыграю. Теперь вхожу в тренерский штаб Миодрага Божовича. Н" +
+        "а поле смогу появиться только в случае прощального матча… Буду принимать участие" +
+        " в предигровых тренировках и упражнениях», — сказал тогда Корниленк. Уже летом 2" +
+        "020 года белорусу предложили должность спортивного директора. По его словам, пре" +
+        "дложение приятно его удивило. А в феврале этого года Корниленко подписал новый к" +
+        "онтракт с «Крыльями» для прощального матча. Вот так забавно пресс-служба самарце" +
+        "в отреагировала на возвращение легенды.Подробнее на «Чемпионате»:https://www.cha" +
+        "mpionat.com/football/article-4343347-krylya-sovetov-krasnodar-2-6-0-sergej-korni" +
+        "lenko-zabil-gol-i-zavershil-kareru-fnl.html?utm_source=copypaste"
   }, {
     id: 4,
-    img:'https://images.unsplash.com/photo-1567117632960-56e34a4c2456?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    img: 'https://images.unsplash.com/photo-1567117632960-56e34a4c2456?ixlib=rb-1.2.1&ixid' +
+        '=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
     title: 'Phasellus sagittis dui a arcu dapibus, quis maximus ipsum efficitur. ',
     prevTxt: "Sed facilisis urna eget urna porta, in consectetur ipsum aliquet. Nam massa leo," +
         " blandit quis ligula sed, mattis ultrices orci. Maecenas eu dui eu sapien blandi" +
@@ -88,13 +107,13 @@ const news = [
   }
 ]
 
-export default class NewsService{
-  getNews=()=>{
-    return new Promise(resolve=>setTimeout(()=>resolve(news),2000))
+export default class NewsService {
+  getNews = () => {
+    return new Promise(resolve => setTimeout(() => resolve(news), 2000))
   }
 
-  getArticle=(id)=>{
-    const article = news.findIndex(item=>item.id===id);
-   return new Promise(resolve=>setTimeout(()=>resolve(news[article]),1000))
+  getArticle = (id) => {
+    const article = news.findIndex(item => item.id === id);
+    return new Promise(resolve => setTimeout(() => resolve(news[article]), 1000))
   }
 }

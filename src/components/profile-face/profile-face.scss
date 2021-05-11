@@ -1,0 +1,42 @@
+.profile-face {
+  display: flex;
+
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 15rem;
+    height: 25rem;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(151, 149, 149, 0.712);
+
+  }
+
+  &__img-wrap {
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.733);
+    border-radius: 50%;
+  }
+
+  &__name {
+    height: 4rem;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__firstname::first-letter,
+  &__lastname::first-letter {
+    text-transform: uppercase;
+  }
+}

@@ -11,6 +11,14 @@ const articleLoaded = (payload) => {
   return {type: 'ARTICLE_LOADED', payload}
 }
 
+const onForm = () => {
+  return {type: 'ON_FORM'}
+}
+
+const hideForm = () => {
+  return {type: 'HIDE_FORM'}
+}
+
 const fetchNews = (newsService, dispatch) => () => {
   dispatch(newsRequest())
   newsService
@@ -20,14 +28,14 @@ const fetchNews = (newsService, dispatch) => () => {
     })
     .catch(err => dispatch(newsError(err)))
 };
-const fetchArticle = (newsService, id, dispatch) => () => { 
+const fetchArticle = (newsService, id, dispatch) => () => {
   dispatch(newsRequest())
   newsService
     .getArticle(id)
     .then(article => {
-       dispatch(articleLoaded(article))
+      dispatch(articleLoaded(article))
     })
     .catch(err => dispatch(newsError(err)))
 };
 
-export {fetchNews, newsError, fetchArticle}
+export {fetchNews, newsError, fetchArticle, onForm, hideForm}

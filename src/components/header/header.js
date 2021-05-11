@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.scss';
-import Profile from '../sign-buttons';
+import ProfileIn from '../profile-in';
 import {Link} from 'react-router-dom';
 import img from './logo.png';
 
@@ -37,7 +37,7 @@ const Header = () => {
             )
           })}
         </nav>
-        <Profile/>
+        <ProfileIn/>
       </div>
     </header>
   )

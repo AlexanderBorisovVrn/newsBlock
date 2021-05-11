@@ -13,7 +13,7 @@ const {loading,news}=useSelector(state=>state.data);
 
   useEffect(() => {
     fetchNews(newsService,dispatch)()
-  }, [fetchNews]);
+  }, [newsService,dispatch]);
 
   if (loading) {
     return <Loader/>

@@ -1,2 +1,2 @@
-import {fetchNews, newsError,fetchArticle} from './actions';
-export {fetchNews, newsError,fetchArticle};
+import {fetchNews, newsError, fetchArticle,onForm,hideForm} from './actions';
+export {fetchNews, newsError, fetchArticle,onForm,hideForm};
