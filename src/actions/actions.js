@@ -19,6 +19,21 @@ const hideForm = () => {
   return {type: 'HIDE_FORM'}
 }
 
+const onUsernameChange = (payload) => {
+  return {type: 'ON_USERNAME_CHANGE', payload}
+}
+const onPasswordChange = (payload) => {
+  return {type: 'ON_PASSWORD_CHANGE', payload}
+}
+
+const onPasswordVisible = ()=>{
+  return {type:'ON_PASSWORD_VISIBLE'}
+}
+
+const onLoggedIn=()=>{
+  return {type:'ON_LOGGED_IN'}
+}
+
 const fetchNews = (newsService, dispatch) => () => {
   dispatch(newsRequest())
   newsService
@@ -38,4 +53,14 @@ const fetchArticle = (newsService, id, dispatch) => () => {
     .catch(err => dispatch(newsError(err)))
 };
 
-export {fetchNews, newsError, fetchArticle, onForm, hideForm}
+export {
+  fetchNews,
+  newsError,
+  fetchArticle,
+  onForm,
+  hideForm,
+  onUsernameChange,
+  onPasswordChange,
+  onPasswordVisible,
+  onLoggedIn
+}
