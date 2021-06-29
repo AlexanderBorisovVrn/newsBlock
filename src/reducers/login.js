@@ -13,16 +13,7 @@ const login = (state, action) => {
         ...state,
         formVisibility: false
       };
-    case 'ON_USERNAME_CHANGE':
-      return {
-        ...state,
-        userName: action.payload
-      };
-    case 'ON_PASSWORD_CHANGE':
-      return {
-        ...state,
-        password: action.payload
-      };
+
     case 'ON_LOGGED_IN':
       return {
         ...state,

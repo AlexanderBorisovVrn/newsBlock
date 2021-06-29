@@ -16,31 +16,5 @@
   &__text {
     margin-bottom: 2rem;
   }
-
-
-  &__field {
-    padding: 20px;
-    background-color: rgba(128, 128, 128, 0.438);
-
-    & label {
-      font-size: 20px;
-      line-height: 20px;
-    }
-
-    & input {
-      margin-left: 5px;
-    }
-  }
 }
 
-#lorem1,
-#lorem2,
-#lorem3 {
-  margin-right: 20px;
-}
-
-
-
-legend {
-  font-size: 20px;
-}

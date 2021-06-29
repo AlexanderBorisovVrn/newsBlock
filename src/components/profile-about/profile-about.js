@@ -17,18 +17,7 @@ const ProfileAbout = () => {
           nulla. Aenean aliquam sagittis justo quis luctus. Praesent et turpis dui. Nunc
           tempus tincidunt libero, et pretium metus sodales quis. Fusce sagittis vitae
           nunc sit amet feugiat.</p>
-        <form className='profile-about__form'>
-          <fieldset className='profile-about__field'>
-            <legend>Lorem ipsum</legend>
-            <label htmlFor='lorem1'>Lorem1</label>
-            <input type='radio' id='lorem1' defaultValue='150'/>
-            <label htmlFor='lorem2'>Lorem2</label>
-            <input type='radio' id='lorem2' defaultValue='150'/>
-            <label htmlFor='lorem3'>Lorem3</label>
-            <input type='radio' id='lorem3' defaultValue='150'/>
-          </fieldset>
-        </form>
-      </div>
+            </div>
     </div>
   );
 };

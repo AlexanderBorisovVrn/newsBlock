@@ -4,8 +4,6 @@ import {
   fetchArticle,
   onForm,
   hideForm,
-  onUsernameChange,
-  onPasswordChange,
   onPasswordVisible,
   onLoggedIn
 } from './actions';
@@ -15,8 +13,6 @@ export {
   fetchArticle,
   onForm,
   hideForm,
-  onUsernameChange,
-  onPasswordChange,
   onPasswordVisible,
   onLoggedIn
 };

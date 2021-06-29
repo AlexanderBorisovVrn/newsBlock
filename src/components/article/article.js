@@ -2,8 +2,8 @@ import React from 'react';
 import './article.scss';
 
 const Article = ({article}) => {
-  const {txt, title, img} = article;
-  //принимаем из article-container данные
+  const {txt, title, img,content} = article;
+  //принимает из article-container данные
   //отображает статью
   return (
     <article className='article'>
@@ -14,7 +14,7 @@ const Article = ({article}) => {
           </div>
           <h1 className='article__title'>{title}</h1>
           <div className='article__txt'>
-            <p>{txt}</p>
+            <p>{content}</p>
           </div>
         </div>
       </div>

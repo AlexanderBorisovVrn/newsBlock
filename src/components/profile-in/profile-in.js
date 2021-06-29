@@ -2,14 +2,19 @@ import React, {useRef} from 'react';
 import './profile-in.scss';
 import {onForm} from '../../actions';
 import {useHover} from '../hooks';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
-const ProfileIn = () => {
+const ProfileIn = ({history}) => {
   const ref = useRef();
   const onHover = useHover(ref);
   const dispatch = useDispatch();
-
-
+  const {isLogged} = useSelector(state => state.login);
+  const onLogginForm = () => {
+    !isLogged
+      ? dispatch(onForm())
+      : history.push('/profile/')
+  }
   return (
     <div className='profile-in' ref={ref}>
       <div className='profile-in__wrapper'>
@@ -29,12 +34,11 @@ const ProfileIn = () => {
         <button type='button' className='sign__up'>
           <span>регистрация</span>
         </button>
-        <button type='button' className='sign__in' onClick={()=>dispatch(onForm())
-        }>
+        <button type='button' className='sign__in' onClick={onLogginForm}>
           <span>войти</span>
         </button>
       </div>
     </div>
   )
 }
-export default ProfileIn;
+export default withRouter(ProfileIn);
