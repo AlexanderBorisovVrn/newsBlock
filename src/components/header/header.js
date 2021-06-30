@@ -6,15 +6,13 @@ import img from './logo.png';
 
 const Header = () => {
   const links = [
-    {
-      title: 'news',
-      path: '/news/',
-      id: 2
-    }, {
-      title: 'lorem',
-      path: '/lorem/',
-      id: 3
-    }
+    'news',
+    'business',
+    'entertainment',
+    'health',
+    'science',
+    'sports',
+    'technology'
   ]
 
   return (
@@ -26,12 +24,11 @@ const Header = () => {
           </Link>
         </div>
         <nav className='nav'>
-          {links.map(link => {
-            const {id, title, path} = link;
+          {links.map((link, idx) => {
             return (
-              <div className='nav__item' key={id}>
-                <Link to={path} className='nav__link'>
-                  <span>{title}</span>
+              <div className='nav__item' key={idx}>
+                <Link to='/news/' className='nav__link'>
+                  <span>{link}</span>
                 </Link>
               </div>
             )

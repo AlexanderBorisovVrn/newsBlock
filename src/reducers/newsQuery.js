@@ -1,7 +1,7 @@
 const initialState ={
-  newsTheme:'all',
-  newsFrom:'2021-06-21',
-  newsTo:'2021-06-27',
+  categry:'all',
+  from:'2021-06-21',
+  to:'2021-06-27',
   sortBy:''
 }
 

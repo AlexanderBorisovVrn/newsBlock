@@ -4,9 +4,9 @@ export default class NewsService {
 
   getResourse = async(query) => {
     //параметры запроса query
-    const {newsTheme, newsFrom, newsTo, sortBy} =query;
+    const {category, from, to, sortBy} =query;
     //запрос
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${newsTheme}&from=${newsFrom}&to=${newsTo}&sortBy=${sortBy}&apiKey=${this._apiKey}`);
+    const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&from=${from}&to=${to}&sortBy=${sortBy}&apiKey=${this._apiKey}`);
     if (!response.ok) {
       throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
     }

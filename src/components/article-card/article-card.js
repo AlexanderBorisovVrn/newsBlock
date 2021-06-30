@@ -12,7 +12,7 @@ const ArticleCards = ({article, history}) => {
           <div className='article-card__img-wrap'>
             <img alt='' src={urlToImage} className='article-card__img'/>
           </div>
-          <h1 className='article-card__title'>{title}</h1>
+          <h1 className='article-card__title'>{title||'zaebis'}</h1>
           <p className='article-card__txt'>{description}</p>
         </div>
       </Link>

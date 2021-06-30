@@ -21,13 +21,8 @@ const NewsListContainer = ({newsService}) => {
     fetchNews(newsService, query, dispatch)()
   }, [newsService, query, dispatch]);
 
-  function getId(title) {
-    //создает id из title
-    return title
-      .toLowerCase()
-      .trim()
-      .replace(/[\s]/g, '-')
-      .replace(/(?:[^\w])/, '')
+  function getId() {
+    return Math.floor(Math.random() * 198654 )+Math.random() * 1998543 
   }
 
   if (loading) {
@@ -37,7 +32,7 @@ const NewsListContainer = ({newsService}) => {
 
       <React.Fragment>
         {news.map(article => {
-          const id = getId(article.title);
+          const id = getId();
           return <ArticleCard article={article} key={id} path={`/article/${id}`}/>
         })
 }
