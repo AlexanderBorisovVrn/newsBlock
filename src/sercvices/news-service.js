@@ -10,9 +10,7 @@ export default class NewsService {
     if (!response.ok) {
       throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
     }
-    
-    return await response.json();
-
+        return await response.json();
   }
 
   getNews = async(query) => {
@@ -20,4 +18,5 @@ export default class NewsService {
     return articles
   }
 
+  
 }

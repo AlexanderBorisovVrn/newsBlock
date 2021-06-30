@@ -2,7 +2,7 @@ import React from 'react';
 import './article.scss';
 
 const Article = ({article}) => {
-  const {txt, title, img,content} = article;
+  const {title, img,content} = article;
   //принимает из article-container данные
   //отображает статью
   return (
