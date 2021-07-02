@@ -10,7 +10,6 @@ const NewsListContainer = () => {
   //создает запрос списка новостей передает ответ в ArticleCard
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
-
   const {
     data: {
       loading,
@@ -18,7 +17,6 @@ const NewsListContainer = () => {
     },
     query //параметры запроса
   } = useSelector(state => state);
-
   useEffect(() => {
     fetchNews(newsService, query, dispatch)()
   }, [newsService, query, dispatch]);

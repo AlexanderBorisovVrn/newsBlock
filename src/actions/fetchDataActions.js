@@ -2,7 +2,6 @@ const NEWS_REQUESTED = 'NEWS_REQUESTED';
 const NEWS_LOADED = 'NEWS_LOADED';
 const NEWS_ERROR = 'NEWS_ERROR';
 const ARTICLE_LOADED = 'ARTICLE_LOADED';
-const CHANGE_CATEGORY='CHANGE_CATEGORY';
 
 const newsRequest = () => {
   return {type: NEWS_REQUESTED}

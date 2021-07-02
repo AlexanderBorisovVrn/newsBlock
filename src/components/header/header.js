@@ -4,8 +4,7 @@ import ProfileIn from '../profile-in';
 import {Link} from 'react-router-dom';
 import img from './logo.png';
 import { useDispatch } from 'react-redux';
-import {setCategory} from './../../actions';
-
+import {setCategory,setDateFrom,setDateTo}from './../../reducers/querySlice';
 const Header = () => {
   const dispatch = useDispatch();
   const links = [
