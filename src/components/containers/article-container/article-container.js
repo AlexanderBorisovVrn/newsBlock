@@ -1,15 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {compose} from 'redux';
 import Loader from '../../loader/';
-import {withNewsService} from '../../hoc'
 import {fetchArticle} from '../../../actions/';
 import Article from '../../article/';
+import NewsContext from '../../news-context/news-context';
 
-const ArticleContainer = ({newsService,itemId}) => {
+const ArticleContainer = ({itemId}) => {
   // делает запрос через action creator fetchArticle помещает статью в state,
   // оттуда передает в Article
   const dispatch = useDispatch();
+  const newsService = useContext(NewsContext);
   const {loading,article}=useSelector(state=>state.data);
 
   useEffect(() => {
@@ -24,4 +25,4 @@ const ArticleContainer = ({newsService,itemId}) => {
 
 }
 
-export default compose(withNewsService)(ArticleContainer)
+export default compose(ArticleContainer)

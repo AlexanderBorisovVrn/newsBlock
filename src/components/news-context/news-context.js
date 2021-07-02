@@ -1,5 +1,5 @@
 import React from 'react';
 
-const { Provider:NewsProvider,Consumer:NewsConsumer}=React.createContext();
+const NewsContext=React.createContext();
 
-export {NewsConsumer,NewsProvider};
+export default NewsContext;

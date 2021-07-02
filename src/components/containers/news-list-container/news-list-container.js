@@ -1,14 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useContext} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {withNewsService} from '../../hoc';
 import {compose} from 'redux';
 import {fetchNews} from '../../../actions';
 import ArticleCard from '../../article-card';
 import Loader from '../../loader';
+import NewsContext from '../../news-context';
 
-const NewsListContainer = ({newsService}) => {
+const NewsListContainer = () => {
   //создает запрос списка новостей передает ответ в ArticleCard
   const dispatch = useDispatch();
+  const newsService = useContext(NewsContext);
+
   const {
     data: {
       loading,
@@ -22,7 +24,7 @@ const NewsListContainer = ({newsService}) => {
   }, [newsService, query, dispatch]);
 
   function getId() {
-    return Math.floor(Math.random() * 198654 )+Math.random() * 1998543 
+    return Math.floor(Math.random() * 198654) + Math.random() * 1998543
   }
 
   if (loading) {
@@ -41,4 +43,4 @@ const NewsListContainer = ({newsService}) => {
   }
 }
 
-export default compose(withNewsService)(NewsListContainer);
+export default compose(NewsListContainer);

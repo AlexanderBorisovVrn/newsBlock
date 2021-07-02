@@ -17,6 +17,4 @@ export default class NewsService {
     const {articles} = await this.getResourse(query);
     return articles
   }
-
-  
 }

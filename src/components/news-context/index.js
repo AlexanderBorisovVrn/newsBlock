@@ -1,2 +1,2 @@
-import {NewsConsumer,NewsProvider} from './news-context';
-export {NewsConsumer,NewsProvider};
+import NewsContext from './news-context';
+export default NewsContext;

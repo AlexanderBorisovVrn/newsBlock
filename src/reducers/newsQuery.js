@@ -1,14 +1,14 @@
 const initialState ={
-  categry:'all',
-  from:'2021-06-21',
-  to:'2021-06-27',
+  category:'all',
+  from:'',
+  to:'',
   sortBy:''
 }
 
 const newsQuery =(state=initialState,action)=>{
   switch (action.type) {
-    case 'BITCOIN_NEWS':
-      return initialState
+    case'SET_CATEGORY':
+      return {...initialState,category:action.payload}
         default:
       return state
   }
