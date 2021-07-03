@@ -2,7 +2,6 @@ import React, {useContext, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {compose} from 'redux';
 import Loader from '../../loader/';
-import {fetchArticle} from '../../../actions/';
 import Article from '../../article/';
 import NewsContext from '../../news-context/news-context';
 
@@ -13,9 +12,9 @@ const ArticleContainer = ({itemId}) => {
   const newsService = useContext(NewsContext);
   const {loading,article}=useSelector(state=>state.data);
 
-  useEffect(() => {
-    fetchArticle(newsService,itemId,dispatch)()
-  }, [newsService,itemId,dispatch]);
+  // useEffect(() => {
+  //   fetchArticle(newsService,itemId,dispatch)()
+  // }, [newsService,itemId,dispatch]);
 
   if (!loading) {
     return <Article article={article}/>

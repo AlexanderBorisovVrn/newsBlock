@@ -1,7 +1,7 @@
-import React, {useEffect,useContext} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {compose} from 'redux';
-import {fetchNews} from '../../../actions';
+import * as Actions from './../../../reducers/fetchDataSlice';
 import ArticleCard from '../../article-card';
 import Loader from '../../loader';
 import NewsContext from '../../news-context';
@@ -11,25 +11,23 @@ const NewsListContainer = () => {
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
   const {
-    data: {
+    fetchData: {
       loading,
       news
     },
     query //параметры запроса
   } = useSelector(state => state);
   useEffect(() => {
-    fetchNews(newsService, query, dispatch)()
+    Actions.fetchNews(newsService, query)(dispatch)
   }, [newsService, query, dispatch]);
 
   function getId() {
     return Math.floor(Math.random() * 198654) + Math.random() * 1998543
   }
-
   if (loading) {
     return <Loader/>
   } else {
     return (
-
       <React.Fragment>
         {news.map(article => {
           const id = getId();

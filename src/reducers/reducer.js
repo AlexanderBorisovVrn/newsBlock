@@ -1,10 +1,10 @@
-import fetchData from './fetchData';
+import fetchData from './fetchDataSlice';
 import login from './login';
 import setQuery from './querySlice';
 import { combineReducers } from 'redux';
 
 const reducer = combineReducers({
-    data:fetchData,
+    fetchData,
     login,
     query:setQuery
   })

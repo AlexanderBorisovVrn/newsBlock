@@ -2,7 +2,8 @@ import React from 'react';
 import './article-card.scss';
 import {Link} from 'react-router-dom';
 
-const ArticleCards = ({article, history}) => {
+
+const ArticleCards = ({article}) => {
   //отображает превью статей списком
   const {title, description, urlToImage, id} = article;
   return (
