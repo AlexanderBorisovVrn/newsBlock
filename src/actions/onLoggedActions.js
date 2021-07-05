@@ -6,9 +6,6 @@ const hideForm = () => {
   return {type: 'HIDE_FORM'}
 }
 
-const onPasswordVisible = ()=>{
-  return {type:'ON_PASSWORD_VISIBLE'}
-}
 
 const onLoggedIn=()=>{
   return {type:'ON_LOGGED_IN'}
@@ -18,6 +15,5 @@ const onLoggedIn=()=>{
 export {
   onForm,
   hideForm,
-  onPasswordVisible,
   onLoggedIn
 }

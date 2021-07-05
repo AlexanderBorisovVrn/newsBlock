@@ -1,8 +1,7 @@
-import {onForm, hideForm, onPasswordVisible, onLoggedIn} from './onLoggedActions';
+import {onForm, hideForm, onLoggedIn} from './onLoggedActions';
 
 export {
   onForm,
   hideForm,
-  onPasswordVisible,
   onLoggedIn
 };

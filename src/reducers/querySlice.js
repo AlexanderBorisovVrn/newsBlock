@@ -3,7 +3,8 @@ const initialState ={
   category:'all',
   from:'',
   to:'',
-  sortBy:''
+  sortBy:'',
+  qualify:'everything'
 }
 
 export const setQuery = createSlice({
@@ -18,9 +19,12 @@ export const setQuery = createSlice({
     },
     setDateTo:(state,action)=>{
       state.to = action.payload
+    },
+    setQualify:(state,action)=>{
+      state.qualify = action.payload
     }
   }
 })
 
-export   const {setCategory,setDateFrom,setDateTo}=setQuery.actions;
+export   const {setCategory,setDateFrom,setDateTo,setQualify}=setQuery.actions;
 export default setQuery.reducer

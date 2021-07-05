@@ -7,7 +7,9 @@ const News = () => {
     <section className='news'>
       <div className='wrap'>
         <div className='news__inner'>
-          <NewsListContainer/>
+          <aside >
+          </aside>
+         <NewsListContainer/>
         </div>
       </div>
     </section>

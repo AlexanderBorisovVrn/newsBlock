@@ -1,10 +1,10 @@
 import React, {useEffect, useContext} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {compose} from 'redux';
 import * as Actions from './../../../reducers/fetchDataSlice';
-import ArticleCard from '../../article-card';
+import ArticleCard from '../../article-card-prew';
 import Loader from '../../loader';
 import NewsContext from '../../news-context';
+import NewsList from '../../news-list';
 
 const NewsListContainer = () => {
   //создает запрос списка новостей передает ответ в ArticleCard
@@ -28,15 +28,15 @@ const NewsListContainer = () => {
     return <Loader/>
   } else {
     return (
-      <React.Fragment>
+      <NewsList>
         {news.map(article => {
           const id = getId();
           return <ArticleCard article={article} key={id} path={`/article/${id}`}/>
         })
 }
-      </React.Fragment>
+      </NewsList>
     )
   }
 }
 
-export default compose(NewsListContainer);
+export default NewsListContainer;

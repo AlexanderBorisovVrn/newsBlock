@@ -4,7 +4,6 @@ import './loader.scss';
 const Loader = () => {
   return (
     <div className='loader-wrap'>
-      <h1 className='loader-title'>loading...</h1>
       <div className="loader">
         <div className="l_main">
           <div className="l_square">
