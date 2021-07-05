@@ -4,6 +4,7 @@ const initialState ={
   from:'',
   to:'',
   sortBy:'',
+  country:'us',
   qualify:'everything'
 }
 
@@ -22,6 +23,9 @@ export const setQuery = createSlice({
     },
     setQualify:(state,action)=>{
       state.qualify = action.payload
+    },
+    setCountry:(state,action)=>{
+      state.country = action.payload
     }
   }
 })
