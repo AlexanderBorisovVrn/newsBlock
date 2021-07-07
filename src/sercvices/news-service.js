@@ -3,7 +3,6 @@ export default class NewsService {
   _apiKey = '138eac7e07bf49b7815747fa75effa14';
 
   getUrl = (api, fetchParams) => {
-    console.log(api + fetchParams);
     return api + fetchParams
   }
 
@@ -24,8 +23,9 @@ export default class NewsService {
   }
 
   getTopHeadlines = async(params) => {
-    const fetchParams = `top-headlines`
-    const {articles} = await this.getResourse(params);
+    const {country,sources}=params;
+    const fetchParams = `top-headlines?country=${country}&sources=${sources}&apiKey=${this._apiKey}`;
+    const {articles} = await this.getResourse(fetchParams);
     return articles
   }
 }

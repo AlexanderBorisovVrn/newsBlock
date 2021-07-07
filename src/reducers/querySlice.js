@@ -1,34 +1,44 @@
-import { createSlice } from "@reduxjs/toolkit";
-const initialState ={
-  category:'all',
-  from:'',
-  to:'',
-  sortBy:'',
-  country:'us',
-  qualify:'everything'
+import {createSlice} from "@reduxjs/toolkit";
+const initialState = {
+  category: 'all',
+  from: '',
+  to: '',
+  sortBy: '',
+  country: 'us',
+  qualify: 'everything',
+  sources:'',
 }
 
 export const setQuery = createSlice({
-  name:'query',
+  name: 'query',
   initialState,
-  reducers:{
-    setCategory:(state,action)=>{
-      state.category=action.payload
+  reducers: {
+    setCategory: (state, action) => {
+      state.category = action.payload
     },
-    setDateFrom:(state,action)=>{
+    setDateFrom: (state, action) => {
       state.from = action.payload
     },
-    setDateTo:(state,action)=>{
+    setDateTo: (state, action) => {
       state.to = action.payload
     },
-    setQualify:(state,action)=>{
+    setQualify: (state, action) => {
       state.qualify = action.payload
     },
-    setCountry:(state,action)=>{
+    setCountry: (state, action) => {
       state.country = action.payload
+    },
+    setSources: (state, action) => {
+      state.sources = action.payload
     }
   }
 })
 
-export   const {setCategory,setDateFrom,setDateTo,setQualify}=setQuery.actions;
+export const {
+  setCategory,
+  setDateFrom,
+  setDateTo,
+  setQualify,
+  setSources
+} = setQuery.actions;
 export default setQuery.reducer

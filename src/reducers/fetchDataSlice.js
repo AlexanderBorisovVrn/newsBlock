@@ -6,11 +6,16 @@ export const fetchData = createSlice({
     loading: true,
     error: null,
     news: [],
+    headlines: [],
     article: {}
   },
   reducers: {
     newsRequested: (state) => {
       state.loading = true
+    },
+    headlinesLoaded: (state, action) => {
+      state.headlines = action.payload;
+      state.loading = false;
     },
     newsLoaded: (state, action) => {
       state.news = action.payload;
@@ -29,7 +34,15 @@ export const fetchNews = (service, query) => dispatch => {
     .then(newsList => dispatch(newsLoaded(newsList)))
 }
 
+export const fetchHeadlines = (service, params) => dispatch => {
+  dispatch(newsRequested());
+  service
+    .getTopHeadlines(params)
+    .then(headlines => dispatch(headlinesLoaded(headlines)))
+}
+
 export const {
+  headlinesLoaded,
   newsRequested,
   newsLoaded,
   newsError

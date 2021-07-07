@@ -4,7 +4,9 @@ import './news-list.scss'
 const NewsList = ({children}) => {
   return (
     <div className='news-list'>
-      {children}
+      <div className='news-list__inner'>
+        {children}
+      </div>
     </div>
   );
 }

@@ -1,17 +1,16 @@
 import React from 'react';
 import './news-page.scss';
-import {NewsListContainer} from '../../components/containers';
+import {NewsListContainer,HeadlinesContainer} from '../../components/containers';
 
 const News = () => {
   return (
     <section className='news'>
-      <div className='wrap'>
-        <div className='news__inner'>
-          <aside >
+        <div className=' news__inner'>
+          <aside>
+            <HeadlinesContainer/>
           </aside>
-         <NewsListContainer/>
+          <NewsListContainer/>
         </div>
-      </div>
     </section>
   )
 }

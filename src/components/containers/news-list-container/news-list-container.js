@@ -25,7 +25,10 @@ const NewsListContainer = () => {
     return Math.floor(Math.random() * 198654) + Math.random() * 1998543
   }
   if (loading) {
-    return <Loader/>
+    return <NewsList>
+       <Loader/>
+    </NewsList>
+       
   } else {
     return (
       <NewsList>

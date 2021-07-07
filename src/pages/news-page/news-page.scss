@@ -1,20 +1,20 @@
 .news{
-  min-width: 100%;
-  min-height: 100vh;
-  &__inner{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    width: 100%;
-    height: auto;
+&__inner{
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
   }
-}
+ }
 
 aside{
   display: flex;
-  height:500px;
-  background-color: rgba(128, 128, 128, 0.555);
+  align-self: flex-start;
+  width: 20%;
+  bottom: 5px;
+  background-color: rgba(128, 128, 128, 0.335);
   border-radius: 5px;
-  padding: 10px 0;
+  padding: 10px;
   margin-top: 10px;
+  
 }
 
