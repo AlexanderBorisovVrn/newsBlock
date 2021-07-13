@@ -16,7 +16,7 @@ const HeadlinesContainer = () => {
  return(
    <ul>
       {
-        headlines.map(txt=><TopHeadlines>{txt}</TopHeadlines>)
+        headlines.map((txt,idx)=><TopHeadlines key={idx}>{txt}</TopHeadlines>)
       }
    </ul>
   )

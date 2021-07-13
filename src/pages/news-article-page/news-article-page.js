@@ -1,10 +1,11 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ArticleContainer from '../../components/containers/article-container';
 
-const NewsArticlePage = ({match})=>{
+const NewsArticlePage = ()=>{
   //передает id из роутера 
-  return <ArticleContainer itemId={+match.params.idx}/>
+ const {id}=useParams();
+  return <ArticleContainer itemId={+id}/>
 }
 
-export default withRouter(NewsArticlePage);
+export default NewsArticlePage;

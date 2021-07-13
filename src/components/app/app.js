@@ -13,7 +13,7 @@ const App = () => {
         <Route path='/profile' component={ProfilePage} exact/>
         <Route path='/news/' component={News} exact/>
         <Route
-          path='/article/:idx'
+          path='/article/:id'
           render={() => {
           return <NewsArticlePage/>
         }}/>

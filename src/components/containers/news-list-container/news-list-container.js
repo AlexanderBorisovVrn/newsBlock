@@ -7,7 +7,7 @@ import NewsContext from '../../news-context';
 import NewsList from '../../news-list';
 
 const NewsListContainer = () => {
-  //создает запрос списка новостей передает ответ в ArticleCard
+  //создает запрос списка новостей передает
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
   const {
@@ -21,9 +21,6 @@ const NewsListContainer = () => {
     Actions.fetchNews(newsService, query)(dispatch)
   }, [newsService, query, dispatch]);
 
-  function getId() {
-    return Math.floor(Math.random() * 198654) + Math.random() * 1998543
-  }
   if (loading) {
     return <NewsList>
        <Loader/>
@@ -31,10 +28,13 @@ const NewsListContainer = () => {
        
   } else {
     return (
+    // отображает 
       <NewsList>
         {news.map(article => {
-          const id = getId();
-          return <ArticleCard article={article} key={id} path={`/article/${id}`}/>
+          const {id}=article;
+          return <ArticleCard  key={id} path={`/article/${id}`}>
+           {article}
+          </ArticleCard>
         })
 }
       </NewsList>
