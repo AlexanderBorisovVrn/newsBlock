@@ -1,13 +1,11 @@
 import React from 'react';
 import './article-card.scss';
 import {Link} from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 
 const ArticleCards = ({children}) => {
   //отображает превью статей списком
   const {title, description, urlToImage,id} = children;
-  const {news}=useSelector(state=>state.fetchData);
   return (
     <article className='article-card'>
       <Link to={`/article/${id}`}>

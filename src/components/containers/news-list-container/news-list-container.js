@@ -21,23 +21,21 @@ const NewsListContainer = () => {
     Actions.fetchNews(newsService, query)(dispatch)
   }, [newsService, query, dispatch]);
 
+  const renderArticleCards = (article) => {
+    const {id} = article;
+    return <ArticleCard key={id} path={`/article/${id}`}>{article}</ArticleCard>
+  }
+
   if (loading) {
     return <NewsList>
-       <Loader/>
+      <Loader/>
     </NewsList>
-       
+
   } else {
     return (
-    // отображает 
-      <NewsList>
-        {news.map(article => {
-          const {id}=article;
-          return <ArticleCard  key={id} path={`/article/${id}`}>
-           {article}
-          </ArticleCard>
-        })
-}
-      </NewsList>
+ < NewsList >
+    {news.map(renderArticleCards)}
+ </NewsList>
     )
   }
 }

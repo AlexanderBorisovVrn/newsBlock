@@ -4,10 +4,12 @@ const initialState = {
   from: '',
   to: '',
   sortBy: '',
-  country: 'us',
+  country: 'ar',
   qualify: 'everything',
   sources:'',
 }
+
+
 
 export const setQuery = createSlice({
   name: 'query',
@@ -39,6 +41,7 @@ export const {
   setDateFrom,
   setDateTo,
   setQualify,
-  setSources
+  setSources,
+  setCountry
 } = setQuery.actions;
 export default setQuery.reducer

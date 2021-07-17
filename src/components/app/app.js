@@ -3,7 +3,8 @@ import Header from '../header';
 import './app.scss';
 import Autorization from '../../pages/autorization';
 import {Route, Switch} from 'react-router-dom';
-import {News, NewsArticlePage, ProfilePage} from '../../pages';
+import {NewsPage, NewsArticlePage, ProfilePage} from '../../pages';
+
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <Header/>
       <Switch>
         <Route path='/profile' component={ProfilePage} exact/>
-        <Route path='/news/' component={News} exact/>
+        <Route path='/news/' component={NewsPage} exact/>
         <Route
           path='/article/:id'
           render={() => {

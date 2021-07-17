@@ -1,7 +1,8 @@
 .article-card {
   display: flex;
-  width:100%;
-  min-height: 15rem;
+  margin-bottom: 10px;
+  height: 25rem;
+  flex-grow: 1;
 
   &__inner {
     display: flex;

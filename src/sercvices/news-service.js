@@ -23,6 +23,7 @@ export default class NewsService {
   }
 
   getTopHeadlines = async(params) => {
+    console.log(params);
     const {country,sources}=params;
     const fetchParams = `top-headlines?country=${country}&sources=${sources}&apiKey=${this._apiKey}`;
     const {articles} = await this.getResourse(fetchParams);
