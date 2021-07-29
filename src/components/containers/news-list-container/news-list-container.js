@@ -11,14 +11,13 @@ const NewsListContainer = () => {
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
   const {fetchData, query} = useSelector(state => state);
-  
+
   const {getNews, getQSearchParams} = newsService;
-  const {category} = query;
+  const params = getQSearchParams(query);
 
   useEffect(() => {
-    const params = getQSearchParams(query);
     fetchNewsThunk(getNews, params)(dispatch)
-  }, [getQSearchParams, getNews, category, dispatch]);
+  }, [ getNews, dispatch,params]);
 
   const renderArticleCards = (article) => {
     const {id} = article;
