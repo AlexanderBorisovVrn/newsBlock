@@ -6,13 +6,12 @@ import App from './components/app';
 import {BrowserRouter as Router} from 'react-router-dom';
 import NewsContext from './components/news-context';
 import ErrorBoundry from './components/error-boundry/';
-import NewsService from './sercvices/';
-
-const newsService = new NewsService();
+import {NewsService,MockNewsService} from './sercvices/';
+const mockNewsService = new MockNewsService()
 ReactDOM.render(
   <Provider store={store}>
   <ErrorBoundry>
-    <NewsContext.Provider value={newsService}>
+    <NewsContext.Provider value={NewsService}>
       <Router>
         <App/>
       </Router>

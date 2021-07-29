@@ -1,2 +1,3 @@
 import useHover from './hover';
-export {useHover};
+import useQuery from './query';
+export {useHover,useQuery};

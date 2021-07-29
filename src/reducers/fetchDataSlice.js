@@ -27,17 +27,14 @@ export const fetchData = createSlice({
   }
 })
 
-export const fetchNews = (service, query) => dispatch => {
+export const fetchNewsThunk = (fetchData, params) => dispatch => {
   dispatch(newsRequested());
-  service
-    .getNews(query)
-    .then(newsList => dispatch(newsLoaded(newsList)))
+  fetchData(params).then(newsList => dispatch(newsLoaded(newsList)))
 }
 
-export const fetchHeadlines = (service, params) => dispatch => {
+export const fetchHeadlines = (fetchData, params) => dispatch => {
   dispatch(newsRequested());
-  service
-    .getTopHeadlines(params)
+  fetchData(params)
     .then(headlines => dispatch(headlinesLoaded(headlines)))
 }
 

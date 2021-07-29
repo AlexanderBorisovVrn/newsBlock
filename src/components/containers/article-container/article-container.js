@@ -3,6 +3,8 @@ import {useSelector} from 'react-redux';
 import {compose} from 'redux';
 import Loader from '../../loader/';
 import Article from '../../article/';
+import PropTypes from 'prop-types';
+
 
 const ArticleContainer = ({itemId}) => {
   const {loading, news} = useSelector(state => state.fetchData);
@@ -17,7 +19,10 @@ const ArticleContainer = ({itemId}) => {
   } else {
     return <Loader/>
   }
-
 }
-
+ArticleContainer.propTypes={
+  loading:PropTypes.bool,
+  news:PropTypes.arrayOf(PropTypes.object),
+  itemId:PropTypes.number
+}
 export default compose(ArticleContainer)

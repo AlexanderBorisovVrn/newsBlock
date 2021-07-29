@@ -1,5 +1,7 @@
 import React from 'react';
-import './news-list.scss'
+import './news-list.scss';
+import PropTypes from 'prop-types';
+
 
 const NewsList = ({children}) => {
   return (
@@ -9,6 +11,10 @@ const NewsList = ({children}) => {
       </div>
     </div>
   );
+}
+
+NewsList.propTypes={
+  children:PropTypes.node
 }
 
 export default NewsList;

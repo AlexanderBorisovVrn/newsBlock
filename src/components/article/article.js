@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './article.scss';
 
 const Article = ({children}) => {
@@ -21,6 +22,13 @@ const Article = ({children}) => {
       </div>
     </article>
   )
+}
+
+Article.propTypes={
+  title:PropTypes.string,
+  description:PropTypes.string,
+  urlToImage:PropTypes.string,
+  id:PropTypes.number
 }
 
 export default Article;

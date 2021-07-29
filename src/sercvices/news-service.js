@@ -1,49 +1,56 @@
-export default class NewsService {
-  _newsApi = `https://newsapi.org/v2/`;
+class NewsService {
+  _url = `https://newsapi.org/v2/`;
   _apiKey = '138eac7e07bf49b7815747fa75effa14';
 
-  getUrl = (api, fetchParams) => {
-    return api + fetchParams
-  }
-
   getResourse = async(fetchParams) => {
-     const response = await fetch(this.getUrl(this._newsApi,fetchParams))
+    const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
+
+    const response = await fetch(url)
     if (!response.ok) {
       throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
     }
     return await response.json();
   }
 
-  getNews = async(query) => {
-   //параметры запроса query
-    const {category, from, to, sortBy, qualify,country} = query;
-    const fetchParams = `${qualify}?q=${category}&from=${from}&coutry=${country}&to=${to}&sortBy=${sortBy}&apiKey=${this._apiKey}`
-    const {articles} = await this.getResourse(fetchParams);
-    return articles.map(article=>this.trasnsformData(article))
+  getQSearchParams = (query) => {
+    return `everything?q=${query.category}}`
+  }
+
+  getPeriodSearchParams = (query) => {
+    const {category, period, sortBy} = query;
+    return `everything?q=${category}&from=${period[0]}&to=${period[1]}&sortBy=${sortBy}`
+  }
+
+  getHeadlinesInCountry = (query) => {
+    return `top-headlines?country=${query.country}`
+  }
+
+  getNews = async(params) => {
+    const {articles} = await this.getResourse(params);
+    return articles.map(article => this.trasnsformData(article))
   }
 
   getTopHeadlines = async(params) => {
-    console.log(params);
-    const {country,sources}=params;
-    const fetchParams = `top-headlines?country=${country}&sources=${sources}&apiKey=${this._apiKey}`;
-    const {articles} = await this.getResourse(fetchParams);
+    const {articles} = await this.getResourse(params);
     return articles
   }
-  idGen() {
-    //генерит id
-    return Math.floor(Math.random() * 198654) +Math.ceil(Math.random() * 1998543)
-  }
 
-  trasnsformData = (data)=>{
+  trasnsformData = (data) => {
+    const idGen = () => {
+      //генерит id
+      return Math.floor(Math.random() * 198654) + Math.ceil(Math.random() * 1998543)
+    }
     return {
-      author:data.author,
-      content:data.content,
-      description:data.description,
-      publishedAt:data.publishedAt,
-      title:data.title,
-      url:data.url,
-      urlToImage:data.urlToImage,
-      id:this.idGen()
+      author: data.author,
+      content: data.content,
+      description: data.description,
+      publishedAt: data.publishedAt,
+      title: data.title,
+      url: data.url,
+      urlToImage: data.urlToImage,
+      id: idGen()
     }
   }
 }
+
+export default new NewsService();

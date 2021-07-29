@@ -1,7 +1,7 @@
 import React, {useEffect, useContext} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import * as Actions from './../../../reducers/fetchDataSlice';
-import ArticleCard from '../../article-card-prew';
+import {fetchNewsThunk} from './../../../reducers/fetchDataSlice';
+import ArticleCard from '../../article-card';
 import Loader from '../../loader';
 import NewsContext from '../../news-context';
 import NewsList from '../../news-list';
@@ -10,34 +10,37 @@ const NewsListContainer = () => {
   //создает запрос списка новостей передает
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
-  const {
-    fetchData: {
-      loading,
-      news
-    },
-    query //параметры запроса
-  } = useSelector(state => state);
+  const {fetchData, query} = useSelector(state => state);
+  
+  const {getNews, getQSearchParams} = newsService;
+  const {category} = query;
+
   useEffect(() => {
-    Actions.fetchNews(newsService, query)(dispatch)
-  }, [newsService, query, dispatch]);
+    const params = getQSearchParams(query);
+    fetchNewsThunk(getNews, params)(dispatch)
+  }, [getQSearchParams, getNews, category, dispatch]);
 
   const renderArticleCards = (article) => {
     const {id} = article;
-    return <ArticleCard key={id} path={`/article/${id}`}>{article}</ArticleCard>
+    return <ArticleCard key={id} path={`/article/${id}`}>
+      {article}
+    </ArticleCard>
   }
 
-  if (loading) {
+  if (fetchData.loading) {
     return <NewsList>
       <Loader/>
     </NewsList>
 
   } else {
-    return (
- < NewsList >
-    {news.map(renderArticleCards)}
- </NewsList>
-    )
+    return < NewsList > {
+      fetchData
+        .news
+        .map(renderArticleCards)
+    } < /NewsList>
   }
 }
+
+
 
 export default NewsListContainer;

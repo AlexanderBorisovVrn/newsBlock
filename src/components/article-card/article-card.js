@@ -1,10 +1,12 @@
 import React from 'react';
 import './article-card.scss';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 
-const ArticleCards = ({children}) => {
+const ArticleCard = ({children}) => {
   //отображает превью статей списком
+  //данные из NewsListContainer
   const {title, description, urlToImage,id} = children;
   return (
     <article className='article-card'>
@@ -21,4 +23,11 @@ const ArticleCards = ({children}) => {
   )
 }
 
-export default ArticleCards;
+ArticleCard.propTypes={
+  title:PropTypes.string,
+  description:PropTypes.string,
+  urlToImage:PropTypes.string,
+  id:PropTypes.number
+}
+
+export default ArticleCard;

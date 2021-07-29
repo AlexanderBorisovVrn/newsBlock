@@ -1,11 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {transformDate} from '../components/calendar/calendar';
+
+const today = transformDate(new Date()) //today format ISO
+
 const initialState = {
-  category: 'all',
-  from: '',
-  to: '',
-  sortBy: '',
-  country: 'ar',
-  qualify: 'everything',
+  category: 'latest',
+  period:[today,today],
+  sortBy: 'publishedAt',
+  country: 'ru',
   sources:'',
 }
 
@@ -18,14 +20,8 @@ export const setQuery = createSlice({
     setCategory: (state, action) => {
       state.category = action.payload
     },
-    setDateFrom: (state, action) => {
-      state.from = action.payload
-    },
-    setDateTo: (state, action) => {
-      state.to = action.payload
-    },
-    setQualify: (state, action) => {
-      state.qualify = action.payload
+    setPeriod: (state, action) => {
+      state.period = action.payload
     },
     setCountry: (state, action) => {
       state.country = action.payload
@@ -36,10 +32,11 @@ export const setQuery = createSlice({
   }
 })
 
+
+
 export const {
   setCategory,
-  setDateFrom,
-  setDateTo,
+  setPeriod,
   setQualify,
   setSources,
   setCountry

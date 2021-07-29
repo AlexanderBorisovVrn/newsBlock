@@ -4,11 +4,12 @@ import ProfileIn from '../profile-in';
 import {Link} from 'react-router-dom';
 import img from './logo.png';
 import { useDispatch } from 'react-redux';
-import {setCategory,setDateFrom,setDateTo}from './../../reducers/querySlice';
+import {setCategory}from './../../reducers/querySlice';
+
 const Header = () => {
   const dispatch = useDispatch();
+  
   const links = [
-    'news',
     'business',
     'entertainment',
     'health',

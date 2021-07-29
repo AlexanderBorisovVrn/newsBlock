@@ -1,2 +1,3 @@
 import NewsService from './news-service';
-export default NewsService;
+import MockNewsService from './mockNewsService';
+export  {NewsService,MockNewsService};

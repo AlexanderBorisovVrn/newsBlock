@@ -1,7 +1,7 @@
 import React from 'react';
 import './news-page.scss';
 import {NewsListContainer, HeadlinesContainer} from '../../components/containers';
-import Params from '../../components/params/';
+import ParamsBlock from '../../components/paramsBlock/params-block';
 
 const NewsPage = () => {
   return (
@@ -11,7 +11,7 @@ const NewsPage = () => {
           <HeadlinesContainer/>
         </aside>
         <NewsListContainer/>
-        <Params/>
+        <ParamsBlock/>
       </div>
     </section>
   )
