@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render NewsList component should contain .news-list 1`] = `
+<div
+  className="news-list"
+>
+  <div
+    className="news-list__inner"
+  />
+</div>
+`;
