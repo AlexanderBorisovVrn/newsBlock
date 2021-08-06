@@ -12,13 +12,10 @@ class NewsService {
     return await response.json();
   }
 
-  getQSearchParams = (query) => {
-    return `everything?q=${query.category}}`
-  }
-
   getPeriodSearchParams = (query) => {
     const {category, period, sortBy} = query;
-    return `everything?q=${category}&from=${period[0]}&to=${period[1]}&sortBy=${sortBy}`
+    const str = `everything?q=${category}&from=${period[0]}&to=${period[1]}&sortBy=${sortBy}`;
+    return str
   }
 
   getHeadlinesInCountry = (query) => {
@@ -38,7 +35,7 @@ class NewsService {
   trasnsformData = (data) => {
     const idGen = () => {
       //генерит id
-      return Math.floor(Math.random() * 198654) + Math.ceil(Math.random() * 1998543)
+      return +Math.random().toString().slice(2)
     }
     return {
       author: data.author,

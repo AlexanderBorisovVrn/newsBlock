@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Article component it should contain .article 1`] = `
+<article
+  className="article"
+>
+  <div
+    className="wrap"
+  >
+    <div
+      className="article__inner"
+    >
+      <h1
+        className="article__title"
+      />
+      <p
+        className="article__author"
+      />
+      <div
+        className="article__img-wrap"
+      >
+        <img
+          alt=""
+          className="article__img"
+          height="500"
+          width="1200"
+        />
+      </div>
+      <div
+        className="article__txt"
+      >
+        <p />
+      </div>
+    </div>
+  </div>
+</article>
+`;

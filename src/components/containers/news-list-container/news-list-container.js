@@ -12,8 +12,8 @@ const NewsListContainer = () => {
   const newsService = useContext(NewsContext);
   const {fetchData, query} = useSelector(state => state);
 
-  const {getNews, getQSearchParams} = newsService;
-  const params = getQSearchParams(query);
+  const {getNews, getPeriodSearchParams} = newsService;
+  const params = getPeriodSearchParams(query);
 
   useEffect(() => {
     fetchNewsThunk(getNews, params)(dispatch)

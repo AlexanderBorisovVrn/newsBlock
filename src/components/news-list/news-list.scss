@@ -1,5 +1,8 @@
 .news-list {
-  display: flex;
-  flex-grow: 1;
-  padding: 10px 0;
+  &__inner{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    padding: 10px 0;
+  }  
 }

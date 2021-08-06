@@ -1,14 +1,14 @@
 import React from 'react';
 import './header.scss';
-import ProfileIn from '../profile-in';
 import {Link} from 'react-router-dom';
 import img from './logo.png';
-import { useDispatch } from 'react-redux';
-import {setCategory}from './../../reducers/querySlice';
+import {useDispatch} from 'react-redux';
+import {setCategory} from './../../reducers/querySlice';
+import ButtonsGroup from '../buttons-group/buttons-group';
 
 const Header = () => {
   const dispatch = useDispatch();
-  
+
   const links = [
     'business',
     'entertainment',
@@ -29,7 +29,12 @@ const Header = () => {
         <nav className='nav'>
           {links.map((link, idx) => {
             return (
-              <div className='nav__item' key={idx} onClick={()=>{dispatch(setCategory(link))}}>
+              <div
+                className='nav__item'
+                key={idx}
+                onClick={() => {
+                dispatch(setCategory(link))
+              }}>
                 <Link to='/news/' className='nav__link'>
                   <span>{link}</span>
                 </Link>
@@ -37,7 +42,7 @@ const Header = () => {
             )
           })}
         </nav>
-        <ProfileIn/>
+        <ButtonsGroup/>
       </div>
     </header>
   )

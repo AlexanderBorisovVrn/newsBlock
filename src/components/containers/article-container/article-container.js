@@ -7,9 +7,12 @@ import PropTypes from 'prop-types';
 
 
 const ArticleContainer = ({itemId}) => {
+  
   const {loading, news} = useSelector(state => state.fetchData);
   //item id from NewsArticlePage
+  
   const idxArticle = news.findIndex(el => el.id === itemId);
+  
   if (!loading) {
     return <div>
       <Article>

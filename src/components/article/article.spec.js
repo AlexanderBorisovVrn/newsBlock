@@ -1,20 +1,13 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Article from './article';
 import { shallow } from 'enzyme';
 
+const setUp = (props)=>shallow(<Article>{{}}</Article>)
+
 describe('should render Article component',()=>{
-  it('should render Article',()=>{
-    const component = shallow(<Article>{{}}</Article>);
-    const wrapper = component.find('.article');
-    expect(wrapper.length).toBe(1)
-  
-  })
-  
-  
-  it('should render text',()=>{
-    const component = shallow(<Article>{{}}</Article>);
-    const wrapper = component.find('p');
-    expect(wrapper.length).toBe(2)
+  it('it should contain .article',()=>{
+    const comp =setUp()
+    expect(comp).toMatchSnapshot();
   })
 })
 

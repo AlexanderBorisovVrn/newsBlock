@@ -6,6 +6,7 @@ const Article = ({children}) => {
   const {title, urlToImage,content,author} = children;
   //принимает из article-container данные
   //отображает статью
+  
   return (
     <article className='article'>
       <div className='wrap'>
