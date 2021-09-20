@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const NewsList = ({children}) => {
+  
   return (
     <div className='news-list'>
       <div className='news-list__inner'>

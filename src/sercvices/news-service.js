@@ -24,7 +24,9 @@ class NewsService {
 
   getNews = async(params) => {
     const {articles} = await this.getResourse(params);
-    return articles.map(article => this.trasnsformData(article))
+    return articles.map(article =>{
+    return  this.trasnsformData(article)
+    })
   }
 
   getTopHeadlines = async(params) => {

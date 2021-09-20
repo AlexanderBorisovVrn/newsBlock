@@ -19,8 +19,9 @@ const NewsListContainer = () => {
     fetchNewsThunk(getNews, params)(dispatch)
   }, [ getNews, dispatch,params]);
 
-  const renderArticleCards = (article) => {
+  const renderArticleCards =(article) => {
     const {id} = article;
+   
     return <ArticleCard key={id} path={`/article/${id}`}>
       {article}
     </ArticleCard>
@@ -31,7 +32,13 @@ const NewsListContainer = () => {
       <Loader/>
     </NewsList>
 
-  } else {
+  }
+  if(fetchData.news.length === 0 ){
+    return <div
+     style={{fontSize:'40px',marginTop:'3rem',marginLeft:'auto'}}
+     >По запросу ничего не найдено</div>
+  }   
+  else {
     return < NewsList > {
       fetchData
         .news
