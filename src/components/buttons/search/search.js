@@ -2,20 +2,25 @@ import React, {useState, useContext} from 'react';
 import './search.scss';
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
+import MyInput from '../../UI/input';
 
 const Search = () => {
-  const [input,
-    setInput] = useState('');
+  const [inputValue,
+    setValue] = useState('');
   const dispatch = useDispatch();
 
   function isStringEmpty(str) {
     return str && str.trim()
   }
 
+  function setInputValue(value){
+         setValue(value)
+  }
+
   function setSearchParams() {
-    if (isStringEmpty(input)) {
-      dispatch(setCategory(input))
-      setInput('')
+    if (isStringEmpty(inputValue)) {
+      dispatch(setCategory(inputValue))
+      setInputValue('')
     }
     return
   }
@@ -30,11 +35,11 @@ const Search = () => {
           e.preventDefault();
           setSearchParams();
         }}>
-          <input
-            type='text'
-            className='search__input'
-            onChange={e => setInput(e.target.value)}
-            value={input}/>
+         <MyInput
+          value={inputValue}
+          placeholder='Search'
+          setInputValue={setInputValue}
+         />
         </form>
       </div>
     </div>

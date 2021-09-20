@@ -36,7 +36,7 @@ const NewsListContainer = () => {
       fetchData
         .news
         .map(renderArticleCards)
-    } < /NewsList>
+    } </NewsList>
   }
 }
 
