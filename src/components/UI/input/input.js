@@ -7,8 +7,7 @@ const MyInput = ({setInputValue,...props}) => {
       <input
         {...props}
         className={styles.myInput}
-        onChange={(e)=>{
-          setInputValue(e.target.value)}}/>
+       />
     </div>
   )
 }

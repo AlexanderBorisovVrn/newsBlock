@@ -1,7 +1,7 @@
 import React from 'react';
 import './buttons-group.scss';
-import Search from '../buttons/search/search';
 import Auth from '../buttons/auth/auth';
+import Search from '../UI/search/search';
 
 const ButtonsGroup = () => {
   return (

@@ -1,8 +1,8 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import './search.scss';
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
-import MyInput from '../../UI/input';
+import {MyInput} from '../../UI'
 
 const Search = () => {
   const [inputValue,
@@ -13,14 +13,11 @@ const Search = () => {
     return str && str.trim()
   }
 
-  function setInputValue(value){
-         setValue(value)
-  }
 
   function setSearchParams() {
     if (isStringEmpty(inputValue)) {
       dispatch(setCategory(inputValue))
-      setInputValue('')
+      setValue('');
     }
     return
   }
@@ -38,7 +35,8 @@ const Search = () => {
          <MyInput
           value={inputValue}
           placeholder='Search'
-          setInputValue={setInputValue}
+          onChange={(e)=>{
+            setValue(e.target.value)}}
          />
         </form>
       </div>

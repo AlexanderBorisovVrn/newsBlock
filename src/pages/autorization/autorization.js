@@ -4,6 +4,7 @@ import {hideForm, onLoggedIn} from '../../actions';
 import {useDispatch, useSelector} from 'react-redux';
 import './autorization.scss'
 import {Redirect} from 'react-router-dom';
+import CheckBox from '../../components/UI/checkbox/checkbox';
 
 const Autorization = () => {
   const dispatch = useDispatch();
@@ -36,8 +37,7 @@ const Autorization = () => {
               className='autorization__password'
               ref={passwordRef}/>
             <div className='autorization__remember'>
-              <input type='checkbox' id='remember-me'/>
-              <label htmlFor='remember-me' className='remember-me'>Запомнить меня</label>
+             <CheckBox name='Запомнить меня'/>
             </div>
             <button type='submit' className='autorization__btn' onClick={logginIn}>Войти</button>
           </form>

@@ -12,12 +12,10 @@ const App = () => {
       <Header/>
       <Switch>
         <Route path='/profile' component={ProfilePage} exact/>
-        <Route path='/news/' component={NewsPage} exact/>
+        <Route path='/:params' component={NewsPage} exact/>
         <Route
           path='/article/:id'
-          render={() => {
-          return <NewsArticlePage/>
-        }}/>
+          component={NewsArticlePage}/>
       </Switch>
       <Autorization/>
     </div>

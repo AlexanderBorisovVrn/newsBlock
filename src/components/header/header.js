@@ -35,7 +35,7 @@ const Header = () => {
                 onClick={() => {
                 dispatch(setCategory(link))
               }}>
-                <Link to='/news/' className='nav__link'>
+                <Link to={`/${link}`} className='nav__link'>
                   <span>{link}</span>
                 </Link>
               </div>

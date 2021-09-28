@@ -1,7 +1,7 @@
 import React from 'react';
 import './article-card.scss';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link,useParams} from 'react-router-dom';
 
 
 const ArticleCard = ({children}) => {
