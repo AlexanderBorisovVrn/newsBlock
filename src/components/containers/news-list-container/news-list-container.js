@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchNewsThunk} from './../../../reducers/fetchDataSlice';
 import ArticleCard from '../../article-card';
 import Loader from '../../loader';
+import { dateSort } from '../../../utils/date-sort';
 import NewsContext from '../../news-context';
 import NewsList from '../../news-list';
 
@@ -10,39 +11,40 @@ const NewsListContainer = () => {
   //создает запрос списка новостей передает
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
-  const {fetchData, query} = useSelector(state => state);
-
+  const {fetchData, query,displayParams} = useSelector(state => state);
   const {getNews, getPeriodSearchParams} = newsService;
-  const params = getPeriodSearchParams(query);
 
+  const {sortDate}=displayParams;
+  const params = getPeriodSearchParams(query);
   useEffect(() => {
     fetchNewsThunk(getNews, params)(dispatch)
   }, [ getNews, dispatch,params]);
 
   const renderArticleCards =(article) => {
     const {id} = article;
-   
-    return <ArticleCard key={id} path={`/article/${id}`}>
+       return <ArticleCard key={id} path={`/article/${id}`}>
       {article}
     </ArticleCard>
   }
-
+  //текущий список новостей
+  const newsList=fetchData.news;
+  // если в стутсе загрузки
   if (fetchData.loading) {
     return <NewsList>
       <Loader/>
     </NewsList>
-
   }
+  //если пустой массив новостей
   if(fetchData.news.length === 0 ){
     return <div
      style={{fontSize:'40px',marginTop:'3rem',marginLeft:'auto'}}
      >По запросу ничего не найдено</div>
   }   
+  //отображает список новостей
   else {
     return < NewsList > {
-      fetchData
-        .news
-        .map(renderArticleCards)
+      dateSort(newsList,'publishedAt',sortDate)
+      .map(renderArticleCards)
     } </NewsList>
   }
 }

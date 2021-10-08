@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './select.module.scss'
 
-const Select = ({options}) => {
+const Select = ({options,callback}) => {
   const {select}= styles;
-  return (
+ return (
     <div>
-      <select className={select}>
+      <select  className={select} onChange={(e)=>callback(e.target)}>
         {
-          options.map(option=><option
+          options.map((option,idx)=><option
+             key={idx}
              disabled={option.disabled}
              value={option.value}
              >{option.name}

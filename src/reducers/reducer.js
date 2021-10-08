@@ -1,12 +1,14 @@
 import fetchData from './fetchDataSlice';
 import login from './login';
-import setQuery from './querySlice';
+import query from './querySlice';
 import { combineReducers } from 'redux';
+import displayParams from './displayParamsSlice';
 
 const reducer = combineReducers({
     fetchData,
     login,
-    query:setQuery
+    query,
+    displayParams
   })
 
 export default reducer;

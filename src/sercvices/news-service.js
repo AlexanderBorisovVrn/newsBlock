@@ -4,12 +4,16 @@ class NewsService {
 
   getResourse = async(fetchParams) => {
     const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
-
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
+    try {
+      const response = await fetch(url)
+      if (!response.ok) {
+        throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
+      }
+      return await response.json();
+    } catch (error) {
+      console.log(error);
     }
-    return await response.json();
+
   }
 
   getPeriodSearchParams = (query) => {
@@ -24,8 +28,8 @@ class NewsService {
 
   getNews = async(params) => {
     const {articles} = await this.getResourse(params);
-    return articles.map(article =>{
-    return  this.trasnsformData(article)
+    return articles.map(article => {
+      return this.trasnsformData(article)
     })
   }
 
@@ -37,7 +41,10 @@ class NewsService {
   trasnsformData = (data) => {
     const idGen = () => {
       //генерит id
-      return +Math.random().toString().slice(2)
+      return + Math
+        .random()
+        .toString()
+        .slice(2)
     }
     return {
       author: data.author,

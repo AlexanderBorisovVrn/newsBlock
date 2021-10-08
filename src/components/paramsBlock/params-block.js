@@ -1,15 +1,14 @@
 import React from 'react';
-import { Select } from '../UI';
-import { sortOptions } from '../../utils/sort-options';
 import './params-block.scss';
 import CheckBox from '../UI/checkbox/checkbox';
+import DateSortSelect from '../date-sort-select/date-sort-select';
 
 const ParamsBlock = () => {
 
   return (
     <div className='params-block'>
-      <Select options={sortOptions}/>
-      <CheckBox name='Tsl'/>
+      <DateSortSelect/>
+      <CheckBox name='Check'/>
     </div>
   );
 }

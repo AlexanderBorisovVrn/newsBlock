@@ -13,7 +13,7 @@ const initialState = {
 
 
 
-export const setQuery = createSlice({
+export const query = createSlice({
   name: 'query',
   initialState,
   reducers: {
@@ -40,5 +40,5 @@ export const {
   setQualify,
   setSources,
   setCountry
-} = setQuery.actions;
-export default setQuery.reducer
+} = query.actions;
+export default query.reducer
