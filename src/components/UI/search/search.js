@@ -8,11 +8,12 @@ const Search = () => {
   const [inputValue,
     setValue] = useState('');
   const dispatch = useDispatch();
+  const [visibility,
+    setVisibility] = useState(false);
 
   function isStringEmpty(str) {
     return str && str.trim()
   }
-
 
   function setSearchParams() {
     if (isStringEmpty(inputValue)) {
@@ -25,20 +26,25 @@ const Search = () => {
   return (
     <div className='search'>
       <div className='search__inner'>
-        <span className='search__btn' onClick={()=>setSearchParams()}>🔍</span>
         <form
           className='search__form'
           onSubmit={(e) => {
           e.preventDefault();
           setSearchParams();
         }}>
-         <MyInput
-          value={inputValue}
-          placeholder='Search'
-          onChange={(e)=>{
-            setValue(e.target.value)}}
-         />
+          <div className={visibility
+            ?'search__input show'
+            :'search__input hidden'}>
+            <MyInput
+              value={inputValue}
+              placeholder='Search'
+              onChange={(e) => {
+              setValue(e.target.value)
+            }}/>
+          </div>
         </form>
+        <div className='search__btn' onClick={() => setVisibility(!visibility)}>🔍</div>
+
       </div>
     </div>
   );
