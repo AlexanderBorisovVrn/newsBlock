@@ -33,11 +33,12 @@ const Autorization = () => {
             </div>
             <input placeholder='Username' className='autorization__name' ref={usernameRef}/>
             <input
+            type='password'
               placeholder='Password'
               className='autorization__password'
               ref={passwordRef}/>
             <div className='autorization__remember'>
-             <CheckBox name='Запомнить меня'/>
+              <CheckBox name='Запомнить меня'/>
             </div>
             <button type='submit' className='autorization__btn' onClick={logginIn}>Войти</button>
           </form>

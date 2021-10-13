@@ -7,7 +7,7 @@
 .auth {
   position: relative;
   z-index: 1;
-
+  height: 100%;
   &__inner {
     @include flexible();
     height: 100%;
@@ -37,7 +37,7 @@
   height: 5rem;
   background-color: rgb(4, 26, 66);
   right: 0;
-  top: 50px;
+  top: 65px;
 
   &__in,
   &__up {

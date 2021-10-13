@@ -11,7 +11,8 @@
    color: white;
    font-size: 24px;
    transition: opacity 50ms ease-out 50ms;
-
+    z-index: 100;
+    background-color:inherit;
    &:hover{
     opacity: 0.8;
     cursor: pointer;
@@ -25,20 +26,21 @@
   padding: 0 5px;
   margin-left: auto;
   margin-right: 0;
+  opacity: 0;
  }
 }
 
 
 @keyframes show {
   from{width: 0;opacity: 0;}
-  to{width: 10rem;opacity: 1;}
+  to{width: auto;opacity: 1;}
 }
 @keyframes hide {
-  from{width: 10rem;opacity: 1;}
-  to{width: 0;opacity: 0;}
+  0% {opacity: 1};
+  50%{opacity: 0;}
+  100%{width: 0;opacity: 0;}
 }
 .show{
-  width:10rem;
   opacity: 1;
   animation: show 0.5s;
 }

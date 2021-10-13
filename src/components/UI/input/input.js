@@ -3,12 +3,10 @@ import styles from './Input.module.scss';
 
 const MyInput = ({setInputValue,...props}) => {
     return (
-    <div className={styles.wrap}>
       <input
         {...props}
         className={styles.myInput}
        />
-    </div>
   )
 }
 

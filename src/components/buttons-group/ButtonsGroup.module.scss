@@ -1,0 +1,28 @@
+.buttons {
+  display: flex;
+  height: 100%;}
+  .list {
+    display: flex;
+    list-style: none;
+  
+  }
+  .item{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &:last-child>.decorBorder{
+      display: none;
+    }
+  }
+  .btn{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  .decorBorder{
+    height: 50%;
+    width: 2px;
+    background-color: #fff;
+  }

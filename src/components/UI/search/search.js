@@ -36,6 +36,7 @@ const Search = () => {
             ?'search__input show'
             :'search__input hidden'}>
             <MyInput
+              type='search'
               value={inputValue}
               placeholder='Search'
               onChange={(e) => {

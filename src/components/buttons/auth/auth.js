@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import './auth.scss';
 import {onForm} from '../../../actions';
 import {useHover} from '../../hooks';
@@ -7,17 +7,18 @@ import {withRouter} from 'react-router-dom';
 
 const Auth = ({history}) => {
   const dispatch = useDispatch();
+  const ref = useRef();
   const {isLogged} = useSelector(state => state.login);
-  const [toggleVisibleAuth,setToggleVisibleAuth] = useState(false);
+  const toggleVisibleAuth = useHover(ref);
   const onLogginForm = () => {
     !isLogged
       ? dispatch(onForm())
       : history.push('/profile/')
   }
   return (
-    <div className='auth'>
+    <div className='auth' ref={ref}>
       <div className='auth__inner'>
-        <div className='auth__txt' onClick={()=>setToggleVisibleAuth(!toggleVisibleAuth)}>
+        <div className='auth__txt' >
           <span>Войти</span>
         </div>
       </div>
