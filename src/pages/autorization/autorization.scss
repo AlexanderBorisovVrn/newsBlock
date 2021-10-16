@@ -1,7 +1,11 @@
+@import '../../styles/styles.scss';
+
 .autorization {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+ position: absolute;
+left: 0;
+right: 0;
+top:0;
+bottom:0;
 
 
 
@@ -79,8 +83,6 @@
 input[type=checkbox] {
   position: absolute;
   appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
 }
 
 .remember-me {
@@ -108,14 +110,14 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked+.remember-me::before {
-  border-color: rgba(255, 51, 0, 0.87);
+  border-color:$news-red;
   content: '\2713';
 }
 
 input[type=checkbox]:hover,
 input[type=checkbox]:focus+.remember-me::before {
-  border-color: rgba(255, 51, 0, 0.87);
-  color: rgba(255, 51, 0, 0.87);
+  border-color: $news-red;
+  color:$news-red;
 }
 
 

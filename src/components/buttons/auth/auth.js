@@ -11,9 +11,7 @@ const Auth = ({history}) => {
   const {isLogged} = useSelector(state => state.login);
   const toggleVisibleAuth = useHover(ref);
   const onLogginForm = () => {
-    !isLogged
-      ? dispatch(onForm())
-      : history.push('/profile/')
+    dispatch(onForm())
   }
   return (
     <div className='auth' ref={ref}>

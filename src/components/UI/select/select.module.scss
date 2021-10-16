@@ -1,7 +1,10 @@
+@import '../../../styles/styles.scss';
+
 .select{
   min-width: 150px;
   height: 30px;
   outline-color:skyblue ;
+  border: 1px solid gray;
   border-radius: 3px;
 
 }

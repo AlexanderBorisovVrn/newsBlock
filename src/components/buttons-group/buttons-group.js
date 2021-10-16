@@ -5,7 +5,6 @@ import styles from './ButtonsGroup.module.scss'
 
 const ButtonsGroup = () => {
   const {buttons,list,item,decorBorder,btn}=styles;
-  console.log(styles);
   const buttonsList=[
     <Search/>,
     <Auth/>
