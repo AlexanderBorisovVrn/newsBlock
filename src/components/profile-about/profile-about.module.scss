@@ -1,0 +1,59 @@
+@import '../../styles/styles.scss';
+
+.profileAbout {
+  display: flex;
+}
+
+.titleWrapper {
+  display: flex;
+}
+
+.triangle {
+  height: 3rem;
+  border: 24px solid transparent;
+  border-left: 20px solid $news-purple;
+}
+
+
+.inner {
+  flex: 1 0 60%;
+  min-height: 25rem;
+  padding: 0 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 10rem;
+  height: 3rem;
+  margin-bottom: 2rem;
+  padding: 0 10px;
+  background-color: $news-purple;
+  color: #fff;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.text {
+  color: $news-gray;
+  font-size: 16px;
+  padding: 0.5rem 0;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+
+  &Title {
+    margin-bottom: 1rem;
+    
+  }
+}
+
+.block {
+  width: auto;
+  height: 100%;
+ 
+}

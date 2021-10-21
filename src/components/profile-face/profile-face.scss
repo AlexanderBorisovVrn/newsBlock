@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&display=swap');
+@import '../../styles/styles.scss';
+
 .profile-face {
   display: flex;
 
@@ -11,8 +14,8 @@
     height: 25rem;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgba(151, 149, 149, 0.712);
-
+    background-color: $news-purple;
+    box-shadow: 4px 4px 2px 1px rgba(58, 57, 57, 0.137);
   }
 
   &__img-wrap {
@@ -31,8 +34,13 @@
 
   &__name {
     height: 4rem;
-    font-size: 18px;
     text-align: center;
+    order: -1;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+    font-family: 'Andada Pro', serif;
   }
 
   &__firstname::first-letter,

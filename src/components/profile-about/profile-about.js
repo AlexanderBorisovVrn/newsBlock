@@ -1,23 +1,46 @@
 import React from 'react';
-import './profile-about.scss';
+import TestimonialsCard from '../tetimonials-card/testimonials-card';
+import styles from './profile-about.module.scss';
 
 const ProfileAbout = () => {
+  const {
+    profilAbout,
+    inner,
+    infoTitle,
+    title,
+    text,
+    info,
+    block,
+    triangle,
+    titleWrapper
+  } = styles;
+
   return (
-    <div className='profile-about'>
-      <div className='profile-about__inner'>
-        <h1 className='profile-about__title'>Lorem ipsum dolor</h1>
-        <p className='profile-about__text'>Nunc maximus leo eu orci ultrices, at
-          placerat elit pharetra. Nullam mi orci, ornare eget purus et, pellentesque
-          placerat nisl. Duis id nisl ac magna semper ultricies nec in enim. Donec congue
-          sodales urna vitae lobortis. In fermentum nibh justo, vel volutpat ex dignissim
-          in. Fusce malesuada quis metus id vehicula. In vel nulla ipsum. Aliquam enim
-          purus, tincidunt quis mollis vitae, viverra in nibh. In hendrerit quis tortor at
-          ornare. Proin cursus metus in erat tempor pharetra. Morbi placerat, tortor id
-          egestas consequat, libero lectus malesuada arcu, id volutpat nibh purus ac
-          nulla. Aenean aliquam sagittis justo quis luctus. Praesent et turpis dui. Nunc
-          tempus tincidunt libero, et pretium metus sodales quis. Fusce sagittis vitae
-          nunc sit amet feugiat.</p>
-            </div>
+    <div className={profilAbout}>
+      <div className={inner}>
+        <div className={titleWrapper}>
+          <h1 className={title}>About</h1>
+          <div className={triangle}></div>
+        </div>
+        <section className={info}>
+          <div className={block}>
+            <h2 className={infoTitle}>I am Web Developer</h2>
+            <p className={text}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quidem
+              consectetur modi maiores error aliquid laboriosam laudantium totam. Quos, dicta
+              excepturi.
+            </p>
+            <p className={text}>
+              Ab quasi a vero inventore numquam dolore provident exercitationem dicta error
+              eveniet asperiores aperiam consequatur labore, quas amet perferendis harum animi
+              aut debitis dolorem, fuga incidunt. Numquam, quia harum.
+            </p>
+          </div>
+          <div className={block}>
+            <TestimonialsCard/>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

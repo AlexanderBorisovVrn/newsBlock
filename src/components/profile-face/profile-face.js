@@ -11,8 +11,8 @@ const ProfileFace = () => {
           <img alt='' className='profile-face__img' src={imgSrc}/>
         </div>
         <div className='profile-face__name'>
-          <p  className='profile-face__firstname'>Bвановичинский</p>
-          <p className='profile-face__lastname'>иван</p>
+          <p  className='profile-face__firstname'>Friday</p>
+          <p className='profile-face__lastname'>Alex</p>
         </div>
       </div>
     </div>

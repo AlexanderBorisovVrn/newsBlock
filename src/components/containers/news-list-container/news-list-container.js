@@ -30,9 +30,7 @@ const NewsListContainer = () => {
   const newsList=fetchData.news;
   // если в стутсе загрузки
   if (fetchData.loading) {
-    return <NewsList>
-      <Loader/>
-    </NewsList>
+    return <Loader/>
   }
   //если пустой массив новостей
   if(fetchData.news.length === 0 ){
