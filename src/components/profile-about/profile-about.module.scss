@@ -1,4 +1,4 @@
-@import '../../styles/styles.scss';
+@import '../../styles/variables.scss';
 
 .profileAbout {
   display: flex;
@@ -45,6 +45,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1em;
+  row-gap: 1em;
 
   &Title {
     margin-bottom: 1rem;

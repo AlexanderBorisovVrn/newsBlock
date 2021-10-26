@@ -1,5 +1,6 @@
 import React from 'react';
-import TestimonialsCard from '../tetimonials-card/testimonials-card';
+import TestimonialsCard from '../testimonials-card/testimonials-card';
+import MySlider from '../UI/slider/slider';
 import styles from './profile-about.module.scss';
 
 const ProfileAbout = () => {
@@ -39,7 +40,11 @@ const ProfileAbout = () => {
           <div className={block}>
             <TestimonialsCard/>
           </div>
+          <div className={block}>
+          <MySlider/>
+        </div>
         </section>
+        
       </div>
     </div>
   );
