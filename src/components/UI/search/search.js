@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './search.scss';
+import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
 import {MyInput} from '../../UI'
@@ -11,13 +12,13 @@ const Search = () => {
   const [visibility,
     setVisibility] = useState(false);
 
-  function isStringEmpty(str) {
-    return str && str.trim()
-  }
 
   function setSearchParams() {
+    //проверка на пустую строку
     if (isStringEmpty(inputValue)) {
+    //установка параметров поиска в state
       dispatch(setCategory(inputValue))
+    //очистка поля input  
       setValue('');
     }
     return
@@ -36,6 +37,9 @@ const Search = () => {
             ?'search__input show'
             :'search__input hidden'}>
             <MyInput
+              style={{
+                padding:'0 10px'
+              }}
               type='search'
               value={inputValue}
               placeholder='Search'

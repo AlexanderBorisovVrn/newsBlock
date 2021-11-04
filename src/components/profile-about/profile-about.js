@@ -37,7 +37,7 @@ const ProfileAbout = () => {
             </p>
           </div>
           <div className={block}>
-            <h2 className={infoTitle}>Testimotionals</h2>
+            <h2 className={infoTitle}>Testimonials</h2>
             <TestimonialsContainer/>
           </div>
 
