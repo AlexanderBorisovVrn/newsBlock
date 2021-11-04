@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './checkbox.module.scss'
 
-const CheckBox = ({name}) => {
+const CheckBox = ({name,callback}) => {
   const [isChecked,
     setIsChecked] = useState(false);
   const {checkbox, wrap, label} = styles;
@@ -17,7 +17,10 @@ const CheckBox = ({name}) => {
         tabIndex="0"
         aria-labelledby
         ={label}
-        onClick={() => setIsChecked(!isChecked)}>{checkMark}</span>
+        onClick={() => {
+          callback();
+          setIsChecked(!isChecked)
+          }}>{checkMark}</span>
       <label className={label}><input type='checkbox'/>{name}</label>
     </div>
   )

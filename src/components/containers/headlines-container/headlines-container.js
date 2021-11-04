@@ -17,11 +17,14 @@ const HeadlinesContainer = () => {
  },[getTopHeadlines,dispatch,query,getHeadlinesInCountry]);
 
  return(
-   <ul>
+   <div>
+     <ul style={{ backgroundColor:'rgba(128, 128, 128, 0.335)',borderRadius:'5px',padding:'5px'}}>
       {
         headlines.map((txt,idx)=><TopHeadlines key={idx}>{txt}</TopHeadlines>)
       }
-   </ul>
+    </ul>
+   </div>
+   
   )
 }
 

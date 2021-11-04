@@ -8,7 +8,6 @@ const ParamsBlock = () => {
   return (
     <div className='params-block'>
       <DateSortSelect/>
-      <CheckBox name='Check'/>
     </div>
   );
 }

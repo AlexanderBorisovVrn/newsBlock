@@ -6,33 +6,27 @@ const Avatar = (props) => {
   return (<img {...props}/>);
 }
 
-const TestimonialsCard = () => {
+const TestimonialsCard = (props) => {
   const {
     inner,
     imgWrap,
     userName,
     userInfo,
-    userFrom,
+    userOrg,
     text,
     textWrap,
     userWrapper,
-    title
   } = styles;
   return (
     <section className={inner}>
-      <h2 className={title}>Testimotional</h2>
-
       <div className={textWrap}>
-        <p className={text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Mauris venenatis eros eget risus consequat pharetra. Suspendisse potenti. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis eros eget
-          risus consequat pharetra. Suspendisse potenti.
+        <p className={text}>
+          {props.text}
         </p>
 
         <div className={userWrapper}>
           <div className={imgWrap}>
             <Avatar
-              alt
               src={svg}
               alt='avatar'
               style={{
@@ -41,12 +35,12 @@ const TestimonialsCard = () => {
               padding: '5px',
               borderRadius: '50%',
               backgroundColor: 'skyblue',
-              border: '2px solid rgba(128, 128, 128, 0.356)'
+              border: '2px solid rgba(128, 128, 128, 0.356)',
             }}/>
           </div>
           <div className={userInfo}>
-            <p className={userName}>Jerry Inc</p>
-            <p className={userFrom}>WaterProof dec.</p>
+            <p className={userName}>{props.userName}</p>
+            <p className={userOrg}>{props.userOrg}</p>
           </div>
         </div>
       </div>

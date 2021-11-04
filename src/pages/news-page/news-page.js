@@ -7,7 +7,7 @@ const NewsPage = () => {
   return (
     <section className='news'>
       <div className=' news__inner'>
-        <aside>
+        <aside className='aside'>
           <HeadlinesContainer/>
         </aside>
         <NewsListContainer/>

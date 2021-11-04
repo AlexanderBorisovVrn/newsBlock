@@ -9,12 +9,13 @@ const ButtonsGroup = () => {
     <Search/>,
     <Auth/>
   ]
+  
   return (
     <div className={buttons}>
       <ul className={list}>
           {
-            buttonsList.map(button=>{
-              return <li className={item}>
+            buttonsList.map((button,idx)=>{
+              return <li className={item} key={idx}>
                 <div className={btn}>{button}</div>
                 <div className={decorBorder}></div>
               </li>

@@ -1,40 +1,26 @@
-import React, {useState} from 'react';
-import styles from './slider.module.scss';
+import React from 'react';
+import Carousel from 'react-material-ui-carousel';
+import {Button} from '@mui/material';
 
-function MySlider(props) {
-  let [itemIdx,
-    setItemIdx] = useState(0);
-  const {slider, btn, btnWrap} = styles;
-  const arr = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-  ]
-  function checkMinItem() {
-    itemIdx === 0
-      ? setItemIdx(arr.length - 1)
-      : setItemIdx(--itemIdx)
-  }
-  function checkMaxItem() {
-    itemIdx === arr.length - 1
-      ? setItemIdx(0)
-      : setItemIdx(++itemIdx)
-  }
+const Nav=({onClick, className, style, next}) => {
 
-  return <div className={slider}>
-    {arr[itemIdx]}
-    <div className={btnWrap}>
-      <button type='button' className={btn} onClick={() => checkMaxItem()}>Next</button>
-      <button type='button' className={btn} onClick={() => checkMinItem()}>Prev</button>
-    </div>
-  </div>
+  return (
+      <Button onClick={onClick} className={className} style={style}>
+          {next && "Nextfdsdf"}
+      </Button>
+  )
 }
 
-export default MySlider;
+function MyCarousel({children}) {
+
+  return ( 
+  <Carousel
+navButtonsAlwaysInvisible
+ >
+    {children}
+  </Carousel> 
+    
+  )
+}
+
+export default MyCarousel;

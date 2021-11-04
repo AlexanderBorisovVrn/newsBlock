@@ -3,7 +3,7 @@ import './loader.scss';
 
 const Loader = () => {
   return <div className='loader__wrap'>
-    <div class="ring">LOADING
+    <div className="ring">LOADING
       <span className='cont'></span>
     </div>
   </div>

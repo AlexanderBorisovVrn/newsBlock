@@ -9,9 +9,12 @@ $header-color:rgb(4, 26, 66);
 
 .header {
   display: flex;
+  position: sticky;
+  top:0;
   height: $header-height;
   min-width: 100%;
   background-color: $header-color;
+
 
   a {
     text-decoration: none;

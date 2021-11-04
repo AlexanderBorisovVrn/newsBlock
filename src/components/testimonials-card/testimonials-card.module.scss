@@ -4,13 +4,15 @@
 .inner {
   display: flex;
   flex-direction: column;
+  padding: 20px;
   width: auto;
   height: 100%;
 }
 
-.title{
+.title {
   margin-bottom: 1rem;
 }
+
 .imgWrap {
   width: 70px;
   height: 70px;
@@ -19,12 +21,14 @@
 .text {
   padding: 20px;
   width: 90%;
-  background-color:rgba(128, 128, 128, 0.287);
-  border:2px solid rgba(128, 128, 128, 0.356);
+  background-color: rgba(128, 128, 128, 0.287);
+  border: 2px solid rgba(128, 128, 128, 0.356);
   border-radius: 5px;
-&Wrap {
+  box-shadow: 3px 3px 10px black;
+
+  &Wrap {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     position: relative;
   }
 }
@@ -33,17 +37,22 @@
   &Wrapper {
     display: flex;
     position: absolute;
+    padding: 5px;
     left: 0;
-    bottom: -40px;
+    bottom: -50px;
     flex-direction: row;
     align-items: flex-end;
   }
-
-  &Name {
-    font-weight: 500;
+  &Info{
+    margin-left: 5px;
   }
 
-  &From {
+  &Name {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &Org {
     font-size: 12px;
     font-weight: 300;
     color: rgba(63, 61, 61, 0.815);

@@ -1,11 +1,10 @@
 import React from 'react';
-import TestimonialsCard from '../testimonials-card/testimonials-card';
-import MySlider from '../UI/slider/slider';
+import TestimonialsContainer from '../containers/testimonials-container/testimonials-container';
 import styles from './profile-about.module.scss';
 
 const ProfileAbout = () => {
   const {
-    profilAbout,
+    profileAbout,
     inner,
     infoTitle,
     title,
@@ -13,11 +12,11 @@ const ProfileAbout = () => {
     info,
     block,
     triangle,
-    titleWrapper
+    titleWrapper,
   } = styles;
 
   return (
-    <div className={profilAbout}>
+    <div className={profileAbout}>
       <div className={inner}>
         <div className={titleWrapper}>
           <h1 className={title}>About</h1>
@@ -38,13 +37,12 @@ const ProfileAbout = () => {
             </p>
           </div>
           <div className={block}>
-            <TestimonialsCard/>
+            <h2 className={infoTitle}>Testimotionals</h2>
+            <TestimonialsContainer/>
           </div>
-          <div className={block}>
-          <MySlider/>
-        </div>
+
         </section>
-        
+
       </div>
     </div>
   );
