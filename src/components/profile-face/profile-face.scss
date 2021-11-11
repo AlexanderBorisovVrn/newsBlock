@@ -43,8 +43,7 @@
     font-family: 'Andada Pro', serif;
   }
 
-  &__firstname::first-letter,
-  &__lastname::first-letter {
-    text-transform: uppercase;
+  &__firstname
+  &__lastname{
   }
 }

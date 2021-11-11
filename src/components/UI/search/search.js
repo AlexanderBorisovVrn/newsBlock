@@ -1,45 +1,39 @@
 import React, {useState} from 'react';
-import './search.scss';
+import {search,form,input,inner,btn,show,hidden} from './search.module.scss';
 import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
-import {MyInput} from '../../UI'
+import {MyInput} from '../../UI';
 
 const Search = () => {
   const [inputValue,
     setValue] = useState('');
   const dispatch = useDispatch();
-  const [visibility,
-    setVisibility] = useState(false);
-
-
+  const [inputWrap,
+    setInputWrap] = useState(true);
+  const [currentPadding, setCurrentPadding] = useState(true);
   function setSearchParams() {
     //проверка на пустую строку
     if (isStringEmpty(inputValue)) {
-    //установка параметров поиска в state
+      //установка параметров поиска в state
       dispatch(setCategory(inputValue))
-    //очистка поля input  
+      //очистка поля input
       setValue('');
     }
     return
   }
 
   return (
-    <div className='search'>
-      <div className='search__inner'>
+    <div className={search}>
+      <div className={inner}>
         <form
-          className='search__form'
+          className={form}
           onSubmit={(e) => {
           e.preventDefault();
           setSearchParams();
         }}>
-          <div className={visibility
-            ?'search__input show'
-            :'search__input hidden'}>
+          <div className={inputWrap?hidden:show} >
             <MyInput
-              style={{
-                padding:'0 10px'
-              }}
               type='search'
               value={inputValue}
               placeholder='Search'
@@ -48,7 +42,10 @@ const Search = () => {
             }}/>
           </div>
         </form>
-        <div className='search__btn' onClick={() => setVisibility(!visibility)}>🔍</div>
+        <div className={btn} onClick={() => {
+          setInputWrap(!inputWrap)
+          setCurrentPadding(!currentPadding)
+          }}>🔍</div>
 
       </div>
     </div>

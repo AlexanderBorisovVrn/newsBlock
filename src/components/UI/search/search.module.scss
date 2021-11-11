@@ -1,0 +1,72 @@
+.search {}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  color: white;
+  font-size: 24px;
+  transition: opacity 50ms ease-out 50ms;
+  z-index: 100;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.form {
+  width: 11rem;
+}
+
+.show,
+.hidden {
+  padding: 0 5px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+
+.show {
+  opacity: 1;
+  animation: show 1s;
+  padding:5px;
+}
+
+.hidden {
+  width: 0;
+  opacity: 0;
+  animation: hide .4s;
+  padding: 0;
+}
+
+
+@keyframes show {
+  0% {
+    width: 0;
+    opacity: 0;
+    padding: 5px;
+  };
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    width: 100%;
+    opacity: 1;
+  };
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
