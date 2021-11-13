@@ -11,6 +11,7 @@
   &__inner {
     @include flexible();
     height: 100%;
+    padding: 0 10px;
     &:hover{
       opacity: 0.8;
       cursor: pointer;

@@ -1,23 +1,17 @@
 import React from 'react';
-import Auth from '../buttons/auth/auth';
-import Search from '../UI/search/search';
-import styles from './ButtonsGroup.module.scss'
 
-const ButtonsGroup = () => {
-  const {buttons,list,item,decorBorder,btn}=styles;
-  const buttonsList=[
-    <Search/>,
-    <Auth/>
-  ]
-  
-  return (
+import {buttons,list,item,decorBorder,btn,none} from './ButtonsGroup.module.scss'
+
+const ButtonsGroup = ({buttonsList,isDecorBorder=false}) => {
+
+   return (
     <div className={buttons}>
       <ul className={list}>
           {
             buttonsList.map((button,idx)=>{
               return <li className={item} key={idx}>
                 <div className={btn}>{button}</div>
-                <div className={decorBorder}></div>
+                <div className={isDecorBorder?decorBorder:none}></div>
               </li>
             })
           }

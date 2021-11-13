@@ -1,5 +1,5 @@
+@import '../../styles/variables.scss';
 $header-height:5rem;
-$header-color:rgb(4, 26, 66);
 
 @mixin flexible {
   display: flex;
@@ -14,7 +14,7 @@ $header-color:rgb(4, 26, 66);
   height: $header-height;
   min-width: 100%;
   background-color: $header-color;
-
+  z-index: 1000;
 
   a {
     text-decoration: none;

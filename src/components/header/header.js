@@ -1,29 +1,38 @@
 import React from 'react';
 import './header.scss';
+import Auth from '../buttons/auth/auth';
+import Search from '../UI/search/search';
 import {Link} from 'react-router-dom';
-import img from './logo.png';
+import LogoImg from '../logo-img/logo-img';
 import {useDispatch} from 'react-redux';
 import {setCategory} from './../../reducers/querySlice';
 import ButtonsGroup from '../buttons-group/buttons-group';
 
+
+const buttonsList=[
+  <Search/>,
+  <Auth/>
+]
+
+const links = [
+  'business',
+  'entertainment',
+  'health',
+  'science',
+  'sports',
+  'technology'
+]
 const Header = () => {
   const dispatch = useDispatch();
 
-  const links = [
-    'business',
-    'entertainment',
-    'health',
-    'science',
-    'sports',
-    'technology'
-  ]
+
 
   return (
     <header className='header'>
       <div className='wrap'>
         <div className='header__logo'>
           <Link to='/' className='header__link'>
-            <img alt='' src={img} className='header__img'/>
+            <LogoImg/>
           </Link>
         </div>
         <nav className='nav'>
@@ -42,7 +51,7 @@ const Header = () => {
             )
           })}
         </nav>
-        <ButtonsGroup/>
+        <ButtonsGroup buttonsList={buttonsList} isDecorBorder={true}/>
       </div>
     </header>
   )
