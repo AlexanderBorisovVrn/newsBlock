@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {search,form,input,inner,btn,show,hidden} from './search.module.scss';
+import {
+  search,
+  form,
+  inner,
+  btn,
+  show,
+  hidden,
+  initialInputVisibility
+} from './search.module.scss';
 import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
@@ -9,9 +17,9 @@ const Search = () => {
   const [inputValue,
     setValue] = useState('');
   const dispatch = useDispatch();
-  const [inputWrap,
-    setInputWrap] = useState(true);
-  const [currentPadding, setCurrentPadding] = useState(true);
+  const [isShow,
+    setIsShow] = useState(initialInputVisibility);
+
   function setSearchParams() {
     //проверка на пустую строку
     if (isStringEmpty(inputValue)) {
@@ -23,6 +31,11 @@ const Search = () => {
     return
   }
 
+  function changeCurrentClassName(value){
+    //устанавливает анимированный класс
+    setIsShow (value===show?hidden:show)
+  }
+
   return (
     <div className={search}>
       <div className={inner}>
@@ -32,7 +45,8 @@ const Search = () => {
           e.preventDefault();
           setSearchParams();
         }}>
-          <div className={inputWrap?hidden:show} >
+          <div
+            className={isShow}>
             <MyInput
               type='search'
               value={inputValue}
@@ -42,10 +56,11 @@ const Search = () => {
             }}/>
           </div>
         </form>
-        <div className={btn} onClick={() => {
-          setInputWrap(!inputWrap)
-          setCurrentPadding(!currentPadding)
-          }}>🔍</div>
+        <div
+          className={btn}
+          onClick={() => {
+          changeCurrentClassName(isShow);
+        }}>🔍</div>
 
       </div>
     </div>

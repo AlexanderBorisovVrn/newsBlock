@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 
 const Portal = ({children}) => {
-  const [container] = useState(document.createElement('div'));
+  const container = document.createElement('div');
 
   useEffect(()=>{
     document.body.appendChild(container);
