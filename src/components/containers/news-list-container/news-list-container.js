@@ -6,6 +6,7 @@ import Loader from '../../loader';
 import { dateSort } from '../../../utils/date-sort';
 import NewsContext from '../../news-context';
 import NewsList from '../../news-list';
+import { Redirect } from 'react-router';
 
 const NewsListContainer = () => {
   //создает запрос списка новостей передает
@@ -37,6 +38,7 @@ const NewsListContainer = () => {
     return <div
      style={{fontSize:'40px',marginTop:'3rem',marginLeft:'auto'}}
      >По запросу ничего не найдено</div>
+
   }   
   //отображает список новостей
   else {

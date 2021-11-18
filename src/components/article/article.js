@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './article.scss';
+import Comments from '../comments/comments';
 
 const Article = ({children}) => {
   const {title, urlToImage,content,author} = children;
@@ -9,7 +10,6 @@ const Article = ({children}) => {
   
   return (
     <article className='article'>
-      <div className='wrap'>
         <div className='article__inner'>
         <h1 className='article__title'>{title}</h1>
         <p className='article__author'>{author}</p>
@@ -19,7 +19,7 @@ const Article = ({children}) => {
           <div className='article__txt'>
             <p>{content}</p>
           </div>
-        </div>
+          <Comments/>
       </div>
     </article>
   )

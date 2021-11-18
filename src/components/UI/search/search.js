@@ -12,6 +12,7 @@ import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
 import {MyInput} from '../../UI';
+import { Redirect, useHistory } from 'react-router';
 
 const Search = () => {
   const [inputValue,
@@ -19,6 +20,8 @@ const Search = () => {
   const dispatch = useDispatch();
   const [isShow,
     setIsShow] = useState(initialInputVisibility);
+    const history = useHistory();
+    
 
   function setSearchParams() {
     //проверка на пустую строку
@@ -44,6 +47,7 @@ const Search = () => {
           onSubmit={(e) => {
           e.preventDefault();
           setSearchParams();
+          history.push('/search')
         }}>
           <div
             className={isShow}>
