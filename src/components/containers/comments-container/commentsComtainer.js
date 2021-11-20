@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import TextareaAutosize from '../../textarea-autosize/textarea-autosize';
 import {
   comments,
   inner,
@@ -38,15 +39,15 @@ const com = [
         'r congue libero eu justo pulvinar ultricies. Ut ipsum augue, rhoncus a nulla in,' +
         ' interdum fringilla leo. Nunc nec diam et lectus porttitor iaculis. Phasellus in' +
         ' dui risus.',
-        dateTime:'2019-08-22'
+    dateTime: '2019-08-22'
   }
 ]
 
 const CommentsContainer = () => {
   const [isShowComments,
     setIsShowComments] = useState(false);
-    const [textareaHeight,
-      setTextareaHeight] = useState(80);
+  const [textareaHeight,
+    setTextareaHeight] = useState(1);
   const ref = useRef();
   return (
     <section className={comments}>
@@ -68,19 +69,8 @@ const CommentsContainer = () => {
             <li className={item}>Популярные</li>
           </ul>
         </div>
-        <textarea
-          style={{
-          height: textareaHeight + 'px'
-        }}
-          ref={ref}
-          onChange={() => {
-         if(ref.current.scrollTop>0){
-           setTextareaHeight(textareaHeight+ref.current.scrollTop)
-         }
-        }}
-          wrap='soft'
-          className={text}
-          placeholder='Напишите комментарий...'></textarea>
+   <TextareaAutosize placeholder = 'Напишите комментарий...'/>
+      
       </div>
     </section>
   );
