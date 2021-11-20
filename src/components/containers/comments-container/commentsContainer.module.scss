@@ -1,0 +1,95 @@
+@import '../../../styles/variables.scss';
+
+@mixin toggle {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  margin-top: 5px;
+  justify-content: center;
+  border-radius: 50%;
+
+  &:after {
+    margin-right: 1px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 10px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.toggle {
+  &Off {
+    @include toggle();
+    border: 1px solid rgba(128, 128, 128, 0.561);
+
+    &:after {
+      margin-bottom: 2px;
+      content: '\1431';
+    }
+  }
+
+  &On {
+    @include toggle();
+    background-color: $news-orange;
+    color: white;
+
+    &:after {
+      margin-bottom: 1px;
+      content: '\142F';
+    }
+  }
+}
+
+.tabs {
+  height: 30px;
+
+  &List {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.item {
+  font-size: 14px;
+  margin-right: 10px;
+  &:hover,
+  &:focus{
+    color: $news-orange;
+    cursor: pointer;
+  }
+  &:active{
+    opacity: 0.8;
+  }
+}
+
+.text{
+  display: flex;
+  width: 100%;
+  margin:20px 0;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+   &::placeholder{
+     color:$news-gray;
+   }
+   &:focus{
+     outline: 2px solid $news-orange;
+     border:none
+   }
+}
