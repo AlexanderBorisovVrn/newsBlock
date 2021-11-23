@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+$avatar-width:60px;
+$avatar-height:60px;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap{
+  // padding: 10px;
+}
+.head{
+  display: flex;
+}
+.text{
+  padding-bottom: 10px;
+  padding-left: $avatar-width;
+}
+.name{
+  @include center();
+}
+.avatar{
+  width:$avatar-width;
+  height: $avatar-height;
+  padding: 10px;
+  cursor: pointer;
+}
+.date{
+  @include center();
+  margin-left: 15px;
+  color:$news-gray ;
+  text-align: center;
+}

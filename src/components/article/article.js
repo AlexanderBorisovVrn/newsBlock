@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './article.scss';
-import CommentsContainer from '../containers/comments-container/commentsComtainer'
+import CommentsContainer from '../containers/comments-container/commentsContainer'
 const Article = ({children}) => {
   const {title, urlToImage, content, author} = children;
   //принимает из article-container данные отображает статью

@@ -1,10 +1,7 @@
 import React from 'react';
 import styles from './testimonials-card.module.scss';
-import svg from '../../icons/296990.svg';
+import Avatar from '../../components/avatar/avatar'
 
-const Avatar = (props) => {
-  return (<img {...props}/>);
-}
 
 const TestimonialsCard = (props) => {
   const {
@@ -26,17 +23,7 @@ const TestimonialsCard = (props) => {
 
         <div className={userWrapper}>
           <div className={imgWrap}>
-            <Avatar
-              src={svg}
-              alt='avatar'
-              style={{
-              width: '100%',
-              height: '100%',
-              padding: '5px',
-              borderRadius: '50%',
-              backgroundColor: 'skyblue',
-              border: '2px solid rgba(128, 128, 128, 0.356)',
-            }}/>
+            <Avatar />
           </div>
           <div className={userInfo}>
             <p className={userName}>{props.userName}</p>

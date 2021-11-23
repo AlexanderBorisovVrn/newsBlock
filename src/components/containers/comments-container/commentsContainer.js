@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import TextareaAutosize from '../../textarea-autosize/textarea-autosize';
+import Comment from '../../comment/comment'
 import {
   comments,
   inner,
@@ -10,12 +11,13 @@ import {
   tabs,
   tabsList,
   item,
+  list,
   text
 } from './commentsContainer.module.scss'
 
 const com = [
   {
-    author: 'dim mednet',
+    userName: 'dim mednet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed sollicitudin' +
         ' dolor. Nulla volutpat, metus et varius luctus, orci risus tempus purus, ut vari' +
         'us dui velit aliquet tortor. Duis volutpat, dolor quis pulvinar blandit, orci er' +
@@ -25,9 +27,9 @@ const com = [
         'estas sed orci. Quisque in vestibulum lectus, efficitur varius ipsum. Quisque po' +
         'suere pulvinar metus, et auctor enim porta sed. Proin quis tincidunt sem. Quisqu' +
         'e ultricies quam ac.',
-    dateTime: '2019-08-21'
+    dateTime: new Date('2019-12-17T03:40:00')
   }, {
-    author: 'trew stratway',
+    userName: 'trew stratway',
     text: 'Maecenas tristique scelerisque malesuada. Nunc lacinia pretium risus, ut pretium' +
         ' mauris hendrerit quis. Duis eu lorem laoreet, tincidunt ligula at, volutpat mas' +
         'sa. Vestibulum consequat nisl at mi tempus tristique. Nunc eu lectus rhoncus, ve' +
@@ -39,7 +41,7 @@ const com = [
         'r congue libero eu justo pulvinar ultricies. Ut ipsum augue, rhoncus a nulla in,' +
         ' interdum fringilla leo. Nunc nec diam et lectus porttitor iaculis. Phasellus in' +
         ' dui risus.',
-    dateTime: '2019-08-22'
+    dateTime: new Date('2018-12-17T03:24:00')
   }
 ]
 
@@ -70,7 +72,15 @@ const CommentsContainer = () => {
           </ul>
         </div>
    <TextareaAutosize placeholder = 'Напишите комментарий...'/>
-      
+      <div className = 'comment-list'>
+       <ul className={list}>
+          {
+            com.map((comment,idx)=><li key={idx}>
+              <Comment comment={comment}/>
+            </li>)
+          }
+       </ul>
+      </div>
       </div>
     </section>
   );
