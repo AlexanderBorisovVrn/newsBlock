@@ -39,12 +39,9 @@ class NewsService {
   }
 
   trasnsformData = (data) => {
-    const idGen = () => {
+    const idGen = (data) => {
       //генерит id
-      return + Math
-        .random()
-        .toString()
-        .slice(2)
+    return data.title.toLowerCase().replace(/[ $%&:;,.]/gm,'-')
     }
     return {
       author: data.author,
@@ -54,7 +51,7 @@ class NewsService {
       title: data.title,
       url: data.url,
       urlToImage: data.urlToImage,
-      id: idGen()
+      id: idGen(data)
     }
   }
 }

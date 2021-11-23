@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import TextareaAutosize from '../../textarea-autosize/textarea-autosize';
 import Comment from '../../comment/comment'
 import {
@@ -12,7 +12,8 @@ import {
   tabsList,
   item,
   list,
-  text
+  show,
+  hide
 } from './commentsContainer.module.scss'
 
 const com = [
@@ -48,9 +49,7 @@ const com = [
 const CommentsContainer = () => {
   const [isShowComments,
     setIsShowComments] = useState(false);
-  const [textareaHeight,
-    setTextareaHeight] = useState(1);
-  const ref = useRef();
+
   return (
     <section className={comments}>
       <div className={inner}>
@@ -60,27 +59,29 @@ const CommentsContainer = () => {
           <button
             type='button'
             className={isShowComments
-            ? toggleOff
-            : toggleOn}
+            ? toggleOn
+            : toggleOff}
             onClick={() => setIsShowComments(!isShowComments)}></button>
         </div>
-        <div className={tabs}>
-          <ul className={tabsList}>
-            <li className={item}>Новые</li>
-            <li className={item}>Старые</li>
-            <li className={item}>Популярные</li>
-          </ul>
+        <div className={isShowComments
+          ? show
+          : hide}>
+          <div className={tabs}>
+            <ul className={tabsList}>
+              <li className={item}>Новые</li>
+              <li className={item}>Старые</li>
+              <li className={item}>Популярные</li>
+            </ul>
+          </div>
+          <TextareaAutosize placeholder='Напишите комментарий...'/>
+          <div className={list}>
+            <ul className={list}>
+              {com.map((comment, idx) =>< li key = {
+                idx
+              } > <Comment comment={comment}/> </li>)}
+            </ul>
+          </div>
         </div>
-   <TextareaAutosize placeholder = 'Напишите комментарий...'/>
-      <div className = 'comment-list'>
-       <ul className={list}>
-          {
-            com.map((comment,idx)=><li key={idx}>
-              <Comment comment={comment}/>
-            </li>)
-          }
-       </ul>
-      </div>
       </div>
     </section>
   );

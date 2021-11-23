@@ -5,7 +5,7 @@ import ArticleContainer from '../../components/containers/article-container';
 const NewsArticlePage = ()=>{
   //передает id из роутера 
  const {id}=useParams();
-  return <ArticleContainer itemId={+id}/>
+  return <ArticleContainer itemId={id}/>
 }
 
 export default NewsArticlePage;

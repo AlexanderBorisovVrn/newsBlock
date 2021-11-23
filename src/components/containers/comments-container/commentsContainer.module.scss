@@ -15,6 +15,9 @@
     font-size: 12px;
   }
 }
+.inner{
+  min-height: 600px;
+}
 
 .header {
   display: flex;
@@ -66,18 +69,25 @@
 .item {
   font-size: 14px;
   margin-right: 10px;
+
   &:hover,
-  &:focus{
+  &:focus {
     color: $news-orange;
     cursor: pointer;
   }
-  &:active{
+
+  &:active {
     opacity: 0.8;
   }
 }
 
-.list{
+.list {
   list-style: none;
 }
+.show{
+  display: block;
+}
 
-
+.hide{
+  display: none;
+}
