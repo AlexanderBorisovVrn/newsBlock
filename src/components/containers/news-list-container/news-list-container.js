@@ -6,7 +6,6 @@ import Loader from '../../loader';
 import { dateSort } from '../../../utils/date-sort';
 import NewsContext from '../../news-context';
 import NewsList from '../../news-list';
-import { Redirect } from 'react-router';
 
 const NewsListContainer = () => {
   //создает запрос списка новостей передает
@@ -27,8 +26,7 @@ const NewsListContainer = () => {
       {article}
     </ArticleCard>
   }
-  //текущий список новостей
-  const newsList=fetchData.news;
+  
   // если в стутсе загрузки
   if (fetchData.loading) {
     return <Loader/>
@@ -43,7 +41,7 @@ const NewsListContainer = () => {
   //отображает список новостей
   else {
     return < NewsList > {
-      dateSort(newsList,'publishedAt',sortDate)
+      dateSort(fetchData.news,'publishedAt',sortDate)
       .map(renderArticleCards)
     } </NewsList>
   }

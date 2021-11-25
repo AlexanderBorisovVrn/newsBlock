@@ -1,3 +1,5 @@
+import {crypto} from '../utils/crypto'
+
 class NewsService {
   _url = `https://newsapi.org/v2/`;
   _apiKey = '138eac7e07bf49b7815747fa75effa14';
@@ -39,11 +41,7 @@ class NewsService {
   }
 
   trasnsformData = (data) => {
-    const idGen = (data) => {
-      //генерит id
-    return data.title.toLowerCase().replace(/[ $%&:;,.]/gm,'-')
-    }
-    return {
+      return {
       author: data.author,
       content: data.content,
       description: data.description,
@@ -51,7 +49,7 @@ class NewsService {
       title: data.title,
       url: data.url,
       urlToImage: data.urlToImage,
-      id: idGen(data)
+      id:crypto(data.title+data.url)
     }
   }
 }

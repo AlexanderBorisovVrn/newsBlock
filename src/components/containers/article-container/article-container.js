@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {useSelector} from 'react-redux';
 import {compose} from 'redux';
 import Loader from '../../loader/';
@@ -9,8 +9,11 @@ import PropTypes from 'prop-types';
 const ArticleContainer = ({itemId}) => {
   
   const {loading, news} = useSelector(state => state.fetchData);
+if(news.length===0){
+
+}
+
   //item id from NewsArticlePage
-  console.log(news)
   const idxArticle = news.findIndex(el => el.id === itemId);
   if (!loading) {
     return <div>
@@ -25,6 +28,6 @@ const ArticleContainer = ({itemId}) => {
 ArticleContainer.propTypes={
   loading:PropTypes.bool,
   news:PropTypes.arrayOf(PropTypes.object),
-  itemId:PropTypes.number
+  itemId:PropTypes.string
 }
 export default compose(ArticleContainer)

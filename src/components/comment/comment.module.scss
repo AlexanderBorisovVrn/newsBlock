@@ -17,6 +17,7 @@ $avatar-height:60px;
 .text{
   padding-bottom: 10px;
   padding-left: $avatar-width;
+  font-size: 14px;
 }
 .name{
   @include center();
@@ -32,4 +33,6 @@ $avatar-height:60px;
   margin-left: 15px;
   color:$news-gray ;
   text-align: center;
+  font-size: 14px;
+
 }

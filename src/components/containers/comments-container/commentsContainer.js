@@ -59,8 +59,8 @@ const CommentsContainer = () => {
           <button
             type='button'
             className={isShowComments
-            ? toggleOn
-            : toggleOff}
+            ? toggleOff
+            : toggleOn}
             onClick={() => setIsShowComments(!isShowComments)}></button>
         </div>
         <div className={isShowComments
