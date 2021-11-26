@@ -3,8 +3,10 @@ import {crypto} from '../utils/crypto'
 class NewsService {
   _url = `https://newsapi.org/v2/`;
   _apiKey = '138eac7e07bf49b7815747fa75effa14';
-
-  getResourse = async(fetchParams) => {
+  _initialNewsParams = {
+    q:'everything'
+  }
+  _getResourse = async(fetchParams) => {
     const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
     try {
       const response = await fetch(url)
@@ -29,14 +31,14 @@ class NewsService {
   }
 
   getNews = async(params) => {
-    const {articles} = await this.getResourse(params);
+    const {articles} = await this._getResourse(params);
     return articles.map(article => {
       return this.trasnsformData(article)
     })
   }
 
   getTopHeadlines = async(params) => {
-    const {articles} = await this.getResourse(params);
+    const {articles} = await this._getResourse(params);
     return articles
   }
 

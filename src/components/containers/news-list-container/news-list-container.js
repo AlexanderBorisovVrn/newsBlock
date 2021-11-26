@@ -13,8 +13,8 @@ const NewsListContainer = () => {
   const newsService = useContext(NewsContext);
   const {fetchData, query,displayParams} = useSelector(state => state);
   const {getNews, getPeriodSearchParams} = newsService;
-
   const {sortDate}=displayParams;
+  
   const params = getPeriodSearchParams(query);
   useEffect(() => {
     fetchNewsThunk(getNews, params)(dispatch)

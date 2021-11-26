@@ -4,9 +4,8 @@ import Auth from '../buttons/auth/auth';
 import Search from '../UI/search/search';
 import {Link} from 'react-router-dom';
 import LogoImg from '../logo-img/logo-img';
-import {useDispatch} from 'react-redux';
-import {setCategory} from './../../reducers/querySlice';
 import ButtonsGroup from '../buttons-group/buttons-group';
+import NavBar from '../nav-bar/nav-bar';
 
 
 const buttonsList=[
@@ -14,7 +13,7 @@ const buttonsList=[
   <Auth/>
 ]
 
-const links = [
+const navItems = [
   'business',
   'entertainment',
   'health',
@@ -23,10 +22,7 @@ const links = [
   'technology'
 ]
 const Header = () => {
-  const dispatch = useDispatch();
-
-
-
+  
   return (
     <header className='header'>
       <div className='wrap'>
@@ -35,22 +31,7 @@ const Header = () => {
             <LogoImg/>
           </Link>
         </div>
-        <nav className='nav'>
-          {links.map((link, idx) => {
-            return (
-              <div
-                className='nav__item'
-                key={idx}
-                onClick={() => {
-                dispatch(setCategory(link))
-              }}>
-                <Link to={`/${link}`} className='nav__link'>
-                  <span>{link}</span>
-                </Link>
-              </div>
-            )
-          })}
-        </nav>
+        <NavBar navItems = {navItems}/>
         <ButtonsGroup buttonsList={buttonsList} isDecorBorder={true}/>
       </div>
     </header>

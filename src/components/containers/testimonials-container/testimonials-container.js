@@ -14,7 +14,7 @@ const TestimonialsContainer = () => {
     }, {
       text: 'Quisque sem tortor, laoreet nec purus ut, rutrum iaculis tellus. Sed sed lacus v' +
           'ehicula, dapibus urna sit amet,ehicula, dapibus urna sit amet ehicula, dapibus urna sit amet congue tellus. In varius sem non semper molestie',
-      userName: 'Judes Priest',
+      userName: 'Judas Priest',
       userOrg: 'STortel',
       id:2
     }, {

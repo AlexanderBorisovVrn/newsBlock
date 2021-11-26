@@ -1,14 +1,16 @@
-import React, { useRef } from 'react';
-import {useSelector} from 'react-redux';
+import React, { useRef,useContext } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {compose} from 'redux';
 import Loader from '../../loader/';
 import Article from '../../article/';
 import PropTypes from 'prop-types';
-
+import NewsContext from '../../news-context';
 
 const ArticleContainer = ({itemId}) => {
-  
+  const {getNews} = useContext(NewsContext);
+  const dispatch = useDispatch();
   const {loading, news} = useSelector(state => state.fetchData);
+  
 if(news.length===0){
 
 }

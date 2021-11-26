@@ -12,7 +12,7 @@ import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
 import {MyInput} from '../../UI';
-import { Redirect, useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 
 const Search = () => {
   const [inputValue,
@@ -43,7 +43,6 @@ const Search = () => {
     <div className={search}>
       <div className={inner}>
         <form
-          className={form}
           onSubmit={(e) => {
           e.preventDefault();
           setSearchParams();
