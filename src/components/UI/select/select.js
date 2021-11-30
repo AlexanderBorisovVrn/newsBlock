@@ -1,11 +1,12 @@
-import React from 'react';
-import styles from './select.module.scss'
+import React, { useRef } from 'react';
 
-const Select = ({options,callback}) => {
-  const {select}= styles;
+const Select = ({options,callback,style}) => {
+
  return (
     <div>
-      <select  className={select} onChange={(e)=>callback(e.target)}>
+      <select
+        
+         onChange={(e)=>callback(e.target)}>
         {
           options.map((option,idx)=><option
              key={idx}

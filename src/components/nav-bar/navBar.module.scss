@@ -1,18 +1,8 @@
 @import '../../styles/variables.scss';
-@mixin flexible {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .nav {
   display: flex;
   height: 100%;
-
-  &-wrap {
-    @include flexible();
-    flex-grow: 1;
-  }
 }
 
 .item {
@@ -23,7 +13,7 @@
 }
 
 .links {
-  @include flexible();
+  @include flexCenter();
   width: auto;
   height: 100%;
   border-radius: 0.3rem;
@@ -42,3 +32,4 @@
     text-transform: uppercase;
   }
 }
+

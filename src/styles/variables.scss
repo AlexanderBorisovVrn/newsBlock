@@ -4,3 +4,9 @@ $news-purple:rgb(75, 102, 148);
 $news-gray:rgb(80, 80, 80);
 $header-color:#0f2140;
 $footer-color:rgb(2, 34, 54);
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

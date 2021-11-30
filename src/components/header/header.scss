@@ -1,8 +1,9 @@
 @import '../../styles/variables.scss';
-$header-height:5rem;
+
 
 @mixin flexible {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
 }
@@ -11,10 +12,14 @@ $header-height:5rem;
   display: flex;
   position: sticky;
   top:0;
-  height: $header-height;
+  height: 5rem;
   min-width: 100%;
   background-color: $header-color;
   z-index: 1000;
+  &__more{
+    @include flexible();
+    display: none;
+  }
 
   a {
     text-decoration: none;
@@ -33,45 +38,21 @@ $header-height:5rem;
   }
 }
 
-.nav {
+
+
+.nav{
   display: flex;
-  height: 100%;
-  &-wrap{
-    @include flexible();
-    flex-grow: 1;
-  }
-
-  &__item {
-    height: 100%;
-    padding: 0.3rem 0;
-    margin-right: 1.5em;
-    line-height: 1.5em;
-  }
-
-  &__link {
-    @include flexible();
-    width: auto;
-    height: 100%;
-    border-radius: 0.3rem;
-    color: white;
-    &:hover{
-      color: $news-orange
-    }
-    &:active {
-      color: $news-orange;
-      opacity: 0.9;
-    }
-
-    span {
-      text-transform: uppercase;
-    }
-  }
 }
 
-@media (max-width: 752px) {
+@media (max-width:865px) {
+.header{
+  height: 4rem;
+  &__more{
+    display: flex;
+  }
+}
   .nav{
-    display: block;
-
+    font-size: 14px;
   }
-}
 
+}

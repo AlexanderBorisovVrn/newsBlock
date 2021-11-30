@@ -1,0 +1,13 @@
+@import '../../../styles/variables.scss';
+
+.list{
+@include flexCenter
+}
+
+.row{
+  flex-direction: row;
+}
+
+.column{
+  flex-direction: column;
+}
