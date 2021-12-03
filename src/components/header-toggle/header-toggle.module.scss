@@ -1,0 +1,80 @@
+$speed: .5s;
+$del: .1s;
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.f,
+.g,
+.h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.g {
+  top: calc(50% - 1px);
+}
+.h {
+  bottom: 0;
+}
+
+.animaF {
+  top: calc(50% - 2px);
+  transform: rotate(45deg);
+  animation: f $speed, rotateF  ease-in $del;
+}
+.animaH {
+  bottom: calc(50% - 2px);
+  transform: rotate(-45deg);
+  animation: h $speed, rotateH ease-in $del;
+}
+.animaG {
+  display: none;
+  animation: g $speed;
+}
+
+@keyframes f {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: calc(50% - 2px);
+  }
+}
+@keyframes h {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: calc(50% - 2px);
+  }
+}
+@keyframes g {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes rotateF {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes rotateH {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}

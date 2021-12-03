@@ -1,4 +1,5 @@
-.buttons {
+@media screen and (min-width:1400px) {
+  .buttons {
   display: flex;
   align-items:center;
   height: 100%;}
@@ -31,4 +32,4 @@
   }
   .none{
     display: none;
-  }
+  }}

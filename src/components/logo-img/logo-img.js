@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.png';
 import {wrap,img} from './logo-img.module.scss';
-
+import logo from './logo.png';
 const LogoImg = () => {
   return (
-    <picture className={wrap}>
+    <div className={wrap}>
       <img alt='logo' src = {logo} className = {img}/>
-    </picture>
+    </div>
   );
 }
 
