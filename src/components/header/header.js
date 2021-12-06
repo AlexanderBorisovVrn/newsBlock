@@ -5,8 +5,10 @@ import Select from '../UI/select/select'
 import Search from '../UI/search/search';
 import LogoImg from '../logo-img/logo-img'
 import {Link} from 'react-router-dom';
+import {changeHeaderNavVisibility} from '../../reducers/displayParamsSlice'
 import ButtonsGroup from '../buttons-group/buttons-group';
 import HeaderToggle from '../header-toggle/header-toggle';
+import { useDispatch } from 'react-redux';
 
 const buttonsList = [ < Search />, < Auth />
 ]
@@ -20,6 +22,8 @@ const options = [
 ]
 
 const Header = () => {
+const dispatch =   useDispatch();
+
   return (
     <header className='header'>
       <div className='header__wrap'>
@@ -31,7 +35,10 @@ const Header = () => {
         <div className='header__select'>
           <Select options={options}/>
         </div>
-        <div className='header__toggle'>
+        <div className='header__toggle'
+        onClick={()=>{
+          changeHeaderNavVisibility(dispatch)}}
+        >
           <HeaderToggle/>
         </div>
         <div className='header__buttons'>

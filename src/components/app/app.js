@@ -10,10 +10,10 @@ const App = () => {
   return (
     <div className='app'>
       <Header/>
-      <NavBar style={{display:'none'}}/>
-      {/* <AppRouter/>
-      <Autorization/>
-      <Footer/> */}
+      <NavBar/>
+      {/* <AppRouter/> */}
+      {/* <Autorization/> */}
+      {/* <Footer/> */}
     </div>
   )
 }
