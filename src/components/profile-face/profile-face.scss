@@ -1,49 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&display=swap');
 @import '../../styles/variables.scss';
 
-.profile-face {
-  display: flex;
+@media screen and (min-width:320px) {
 
-
-  &__inner {
+  .profile-face {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 10%;
-    border-radius: 5px;
-    background-color: $news-purple;
-    box-shadow: 4px 4px 2px 1px rgba(58, 57, 57, 0.137);
-  }
+    margin-bottom: .75rem;
 
-  &__img-wrap {
-    width: 100%;
-    height: 15rem;
-    margin-bottom: 2rem;
-  }
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100%;
+      height: 400px;
+      padding-top: 2rem;
+      background-color: $news-purple;
+    }
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid rgba(0, 0, 0, 0.733);
-    border-radius: 50%;
-  }
+    &__img-wrap {
+      width: 15rem;
+      height: 15rem;
+      margin-bottom: 2rem;
+    }
 
-  &__name {
-    height: 4rem;
-    text-align: center;
-    order: -1;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 24px;
-    font-family: 'Andada Pro', serif;
-  }
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid rgba(0, 0, 0, 0.733);
+      border-radius: 50%;
+      box-shadow: 0 1px 3px black;
+    }
 
-  &__firstname
-  &__lastname{
+    &__name {
+      height: 4rem;
+      text-align: center;
+      order: -1;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 24px;
+      font-family: 'Andada Pro', serif;
+    }
+
   }
 }
+
+
+// .profile-face {
+//   display: flex;
+
+
+//   &__inner {
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     flex-direction: column;
+//     width: 100%;
+//     height: 400px;
+//     padding: 10%;
+//     border-radius: 5px;
+//     background-color: $news-purple;
+//     box-shadow: 4px 4px 2px 1px rgba(58, 57, 57, 0.137);
+//   }
+
+//   &__img-wrap {
+//     width: 100%;
+//     height: 15rem;
+//     margin-bottom: 2rem;
+//   }
+
+//   &__img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     border: 1px solid rgba(0, 0, 0, 0.733);
+//     border-radius: 50%;
+//   }
+
+//   &__name {
+//     height: 4rem;
+//     text-align: center;
+//     order: -1;
+//     margin-bottom: 2rem;
+//     text-transform: uppercase;
+//     font-weight: 800;
+//     font-size: 24px;
+//     font-family: 'Andada Pro', serif;
+//   }
+
+// }

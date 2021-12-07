@@ -1,9 +1,23 @@
-.profile-page{
-  display: flex;
-  &__inner{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    padding-top:1rem;
-    padding-bottom: 10px;
+@media screen and (min-width:320px) {
+  .profile-page{
+    display: flex;
+  
+    &__inner{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(128, 128, 128, 0.363);
+    }
   }
 }
+
+// .profile-page{
+
+
+//   &__inner{
+//     display: grid;
+//     grid-template-columns: 300px 1fr;
+//     padding-top:1rem;
+//     padding-bottom: 10px;
+//   }
+// }

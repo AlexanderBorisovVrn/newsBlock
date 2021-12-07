@@ -1,4 +1,4 @@
-@media screen and (min-width:1400px) {
+@media screen and (min-width:320px) {
   .buttons {
   display: flex;
   align-items:center;
@@ -33,3 +33,39 @@
   .none{
     display: none;
   }}
+
+// @media screen and (min-width:1400px) {
+//   .buttons {
+//   display: flex;
+//   align-items:center;
+//   height: 100%;}
+//   .list {
+//     display: flex;
+//     height: 100%;
+//     align-items: center;
+//     list-style: none;
+//     margin: 0;
+  
+//   }
+//   .item{
+//     height: 100%;
+//     display: flex;
+//     align-items: center;
+//     &:last-child>.decorBorder{
+//       display: none;
+//     }
+//   }
+//   .btn{
+//     display: flex;
+//     align-items: center;
+//     height: 100%;
+//     }
+
+//   .decorBorder{
+//     height: 50%;
+//     width: 2px;
+//     background-color: #fff;
+//   }
+//   .none{
+//     display: none;
+//   }}

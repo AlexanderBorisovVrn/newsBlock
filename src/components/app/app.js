@@ -11,7 +11,7 @@ const App = () => {
     <div className='app'>
       <Header/>
       <NavBar/>
-      {/* <AppRouter/> */}
+      <AppRouter/>
       {/* <Autorization/> */}
       {/* <Footer/> */}
     </div>

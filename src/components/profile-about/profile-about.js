@@ -1,7 +1,8 @@
 import React from 'react';
 import TestimonialsContainer from '../containers/testimonials-container/testimonials-container';
 import styles from './profile-about.module.scss';
-import AboutMe from '../aboutMe/aboutMe'
+import AboutMe from '../aboutMe/aboutMe';
+import Footer from '../footer/footer'
 const ProfileAbout = () => {
   const {
     profileAbout,
@@ -12,6 +13,7 @@ const ProfileAbout = () => {
     block,
     triangle,
     titleWrapper,
+    testimonials
   } = styles;
 
   return (
@@ -23,16 +25,14 @@ const ProfileAbout = () => {
         </div>
         <section className={info}>
           <div className={block}>
-          <h2 className={infoTitle}>I am Web Developer</h2>
-          <AboutMe/>
+            <h2 className={infoTitle}>I am Web Developer</h2>
+            <AboutMe/>
           </div>
-          <div className={block}>
+          <div className={block} id={testimonials}>
             <h2 className={infoTitle}>Testimonials</h2>
             <TestimonialsContainer/>
           </div>
-
         </section>
-
       </div>
     </div>
   );

@@ -1,57 +1,80 @@
 @import '../../styles/variables.scss';
 
-.profileAbout {
-  display: flex;
+
+@media screen and (min-width:320px) {
+  .profileAbout {
+    display: flex;
+    margin-bottom: .75rem;
+  }
+  .inner {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ background-color: white;
 }
-
-.titleWrapper {
-  display: flex;
-}
-
-.triangle {
-  height: 3rem;
-  border: 24px solid transparent;
-  border-left: 20px solid $news-purple;
-}
-
-
-.inner {
-  flex: 1 0 60%;
-  padding: 0 2rem;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 10rem;
-  height: 3rem;
-  margin-bottom: 2rem;
-  padding: 0 10px;
-  background-color: $news-purple;
-  color: #fff;
-  font-size: 30px;
-  line-height: 30px;
-}
-
-
-.info {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 25rem 1fr;
-  grid-template-rows: repeat(4,1fr);
-  align-self: stretch;
-  column-gap: 1em;
-  row-gap: 1em;
-
-  &Title {
-    margin-bottom: 1rem;
-    
+  
+  .titleWrapper {
+    visibility: hidden;
+  }
+  .triangle{
+    display: none;
+  }
+  .title {
+    @include visually-hidden()
+  }
+  .infoTitle{
+    @include flexCenter();
+  }
+  #testimonials{
+    display: none;
   }
 }
 
-.block {
-display: flex;
-flex-direction: column;
- }
+
+// .triangle {
+//   height: 3rem;
+//   border: 24px solid transparent;
+//   border-left: 20px solid $news-purple;
+// }
+
+
+// .inner {
+//   flex: 1 0 60%;
+//   padding: 0 2rem;
+// }
+
+// .title {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//   width: 10rem;
+//   height: 3rem;
+//   margin-bottom: 2rem;
+//   padding: 0 10px;
+//   background-color: $news-purple;
+//   color: #fff;
+//   font-size: 30px;
+//   line-height: 30px;
+// }
+
+
+// .info {
+//   display: grid;
+//   height: 100%;
+//   grid-template-columns: 25rem 1fr;
+//   grid-template-rows: repeat(4,1fr);
+//   align-self: stretch;
+//   column-gap: 1em;
+//   row-gap: 1em;
+
+//   &Title {
+//     margin-bottom: 1rem;
+    
+//   }
+// }
+
+// .block {
+// display: flex;
+// flex-direction: column;
+//  }
 
