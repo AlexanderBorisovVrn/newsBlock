@@ -11,7 +11,7 @@ const ProfileFace = () => {
           <img alt='' className='profile-face__img' src={_imgSrc}/>
         </div>
         <div className='profile-face__name'>
-          <p  className='profile-face__firstname'>Alex</p>
+          <p  className='profile-face__firstname'>A.</p>
           <p className='profile-face__lastname'>Borisov</p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import TestimonialsContainer from '../containers/testimonials-container/testimonials-container';
 import styles from './profile-about.module.scss';
 import AboutMe from '../aboutMe/aboutMe';
-import Footer from '../footer/footer'
+
 const ProfileAbout = () => {
   const {
     profileAbout,

@@ -16,10 +16,11 @@
   .inner {
     display: flex;
     flex-direction: row;
-    width: 320px;
-    height: 4rem;
-    margin: 0 auto;
     justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    padding: 0 .75rem;
+    margin: 0 auto;
     background-color: inherit;
   }
 }

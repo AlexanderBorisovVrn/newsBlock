@@ -15,6 +15,7 @@ const Socials = () => {
       src: vk,
       href: 'http://vk.com'
     }
+  
   ]
   const buttonsList = buttons.map(({title, src, href}) =>
     <a href={href} className={link}>

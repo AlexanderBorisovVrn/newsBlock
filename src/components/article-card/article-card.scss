@@ -1,39 +1,78 @@
-.article-card {
-  min-height: 25rem;
-
-  &__inner {
-   width: 100%;
-    height: 100%;
-    background-color: rgba(161, 161, 161, 0.596);
-    box-shadow:2px 1px 10px rgba(0,0,0,0.5);
-    border-radius: 5px;
-    cursor: pointer;
-    }
-
-  &__img-wrap {
-    width: 100%;
-    height: 200px;
-  }
+@media screen and (min-width:320px) {
+  .article-card {
   
-  &__img {
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    object-fit:cover;
-    font-size: 0;
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem 1rem;
-  }
-
-  &__txt {
-    padding: 1rem;
-    text-align: left;
-    word-break: break-all;
+    &__inner {
+     width: 100%;
+      height: 100%;
+      padding-top: .75rem;
+      }
+  
+    &__img-wrap {
+      width: 100%;
+      height: 200px;
+    }
+    
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit:fill;
+      font-size: 0;
+    }
+    &__title,
+    &__txt{
+      background-color: rgba(161, 161, 161, 0.596);
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem .75rem;
+    }
+  
+    &__txt {
+      padding: .75rem;
+      text-align: left;
+      word-break: break-all;
+    }
   }
 }
+
+// .article-card {
+//   min-height: 25rem;
+
+//   &__inner {
+//    width: 100%;
+//     height: 100%;
+//     background-color: rgba(161, 161, 161, 0.596);
+//     box-shadow:2px 1px 10px rgba(0,0,0,0.5);
+//     border-radius: 5px;
+//     cursor: pointer;
+//     }
+
+//   &__img-wrap {
+//     width: 100%;
+//     height: 200px;
+//   }
+  
+//   &__img {
+//     width: 100%;
+//     height: 100%;
+//     border-top-left-radius: 5px;
+//     border-top-right-radius: 5px;
+//     object-fit:cover;
+//     font-size: 0;
+//   }
+
+//   &__title {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: .5rem 1rem;
+//   }
+
+//   &__txt {
+//     padding: 1rem;
+//     text-align: left;
+//     word-break: break-all;
+//   }
+// }

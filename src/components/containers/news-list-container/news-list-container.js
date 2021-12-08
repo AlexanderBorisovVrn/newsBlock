@@ -21,8 +21,7 @@ const NewsListContainer = () => {
   }, [ getNews, dispatch,params]);
 
   const renderArticleCards =(article) => {
-    const {id} = article;
-       return <ArticleCard key={id} path={`/article/${id}`}>
+       return <ArticleCard key={article.id} path={`/article/${article.id}`}>
       {article}
     </ArticleCard>
   }

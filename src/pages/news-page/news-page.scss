@@ -1,16 +1,32 @@
-.news{
-&__inner{
-  display: grid;
-  grid-template-columns: 20% 1fr 20%;
-  max-width: 1200px;
-  margin: 0 auto;
-  }
+@media screen and (min-width:320px){
+  .news{
+    &__inner{
+      display: block;
+      margin: 0 auto;
+      }
+    }
+    
+    .aside{
+      display: none;
+     }
+    
 }
 
-.aside{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
- }
+
+
+// .news{
+// &__inner{
+//   display: grid;
+//   grid-template-columns: 20% 1fr 20%;
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   }
+// }
+
+// .aside{
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   padding: 10px;
+//  }
 
