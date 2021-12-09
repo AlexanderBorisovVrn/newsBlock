@@ -5,6 +5,8 @@
     @include flexCenter();
     width: 100%;
     font-size: 14px;
+    position: sticky;
+    top:4rem;
   }
   .list{
     width: 100%;
