@@ -9,7 +9,9 @@ class NewsService {
   _getResourse = async(fetchParams) => {
     const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
     try {
-      const response = await fetch(url)
+      const response = await fetch(url,{
+        cors:'no-cors'
+      })
       if (!response.ok) {
         throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
       }

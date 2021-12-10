@@ -25,7 +25,7 @@ const NewsListContainer = () => {
       {article}
     </ArticleCard>
   }
-  
+
   // если в стутсе загрузки
   if (fetchData.loading) {
     return <Loader/>

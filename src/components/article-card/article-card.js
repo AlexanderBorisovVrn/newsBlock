@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import './article-card.scss';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
@@ -7,13 +7,23 @@ import {Link} from 'react-router-dom';
 const ArticleCard = ({children}) => {
   //отображает превью статей списком
   //данные из NewsListContainer
+  const [img, setImg] = useState('');
   const {title, description, urlToImage,id} = children;
+
   return (
     <article className='article-card'>
       <Link to={`/article/${id}`}>
         <div className='article-card__inner'>
           <div className='article-card__img-wrap'>
-            <img alt='' src={urlToImage} className='article-card__img' width='400' height='200'/>
+            <img
+            onError={(e)=>{
+              console.log(e);
+            }}
+              alt=''
+              src={urlToImage}
+              className='article-card__img'
+              width='400'
+              height='200'/>
           </div>
           <h1 className='article-card__title'>{title}</h1>
           <p className='article-card__txt'>{description}</p>
