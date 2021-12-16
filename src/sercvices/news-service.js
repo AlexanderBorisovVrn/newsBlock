@@ -1,4 +1,4 @@
-import {crypto} from '../utils/crypto'
+import {crypto} from '../utils/crypto';
 
 class NewsService {
   _url = `https://newsapi.org/v2/`;
@@ -7,13 +7,11 @@ class NewsService {
     q:'everything'
   }
   _getResourse = async(fetchParams) => {
-    const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
+    const url =this._url + fetchParams + '&apiKey=' + this._apiKey;
     try {
-      const response = await fetch(url,{
-        cors:'no-cors'
-      })
-      if (!response.ok) {
-        throw new Error(`Error.Couldn't fetch ${this._newsApi}.Response status ${response.status}`)
+      const response = await fetch(url)
+      if (response.status!==200) {
+        throw new Error(`Error.Couldn't fetch ${url}.Response status ${response.status}`)
       }
       return await response.json();
     } catch (error) {

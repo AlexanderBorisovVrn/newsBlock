@@ -12,26 +12,28 @@ const NewsListContainer = () => {
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
   const {fetchData, query,displayParams} = useSelector(state => state);
+
   const {getNews, getPeriodSearchParams} = newsService;
   const {sortDate}=displayParams;
-  
+  const {loading,news} = fetchData;
+
   const params = getPeriodSearchParams(query);
   useEffect(() => {
     fetchNewsThunk(getNews, params)(dispatch)
   }, [ getNews, dispatch,params]);
 
-  const renderArticleCards =(article) => {
-       return <ArticleCard key={article.id} path={`/article/${article.id}`}>
+  const renderArticleCards =(article,idx) => {
+       return <ArticleCard key={article.id+idx}>
       {article}
     </ArticleCard>
   }
 
   // если в стутсе загрузки
-  if (fetchData.loading) {
+  if (loading) {
     return <Loader/>
   }
   //если пустой массив новостей
-  if(fetchData.news.length === 0 ){
+  if(news.length === 0 ){
     return <div
      style={{fontSize:'40px',marginTop:'3rem',marginLeft:'auto'}}
      >По запросу ничего не найдено</div>
@@ -40,8 +42,8 @@ const NewsListContainer = () => {
   //отображает список новостей
   else {
     return < NewsList > {
-      dateSort(fetchData.news,'publishedAt',sortDate)
-      .map(renderArticleCards)
+      dateSort(news,'publishedAt',sortDate)
+        .map(renderArticleCards)
     } </NewsList>
   }
 }
