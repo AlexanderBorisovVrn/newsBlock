@@ -8,7 +8,8 @@ import {Link} from 'react-router-dom';
 import {changeHeaderNavVisibility} from '../../reducers/displayParamsSlice'
 import ButtonsGroup from '../buttons-group/buttons-group';
 import HeaderToggle from '../header-toggle/header-toggle';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import NavBar from '../nav-bar/nav-bar';
 
 const buttonsList = [ < Search />, < Auth />
 ]
@@ -22,8 +23,9 @@ const options = [
 ]
 
 const Header = () => {
-const dispatch =   useDispatch();
-
+  const dispatch = useDispatch();
+  const {headerNavVisibility} = useSelector(state => state.displayParams);
+  let navVisibilityClass =headerNavVisibility?'header__nav': 'header__nav isVisible'
   return (
     <header className='header'>
       <div className='header__wrap'>
@@ -32,13 +34,17 @@ const dispatch =   useDispatch();
             <LogoImg/>
           </Link>
         </div>
+        <div className={navVisibilityClass}>
+          <NavBar/>
+        </div>
         <div className='header__select'>
           <Select options={options}/>
         </div>
-        <div className='header__toggle'
-        onClick={()=>{
-          changeHeaderNavVisibility(dispatch)}}
-        >
+        <div
+          className='header__toggle'
+          onClick={() => {
+          changeHeaderNavVisibility(dispatch)
+        }}>
           <HeaderToggle/>
         </div>
         <div className='header__buttons'>

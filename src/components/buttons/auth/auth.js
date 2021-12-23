@@ -2,13 +2,12 @@ import React, {useRef, useState} from 'react';
 import './auth.scss';
 import {onForm} from '../../../actions';
 import {useHover} from '../../hooks';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-const Auth = ({history}) => {
+const Auth = () => {
   const dispatch = useDispatch();
   const ref = useRef();
-  const {isLogged} = useSelector(state => state.login);
   const toggleVisibleAuth = useHover(ref);
   const onLogginForm = () => {
     dispatch(onForm())

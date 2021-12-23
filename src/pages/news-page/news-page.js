@@ -1,6 +1,5 @@
 import React from 'react';
 import './news-page.scss';
-import Footer from '../../components/footer/footer';
 import {NewsListContainer, HeadlinesContainer} from '../../components/containers';
 
 const NewsPage = () => {
@@ -11,7 +10,6 @@ const NewsPage = () => {
           <HeadlinesContainer/>
         </aside>
         <NewsListContainer/>
-        <Footer/>
       </div>
     </section>
   )

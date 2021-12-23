@@ -1,66 +1,71 @@
 @import '../../styles/variables.scss';
 
-@media screen and (min-width:320px) {
-  .nav {
-    @include flexCenter();
-    width: 100%;
-    font-size: 14px;
-    position: sticky;
-    top:4rem;
-  }
-  .list{
-    width: 100%;
-    &:last-child{
-      border-bottom: none;
-    }
-  }
-  .item{
-    width: 100%;
-    margin: 0;
-    padding: 0.1rem;
-    background-color: $header-color;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    color:white;
-  }
-  .links {
-    @include flexCenter();
-    width: auto;
+
+.nav {
+  @include flexCenter();
+  width: 100%;
+  font-size: .75rem;
+  position: absolute;
+  left: 0;
+  top: 3rem;
+
+  @include md {
+    position: initial;
+    width: initial;
     height: 100%;
-    border-radius: 0.3rem;
-    
-  
-    &:hover {
-      color: $news-orange
-    }
-  
-    &:active {
-      color: $news-orange;
-      opacity: 0.9;
-    }
-  
-    
+    flex-shrink: 1;
+    font-size: .75rem;
   }
-  span {
-    text-transform: uppercase;
-  }
+
 }
 
+.list {
+  width: 100%;
+  @include md{
+    display: flex;
+    width: initial;
+    height: 100%;
+  }
 
-@media screen and (min-width:1200px) {
-  .nav {
-  @include flexCenter();
-  height: 100%;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .item {
-  height: 100%;
-  padding: 0.3rem 0;
-  margin-right: 1.5em;
-  line-height: 1.5em;
+  width: 100%;
+  margin: 0;
+  padding: 0.1rem;
+  background-color: $header-color;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
+  @include md {
+    margin-right: .75rem;
+    border: none;
+  }
+  
 }
 
+.links {
+  @include flexCenter();
+  width: auto;
+  height: 100%;
+  border-radius: 0.3rem;
+
+
+  &:hover {
+    color: $news-orange
+  }
+
+  &:active {
+    color: $news-orange;
+    opacity: 0.9;
+  }
+
+
 }
 
-
+span {
+  text-transform: uppercase;
+}

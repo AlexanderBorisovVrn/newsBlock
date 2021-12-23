@@ -4,7 +4,7 @@ import {content} from './textareaAutosize.module.scss';
 const TextareaAutosize = ({placeholder=''}) => {
   return (
       <div
-        onInput={(e)=>console.log(e.target.textContent)}
+        onInput={(e)=>{return}}
           contentEditable
           className={content}
           data-placeholder={placeholder}></div>

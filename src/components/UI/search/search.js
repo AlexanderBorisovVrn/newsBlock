@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   search,
-  form,
   inner,
   btn,
   show,
@@ -22,7 +21,7 @@ const Search = () => {
     setIsShow] = useState(initialInputVisibility);
     const history = useHistory();
     
-
+console.log(isShow);
   function setSearchParams() {
     //проверка на пустую строку
     if (isStringEmpty(inputValue)) {

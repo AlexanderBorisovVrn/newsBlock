@@ -19,8 +19,8 @@ const NewsListContainer = () => {
 
   const params = getPeriodSearchParams(query);
   useEffect(() => {
-    fetchNewsThunk(getNews, params)(dispatch)
-  }, [ getNews, dispatch,params]);
+   dispatch (fetchNewsThunk(getNews, params))
+  }, [ getNews,params,dispatch]);
 
   const renderArticleCards =(article,idx) => {
        return <ArticleCard key={article.id+idx}>
@@ -28,7 +28,6 @@ const NewsListContainer = () => {
     </ArticleCard>
   }
 
-  // если в стутсе загрузки
   if (loading) {
     return <Loader/>
   }

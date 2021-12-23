@@ -5,6 +5,40 @@ $news-gray:rgb(80, 80, 80);
 $header-color:#0f2140;
 $footer-color:rgb(2, 34, 54);
 
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -18,3 +52,4 @@ $footer-color:rgb(2, 34, 54);
   height: 1px;
   margin: -1px;
 }
+
