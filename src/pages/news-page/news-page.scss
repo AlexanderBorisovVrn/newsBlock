@@ -1,32 +1,28 @@
-@media screen and (min-width:320px){
-  .news{
-    &__inner{
-      display: block;
-      margin: 0 auto;
-      }
+@import '../../styles/variables.scss';
+
+.news {
+  &__inner {
+    display: block;
+    @include blockCenter();
+    @include container();
+
+    @include lg {
+      display: grid;
+      grid-template-columns: 20% minmax(100px,1fr);
     }
-    
-    .aside{
-      display: none;
-     }
-    
+  }
 }
 
+.aside {
+  display: none;
 
-
-// .news{
-// &__inner{
-//   display: grid;
-//   grid-template-columns: 20% 1fr 20%;
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   }
-// }
-
-// .aside{
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-//   padding: 10px;
-//  }
-
+  @include lg {
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    font-size: .75rem;
+  }
+  @include lg {
+    font-size: 1rem;
+  }
+}

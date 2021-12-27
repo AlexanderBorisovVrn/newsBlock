@@ -9,8 +9,8 @@ const App = () => {
   return (
     <div className='app'>
       <Header/>
-      {/* <AppRouter/> 
-      <Autorization/>
+      <AppRouter/> 
+      {/* <Autorization/>
     <Footer/> */}
     </div>
   )

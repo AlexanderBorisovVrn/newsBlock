@@ -17,25 +17,25 @@ $screen-xl-min: 1200px;
 
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
-      @content;
+    @content;
   }
 }
 
 @mixin md {
   @media (min-width: #{$screen-md-min}) {
-      @content;
+    @content;
   }
 }
 
 @mixin lg {
   @media (min-width: #{$screen-lg-min}) {
-      @content;
+    @content;
   }
 }
 
 @mixin xl {
   @media (min-width: #{$screen-xl-min}) {
-      @content;
+    @content;
   }
 }
 
@@ -45,7 +45,11 @@ $screen-xl-min: 1200px;
   justify-content: center;
 }
 
-@mixin visually-hidden{
+@mixin blockCenter {
+  margin: 0 auto;
+}
+
+@mixin visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -53,3 +57,20 @@ $screen-xl-min: 1200px;
   margin: -1px;
 }
 
+@mixin container {
+  @include sm {
+    width: $screen-sm-min;
+  }
+
+  @include md {
+    width: $screen-md-min;
+  }
+
+  @include lg {
+    width: $screen-lg-min;
+  }
+
+  @include xl {
+    width: $screen-xl-min;
+  }
+}

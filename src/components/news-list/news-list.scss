@@ -1,13 +1,13 @@
-@media screen and (min-width:320px){
-
-    
+@import '../../styles/variables.scss';
+.news-list {
+@include blockCenter();
+&__inner{
+  @include xl{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: .75rem;
+    gap: .75rem;
+  }
 }
-// .news-list {
-//   &__inner{
-//     display: grid;
-//     gap: 10px;
-//     grid-template-columns: repeat(2, minmax(100px, 1fr));
-//     padding: 10px 0;
-//   }  
-// }
+}
 

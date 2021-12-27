@@ -17,7 +17,8 @@ const displayParams = createSlice({
   }
 })
 const {dateSorted,headerNavVisibility} = displayParams.actions;
-export const changeHeaderNavVisibility = (dispatch)=>{
+
+export const changeHeaderNavVisibility =(dispatch)=>{
 dispatch(headerNavVisibility())
 } 
 
