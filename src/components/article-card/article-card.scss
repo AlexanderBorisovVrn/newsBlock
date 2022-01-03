@@ -62,8 +62,10 @@ $img-width:100%;
   }
 
   &__txt {
+    display: flex;
     padding: .75rem;
     text-align: left;
     word-break: break-all;
+
   }
 }

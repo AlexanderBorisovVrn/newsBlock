@@ -16,7 +16,9 @@
   }
 }
 .inner{
-  min-height: 600px;
+  @include lg{
+    min-height: 600px;
+  }
 }
 
 .header {

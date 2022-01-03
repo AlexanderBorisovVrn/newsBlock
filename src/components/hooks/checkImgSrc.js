@@ -4,6 +4,7 @@ export function useCheckImgSource(src, fallBack) {
   const [imgSrc,
     setImgSrc] = useState();
     let img = new Image();
+    console.log('rerender');
     img.src = src;
     const validSrc =()=>{setImgSrc(src)}
     const fallBackSrc =()=>{setImgSrc(fallBack)}

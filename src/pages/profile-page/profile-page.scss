@@ -1,23 +1,18 @@
-@media screen and (min-width:320px) {
-  .profile-page{
+@import '../../styles/variables.scss';
+.profile-page {
+  display: flex;
+
+  &__inner {
+    @include container();
+    @include blockCenter();
     display: flex;
-  
-    &__inner{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(128, 128, 128, 0.363);
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.363);
+    @include lg{
+      display: grid;
+      grid-template-columns: 30% 1fr;
     }
   }
 }
 
-// .profile-page{
 
-
-//   &__inner{
-//     display: grid;
-//     grid-template-columns: 300px 1fr;
-//     padding-top:1rem;
-//     padding-bottom: 10px;
-//   }
-// }

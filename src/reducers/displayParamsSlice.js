@@ -5,22 +5,20 @@ const displayParams = createSlice({
   name:'displayParams',
   initialState:{
     sortDate:false,
-    headerNavVisibility:false
+    isNavVisible:false
   },
   reducers:{
     dateSorted:(state,action)=>{
       state.sortDate=action.payload
     },
-    headerNavVisibility:(state)=>{
-      state.headerNavVisibility=!state.headerNavVisibility
+    setNavVisibility:(state)=>{
+      state.isNavVisible=!state.isNavVisible
     }
   }
 })
-const {dateSorted,headerNavVisibility} = displayParams.actions;
+export const {dateSorted,setNavVisibility} = displayParams.actions;
 
-export const changeHeaderNavVisibility =(dispatch)=>{
-dispatch(headerNavVisibility())
-} 
+ 
 
 export const sortByDate=(isSorted)=>dispatch=>{
   dispatch(dateSorted(!isSorted))

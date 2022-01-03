@@ -5,7 +5,7 @@ import Select from '../UI/select/select'
 import Search from '../UI/search/search';
 import LogoImg from '../logo-img/logo-img'
 import {Link} from 'react-router-dom';
-import {changeHeaderNavVisibility} from '../../reducers/displayParamsSlice'
+import {setNavVisibility} from '../../reducers/displayParamsSlice'
 import ButtonsGroup from '../buttons-group/buttons-group';
 import HeaderToggle from '../header-toggle/header-toggle';
 import {useDispatch, useSelector} from 'react-redux';
@@ -24,8 +24,8 @@ const options = [
 
 const Header = () => {
   const dispatch = useDispatch();
-  const {headerNavVisibility} = useSelector(state => state.displayParams);
-  let navVisibilityClass =headerNavVisibility?'header__nav': 'header__nav isVisible'
+  const {isNavVisible} = useSelector(state => state.displayParams);
+  let navVisibilityClass =isNavVisible?'header__nav': 'header__nav isVisible';
   return (
     <header className='header'>
       <div className='header__wrap'>
@@ -43,7 +43,7 @@ const Header = () => {
         <div
           className='header__toggle'
           onClick={() => {
-          changeHeaderNavVisibility(dispatch)
+          dispatch(setNavVisibility())
         }}>
           <HeaderToggle/>
         </div>

@@ -1,5 +1,6 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useEffect, useContext, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {setNavVisibility} from '../../../reducers/displayParamsSlice'
 import {fetchNewsThunk} from './../../../reducers/fetchDataSlice';
 import ArticleCard from '../../article-card';
 import Loader from '../../loader';
@@ -12,15 +13,17 @@ const NewsListContainer = () => {
   const dispatch = useDispatch();
   const newsService = useContext(NewsContext);
   const {fetchData, query,displayParams} = useSelector(state => state);
-
   const {getNews, getPeriodSearchParams} = newsService;
-  const {sortDate}=displayParams;
+  const {sortDate,isNavVisible}=displayParams;
   const {loading,news} = fetchData;
 
-  const params = getPeriodSearchParams(query);
+  const params = useMemo(()=>getPeriodSearchParams(query),[query]);
   useEffect(() => {
-   dispatch (fetchNewsThunk(getNews, params))
-  }, [ getNews,params,dispatch]);
+    if(isNavVisible){
+      dispatch(setNavVisibility());
+    }
+   dispatch (fetchNewsThunk(getNews, params));
+   }, [ getNews,params,dispatch]);
 
   const renderArticleCards =(article,idx) => {
        return <ArticleCard key={article.id+idx}>

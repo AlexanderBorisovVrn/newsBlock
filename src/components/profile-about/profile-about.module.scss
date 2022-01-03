@@ -1,32 +1,87 @@
 @import '../../styles/variables.scss';
 
 
-@media screen and (min-width:320px) {
-  .profileAbout {
-    display: flex;
-    margin-bottom: .75rem;
-  }
-  .inner {
- display: flex;
- flex-direction: column;
- justify-content: center;
- background-color: white;
+
+.profileAbout {
+  display: flex;
+  margin-bottom: .75rem;
 }
-  
-  .titleWrapper {
+
+.inner {
+  display: block;
+  background-color: white;
+
+  @include lg {
+    flex: 1 0 60%;
+    padding: 0 2rem;
+  }
+}
+
+
+.triangle {
+  display: none;
+
+  @include xl {
+    display: flex;
+    height: 3rem;
+    border: 24px solid transparent;
+    border-left: 20px solid $news-purple;
+  }
+}
+
+.title {
+  @include visually-hidden();
+
+  @include xl{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: static;
+    width: 10rem;
+    height: 3rem;
+    padding: 0 10px;
+    background-color: $news-purple;
+    color: #fff;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  &Wrapper{
     visibility: hidden;
+    @include xl{
+      display: flex;
+      padding: 10px 0;
+      height: 4rem;
+      position: relative;
+      visibility: visible;
+    }
   }
-  .triangle{
-    display: none;
+}
+
+.infoTitle {
+  @include flexCenter();
+}
+
+#testimonials {
+  display: none;
+
+  @include xl {
+    display: block;
   }
-  .title {
-    @include visually-hidden()
-  }
-  .infoTitle{
-    @include flexCenter();
-  }
-  #testimonials{
-    display: none;
+
+}
+.info {
+  @include xl {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 25rem 1fr;
+    align-self: stretch;
+    column-gap: 1em;
+    row-gap: 1em;
+
+    &Title {
+      margin-bottom: 1rem;
+
+    }
   }
 }
 
@@ -58,23 +113,9 @@
 // }
 
 
-// .info {
-//   display: grid;
-//   height: 100%;
-//   grid-template-columns: 25rem 1fr;
-//   grid-template-rows: repeat(4,1fr);
-//   align-self: stretch;
-//   column-gap: 1em;
-//   row-gap: 1em;
 
-//   &Title {
-//     margin-bottom: 1rem;
-    
-//   }
-// }
 
 // .block {
 // display: flex;
 // flex-direction: column;
 //  }
-
