@@ -23,7 +23,7 @@ const NewsListContainer = () => {
       dispatch(setNavVisibility());
     }
    dispatch (fetchNewsThunk(getNews, params));
-   }, [ getNews,params,dispatch]);
+   }, [ getNews,params]);
 
   const renderArticleCards =(article,idx) => {
        return <ArticleCard key={article.id+idx}>

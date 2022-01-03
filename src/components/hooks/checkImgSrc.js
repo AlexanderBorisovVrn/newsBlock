@@ -1,22 +1,33 @@
 import {useEffect, useState} from 'react';
+//производит проверку ссылки
+//создаем объект изображения
+//задать src
+//через слушатель событий проверить возможность загрузки
+//установить  в imgSrc либо src либо fallBack
+//возвращает ссылку на ресурс
 
 export function useCheckImgSource(src, fallBack) {
   const [imgSrc,
     setImgSrc] = useState();
-    let img = new Image();
     console.log('rerender');
-    img.src = src;
-    const validSrc =()=>{setImgSrc(src)}
-    const fallBackSrc =()=>{setImgSrc(fallBack)}
+ 
+  const validSrc = () => {
+    setImgSrc(src)
+  }
+  const fallBackSrc = () => {
+    setImgSrc(fallBack)
+  }
 
   useEffect(() => {
-    img.addEventListener('load',validSrc)
-    img.addEventListener('error',fallBackSrc)
+    let img = new Image();
+    img.src = src;
+    img.addEventListener('load', validSrc)
+    img.addEventListener('error', fallBackSrc)
 
-    return ()=>{
-      img.removeEventListener('load',validSrc)
-      img.removeEventListener('error',fallBackSrc)
+    return () => {
+      img.removeEventListener('load', validSrc)
+      img.removeEventListener('error', fallBackSrc)
     }
-  },[src])
+  }, [src])
   return imgSrc
 }

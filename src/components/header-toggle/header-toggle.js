@@ -9,9 +9,8 @@ import {
   animaG
 } from './header-toggle.module.scss'
 
-const HeaderToggle = () => {
-  const [isOpen,
-    setIsOpen] = useState(false);
+const HeaderToggle = ({isOpen}) => {
+
   function addAnimaClass(clazz, add) {
     if (isOpen) {
       return [clazz, add].join(' ')
@@ -23,7 +22,6 @@ const HeaderToggle = () => {
     <div
       className={wrap}
       onClick={() => {
-      setIsOpen(!isOpen)
     }}>
       <div className={addAnimaClass(f, animaF)}></div>
       <div className={addAnimaClass(g, animaG)}></div>

@@ -7,7 +7,7 @@ const MyImage = ({
   ...props
 }) => {
   const imgSource = useCheckImgSource(src, fallBackImg)
-  return (<img alt='' src={imgSource} {...props}/>);
+  return <img alt='' src={imgSource} {...props}/>;
 }
 
 export default MyImage;

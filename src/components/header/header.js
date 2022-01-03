@@ -45,7 +45,7 @@ const Header = () => {
           onClick={() => {
           dispatch(setNavVisibility())
         }}>
-          <HeaderToggle/>
+          <HeaderToggle isOpen={isNavVisible}/>
         </div>
         <div className='header__buttons'>
           <ButtonsGroup buttonsList={buttonsList} isDecorBorder={true}/>
