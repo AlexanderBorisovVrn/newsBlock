@@ -1,5 +1,5 @@
 import React from 'react';
-import Autorization from '../../pages/autorization';
+import { Login } from '../../pages';
 import AppRouter from '../appRouter/appRouter';
 import Header from '../header';
 import Footer from '../footer/footer'
@@ -10,7 +10,7 @@ const App = () => {
     <div className='app'>
       <Header/>
       <AppRouter/> 
-      {/* <Autorization/>
+      {/* <Login/>
     <Footer/> */}
     </div>
   )

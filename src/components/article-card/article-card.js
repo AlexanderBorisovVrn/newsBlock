@@ -1,4 +1,4 @@
-import React,{useEffect, useMemo} from 'react';
+import React from 'react';
 import './article-card.scss';
 
 import PropTypes from 'prop-types';

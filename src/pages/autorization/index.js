@@ -1,2 +1,2 @@
-import Autorization from './autorization';
-export default Autorization;
+import Login from './Login';
+export default Login;

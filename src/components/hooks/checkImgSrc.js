@@ -9,7 +9,6 @@ import {useEffect, useState} from 'react';
 export function useCheckImgSource(src, fallBack) {
   const [imgSrc,
     setImgSrc] = useState();
-    console.log('rerender');
  
   const validSrc = () => {
     setImgSrc(src)
