@@ -10,8 +10,8 @@ export const fetchData = createSlice({
     article: {}
   },
   reducers: {
-    newsRequested: (state) => {
-      state.loading = true
+    loading: (state,action) => {
+      state.loading = action.payload
     },
     headlinesLoaded: (state, action) => {
       state.headlines = action.payload;
@@ -28,19 +28,19 @@ export const fetchData = createSlice({
 })
 
 export const fetchNewsThunk = (fetchData, params) => dispatch => {
-  dispatch(newsRequested());
+  dispatch(loading(true));
   fetchData(params).then(newsList => dispatch(newsLoaded(newsList)))
 }
 
 export const fetchHeadlines = (fetchData, params) => dispatch => {
-  dispatch(newsRequested());
+  dispatch(loading(true));
   fetchData(params)
     .then(headlines => dispatch(headlinesLoaded(headlines)))
 }
 
 export const {
   headlinesLoaded,
-  newsRequested,
+  loading,
   newsLoaded,
   newsError
 } = fetchData.actions;
