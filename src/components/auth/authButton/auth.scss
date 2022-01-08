@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+
+.auth {
+  position: relative;
+  height: 100%;
+
+  &__inner {
+    @include flexCenter;
+    height: 100%;
+    padding: 0 10px;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  &__txt {
+    display: flex;
+    color: #ffff;
+    font-weight: 600;
+  }
+}
+

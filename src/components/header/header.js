@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './header.scss';
-import Auth from '../buttons/auth/auth';
-import Select from '../UI/select/select'
+import Auth from '../auth/authButton/auth';
 import Search from '../UI/search/search';
 import LogoImg from '../logo-img/logo-img'
 import {Link} from 'react-router-dom';
@@ -10,22 +9,29 @@ import ButtonsGroup from '../buttons-group/buttons-group';
 import HeaderToggle from '../header-toggle/header-toggle';
 import {useDispatch, useSelector} from 'react-redux';
 import NavBar from '../nav-bar/nav-bar';
-
-const buttonsList = [ < Search />, < Auth />
-]
-
-const options = [
-  {
-    disabled: false,
-    value: 'TOT',
-    name: 'T0t'
-  }
-]
+import {useResize} from '../hooks/useResize';
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [width,
+    setWidth] = useState('');
+  const size = useResize()
   const {isNavVisible} = useSelector(state => state.displayParams);
-  let navVisibilityClass =isNavVisible?'header__nav': 'header__nav isVisible';
+  useEffect(() => {
+    dispatch(setNavVisibility(false))
+    setWidth(size)
+  }, [size])
+  const onClick = () => {
+    if (isNavVisible) {
+      dispatch(setNavVisibility(false))
+    } else {
+      dispatch(setNavVisibility(true))
+    }
+  }
+  let navVisibilityClass = isNavVisible
+    ? 'header__nav'
+    : 'header__nav isVisible';
+    
   return (
     <header className='header'>
       <div className='header__wrap'>
@@ -37,18 +43,14 @@ const Header = () => {
         <div className={navVisibilityClass}>
           <NavBar/>
         </div>
-        <div className='header__select'>
-          <Select options={options}/>
-        </div>
-        <div
-          className='header__toggle'
-          onClick={() => {
-          dispatch(setNavVisibility())
-        }}>
+        <div className='header__toggle' onClick={onClick}>
           <HeaderToggle isOpen={isNavVisible}/>
         </div>
         <div className='header__buttons'>
-          <ButtonsGroup buttonsList={buttonsList} isDecorBorder={true}/>
+          <ButtonsGroup isDecorBorder={true}>
+            < Search/>
+            < Auth/>
+          </ButtonsGroup>
         </div>
       </div>
 

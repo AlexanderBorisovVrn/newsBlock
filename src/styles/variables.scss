@@ -16,25 +16,25 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 @mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
+  @media (min-width: $screen-sm-min) {
     @content;
   }
 }
 
 @mixin md {
-  @media (min-width: #{$screen-md-min}) {
+  @media (min-width: $screen-md-min) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (min-width: #{$screen-lg-min}) {
+  @media (min-width: $screen-lg-min) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
+  @media (min-width: $screen-xl-min) {
     @content;
   }
 }
@@ -48,6 +48,7 @@ $screen-xl-min: 1200px;
 @mixin blockCenter {
   margin: 0 auto;
 }
+
 
 @mixin visually-hidden {
   position: absolute;

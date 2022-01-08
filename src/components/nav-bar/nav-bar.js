@@ -2,11 +2,11 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {setCategory} from '../../reducers/querySlice';
 import {Link} from 'react-router-dom';
-import {nav, links, item, list,} from './navBar.module.scss';
+import {nav, links, item, list} from './navBar.module.scss';
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  
+
   const navItems = [
     'business',
     'entertainment',
@@ -16,7 +16,7 @@ const NavBar = () => {
     'technology'
   ]
 
-  const navList = navItems.map((link, idx) => {
+  const items = navItems.map((link, idx) => {
     return (
       <li
         className={item}
@@ -30,13 +30,14 @@ const NavBar = () => {
       </li>
     )
   })
-  return (
-    <nav className={nav}      >
-      <ul className={list}>
-        {navList}
-      </ul>
-    </nav>
-  );
+ 
+    return <nav className={nav}>
+        <ul className={list}>
+          {items}
+        </ul>
+      </nav>
+
+
 }
 
 export default NavBar;

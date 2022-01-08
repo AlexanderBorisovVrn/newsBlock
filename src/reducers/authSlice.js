@@ -4,6 +4,7 @@ import { Users } from '../sercvices/authService';
 const initialState = { 
   isAuth:false,
   user:null,
+  isFormVisible:false
 }
 
 const authSlice = createSlice({
@@ -16,6 +17,9 @@ const authSlice = createSlice({
     setAuth(state,action) {
       state.isAuth = action.payload;
     },
+    setFormVisibility(state,action){
+      state.isFormVisible=action.payload
+    }
   },
 })
 
@@ -49,5 +53,5 @@ export const logOut =(username)=>async(dispatch)=>{
     dispatch(newsError(error))
   }
 }
-const { setUser,setAuth } = authSlice.actions
+export const { setUser,setAuth,setFormVisibility } = authSlice.actions
 export default authSlice.reducer

@@ -5,67 +5,63 @@ import {
   btn,
   show,
   hidden,
-  initialInputVisibility
+  initial,
+  animationShowing
 } from './search.module.scss';
-import isStringEmpty from '../../../utils/isStringEmpty'
 import {setCategory} from '../../../reducers/querySlice';
 import {useDispatch} from 'react-redux';
 import {MyInput} from '../../UI';
-import { useHistory } from 'react-router';
+import {useHistory} from 'react-router';
 
 const Search = () => {
   const [inputValue,
     setValue] = useState('');
   const dispatch = useDispatch();
   const [isShow,
-    setIsShow] = useState(initialInputVisibility);
-    const history = useHistory();
-    
+    setIsShow] = useState(false);
+  const history = useHistory();
+
   function setSearchParams() {
-    //проверка на пустую строку
-    if (isStringEmpty(inputValue)) {
-      //установка параметров поиска в state
-      dispatch(setCategory(inputValue))
-      //очистка поля input
-      setValue('');
-    }
-    return
+    dispatch(setCategory(inputValue))
+    setValue('');
+  }
+  function onSubmit(event) {
+    event.preventDefault();
+    setSearchParams();
+    history.push('/search')
   }
 
-  function changeCurrentClassName(value){
-    //устанавливает анимированный класс
-    setIsShow (value===show?hidden:show)
+  function onClick() {
+    setIsShow(!isShow);
   }
+  function onChange(e) {
+    setValue(e.target.value)
+  }
+
+  const clazz = isShow
+  ?[initial,animationShowing].join(' ')
+  :hidden
 
   return (
     <div className={search}>
       <div className={inner}>
-        <form
-          onSubmit={(e) => {
-          e.preventDefault();
-          setSearchParams();
-          history.push('/search')
-        }}>
-          <div
-            className={isShow}>
-            <MyInput
-              type='search'
-              value={inputValue}
-              placeholder='Search'
-              onChange={(e) => {
-              setValue(e.target.value)
-            }}/>
-          </div>
-        </form>
-        <div
-          className={btn}
-          onClick={() => {
-          changeCurrentClassName(isShow);
-        }}>🔍</div>
+        <form onSubmit={onSubmit}>
+      <div className={clazz}> 
+      <MyInput
+            
+            required
+            type='search'
+            value={inputValue}
+            placeholder='Search'
+            onChange={onChange}/>
+      </div>
+          
 
+        </form>
+        <div className={btn} onClick={onClick}>🔍</div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Search;

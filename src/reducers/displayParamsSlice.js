@@ -11,8 +11,8 @@ const displayParams = createSlice({
     dateSorted:(state,action)=>{
       state.sortDate=action.payload
     },
-    setNavVisibility:(state)=>{
-      state.isNavVisible=!state.isNavVisible
+    setNavVisibility:(state,action)=>{
+      state.isNavVisible=action.payload
     }
   }
 })

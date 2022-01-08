@@ -1,38 +1,36 @@
-import React, { useRef,useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import React, {useRef} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import './Login.scss';
-import { logIn } from '../../reducers/authSlice';
+import {logIn, setFormVisibility} from '../../reducers/authSlice';
 import Popup from '../../components/popup/popup';
 import CheckBox from '../../components/UI/checkbox/checkbox';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const {isFormVisibility} = useSelector(state => state.authSlice)
   const userRef = useRef('');
   const passRef = useRef('');
-  const {username}=userRef.current;
-  const {password}=userRef.current;
- 
-  const submit = (username,password)=>{
-    dispatch(logIn(username,password))
-    passRef.current.value='';
-    userRef.current.value=''
+  const {username} = userRef.current;
+  const {password} = userRef.current;
+
+  const submit = (username, password) => {
+    dispatch(logIn(username, password))
+    passRef.current.value = '';
+    userRef.current.value = ''
   }
 
-
-  return <Popup isOpened={true}>
+  return <Popup isOpened={isFormVisibility}>
     <section className='autorization'>
       <div className='autorization__inner'>
-        <form className='autorization__form'
-        onSubmit={
-          (e)=>{
-            e.preventDefault();
-            submit(username,password)
-          }
-        }
-        >
+        <form
+          className='autorization__form'
+          onSubmit={(e) => {
+          e.preventDefault();
+          submit(username, password)
+        }}>
           <div className='autorization__form-top'>
             <h1 className='autorization__title'>Вход</h1>
-            <span className='close' onClick={() => dispatch(hideForm())}>&#215;</span>
+            <span className='close' onClick={() => dispatch(setFormVisibility(false))}>&#215;</span>
           </div>
           <input
             ref={userRef}

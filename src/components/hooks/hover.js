@@ -5,6 +5,7 @@ export default function useHover(ref) {
     setHovering] = useState(false);
   const on = () => setHovering(true);
   const off = () => setHovering(false);
+  
 
   useEffect(() => {
     if (!ref.current) {
@@ -12,10 +13,11 @@ export default function useHover(ref) {
     }
     const node = ref.current;
     node.addEventListener('mouseenter', on);
-    node.addEventListener('mouseleave', off)
+    node.addEventListener('mouseleave', off);
     return () => {
-      node.removeEventListener('mouseleave', off)
-      node.removeEventListener('mouseenter', on);
+      node.removeEventListener('click', off);
+      node.removeEventListener('mouseleave', on);
+
     };
   }, [ref]);
 

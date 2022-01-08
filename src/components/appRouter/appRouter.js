@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import {NewsPage, NewsArticlePage, ProfilePage, Login} from '../../pages';
+import {NewsPage, NewsArticlePage, ProfilePage} from '../../pages';
 
 const AppRouter = () => {
   return false
@@ -12,8 +12,10 @@ const AppRouter = () => {
       </Switch>
 
     : <Switch>
-      <Route path='/login' component={Login} exact/>
-      <Redirect to='/login'/>
+      <Route path='/' component={ProfilePage} exact/>
+      <Route path='/:params' component={NewsPage} exact/>
+      <Route path='/article/:id' component={NewsArticlePage}/>
+      <Redirect to='/'/>
     </Switch>
 
 }

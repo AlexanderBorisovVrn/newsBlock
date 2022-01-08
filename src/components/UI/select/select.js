@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Select = ({options,callback,style}) => {
+const Select = ({children,callback,style}) => {
 
  return (
     <div>
@@ -8,7 +8,7 @@ const Select = ({options,callback,style}) => {
         
          onChange={(e)=>callback(e.target)}>
         {
-          options.map((option,idx)=><option
+          children.map((option,idx)=><option
              key={idx}
              disabled={option.disabled}
              value={option.value}
