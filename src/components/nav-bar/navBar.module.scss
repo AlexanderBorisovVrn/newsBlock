@@ -2,6 +2,8 @@
 
 
 .nav {
+  display: flex;
+  flex-direction: column;
   @include flexCenter();
   width: 100%;
   font-size: .75rem;
@@ -16,7 +18,8 @@
     flex-shrink: 1;
     font-size: .75rem;
   }
-  @include lg{
+
+  @include lg {
     font-size: 1rem;
   }
 
@@ -24,7 +27,8 @@
 
 .list {
   width: 100%;
-  @include md{
+
+  @include md {
     display: flex;
     width: initial;
     height: 100%;
@@ -43,11 +47,16 @@
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
+
+  @include sm {
+    height: 2rem;
+  }
+
   @include md {
     margin-right: .75rem;
     border: none;
   }
-  
+
 }
 
 .links {

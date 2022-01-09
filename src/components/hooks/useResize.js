@@ -1,20 +1,25 @@
 import {useState, useEffect} from 'react';
 
+//1 - Phones and small smartphones
+//2 - Small tablets and large smartphones (landscape view)
+//3 - Small tablets (portrait view)
+//4 -  Tablets and small desktops
+//5 - Large tablets and desktops
 
 
 const getWidth = () => {
   const {innerWidth: size} = window;
   switch (true) {
     case size < 576:
-      return 'min';
+      return 1;
     case size >= 576 && size < 768:
-      return 'sm';
+      return 2;
     case size >= 768 && size < 992:
-      return 'md';
+      return 3;
     case size >= 992 && size < 1200:
-      return 'lg';
+      return 4;
     case size >= 1200:
-      return 'xl';
+      return 5;
     default:
       return ;
   }

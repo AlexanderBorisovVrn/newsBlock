@@ -7,41 +7,41 @@ import CheckBox from '../../components/UI/checkbox/checkbox';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const {isFormVisibility} = useSelector(state => state.authSlice)
-  const userRef = useRef('');
-  const passRef = useRef('');
-  const {username} = userRef.current;
-  const {password} = userRef.current;
+  const {isFormVisible} = useSelector(state => state.authSlice);
+  const userRef = useRef();
+  const passRef = useRef();
+  const setVisibility = () => dispatch(setFormVisibility(false))
 
-  const submit = (username, password) => {
+  const onSubmit = () => {
+    let username = userRef.current.value;
+    let password = passRef.current.value;
     dispatch(logIn(username, password))
-    passRef.current.value = '';
-    userRef.current.value = ''
+    username = '';
+    password = ''
   }
-
-  return <Popup isOpened={isFormVisibility}>
+  return <Popup isOpened={isFormVisible}>
     <section className='autorization'>
       <div className='autorization__inner'>
         <form
           className='autorization__form'
           onSubmit={(e) => {
           e.preventDefault();
-          submit(username, password)
+          onSubmit()
         }}>
           <div className='autorization__form-top'>
             <h1 className='autorization__title'>Вход</h1>
-            <span className='close' onClick={() => dispatch(setFormVisibility(false))}>&#215;</span>
+            <span className='close' onClick={setVisibility}>&#215;</span>
           </div>
           <input
             ref={userRef}
-            value={userRef.current.value}
+            defaultValue={''}
             required
             placeholder='Username'
             className='autorization__name'
             type='name'/>
           <input
             ref={passRef}
-            value={passRef.current.value}
+            defaultValue={''}
             required
             type='password'
             placeholder='Password'
@@ -51,7 +51,7 @@ const Login = () => {
           </div>
           <span style={{
             fontSize: '10px'
-          }}>Пароли в users.json</span>
+          }}>user:123</span>
           <button type='submit' className='autorization__btn'>Войти</button>
         </form>
       </div>

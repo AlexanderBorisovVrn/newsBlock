@@ -10,8 +10,8 @@ const App = () => {
     <div className='app'>
       <Header/>
       <AppRouter/> 
-      {/* <Login/>
-    <Footer/> */}
+      <Login/>
+    {/* <Footer/> */}
     </div>
   )
 }

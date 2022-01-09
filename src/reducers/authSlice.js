@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {newsError,loading} from './fetchDataSlice';
 import { Users } from '../sercvices/authService';
+import { setNavVisibility } from './displayParamsSlice';
+
 const initialState = { 
   isAuth:false,
   user:null,
@@ -25,17 +27,19 @@ const authSlice = createSlice({
 
 export const logIn =(username,password)=>async(dispatch)=>{
   try {
+    dispatch(loading(true))
     const response = await Users.getUsers();
-    const checkUser = response.data.find(user=>{
+    const user = response.data.find(user=>{
      return user.username===username && user.password===password
     })
-    if(checkUser){
-      loading(true)
+    if(user){
       localStorage.setItem('auth','true');
       localStorage.setItem('username',username);
-      setUser(checkUser);
-      setAuth(true);
-      loading(false)
+      dispatch(setUser(user));
+      dispatch(setAuth(true))
+      dispatch(setFormVisibility(false))
+      dispatch(setNavVisibility(false))
+      dispatch(loading(false))
     }else{
       dispatch(newsError('Неправильное имя пользователя или пароль'))
     }
@@ -47,8 +51,8 @@ export const logOut =(username)=>async(dispatch)=>{
   try {
       localStorage.removeItem('auth');
       localStorage.removeItem('username');
-      setUser('');
-      setAuth(false);
+      dispatch(setUser(''));
+      dispatch(setAuth(false));
     } catch (error) {
     dispatch(newsError(error))
   }

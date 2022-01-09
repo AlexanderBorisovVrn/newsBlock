@@ -1,7 +1,7 @@
 import React from 'react';
 import Portal from '../portal/portal';
 
-const Popup = ({children,onClose,isOpened}) => {
+const Popup = ({children,isOpened}) => {
   if(!isOpened){
     return null
   }

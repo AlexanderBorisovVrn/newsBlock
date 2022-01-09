@@ -1,9 +1,13 @@
 import axios from 'axios'
 
- export class Users {
+export class Users {
   static _url = 'users.json'
-  static getUsers=async()=>{
-   return await axios.get(this._url)
+  static getUsers() {
+    return new Promise(resolve => {
+      setTimeout(async() => {
+        resolve(await axios.get(this._url))
+      }, 2000);
+    })
   }
-}
 
+}

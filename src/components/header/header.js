@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './header.scss';
 import Auth from '../auth/authButton/auth';
 import Search from '../UI/search/search';
@@ -13,14 +13,12 @@ import {useResize} from '../hooks/useResize';
 
 const Header = () => {
   const dispatch = useDispatch();
-  const [width,
-    setWidth] = useState('');
   const size = useResize()
   const {isNavVisible} = useSelector(state => state.displayParams);
   useEffect(() => {
-    dispatch(setNavVisibility(false))
-    setWidth(size)
+    dispatch(setNavVisibility(false));
   }, [size])
+
   const onClick = () => {
     if (isNavVisible) {
       dispatch(setNavVisibility(false))
@@ -31,7 +29,7 @@ const Header = () => {
   let navVisibilityClass = isNavVisible
     ? 'header__nav'
     : 'header__nav isVisible';
-    
+
   return (
     <header className='header'>
       <div className='header__wrap'>

@@ -1,11 +1,37 @@
 @import '../../../styles/variables.scss';
 
 .sign {
+  min-width: 100%;
+  @include flexCenter();
+  flex-direction: column;
+  background-color: rgb(4, 26, 66);
+  font-size: .75rem;
+
+  &__in,
+  &__up {
+    @include sm {
+      height: 2rem;
+    }
+
+    @include flexCenter();
+    min-width: 100%;
+    color: #ffff;
+    text-transform: none;
+    background-color: $header-color;
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  &__up {
+    background-color: rgb(243, 96, 11);
+  }
+
+
   @include md {
     position: absolute;
-    @include flexCenter();
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
     padding: 0 17px;
     min-width: 10rem;
     height: 5rem;
@@ -24,6 +50,7 @@
       color: #ffff;
       text-transform: none;
       background-color: rgb(144, 143, 143);
+
       &:hover {
         opacity: 0.9;
       }
