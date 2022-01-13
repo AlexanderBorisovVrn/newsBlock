@@ -1,25 +1,47 @@
-import React, {useState,useEffect} from 'react';
+import React, {useEffect} from 'react';
 import './auth.scss';
-import {useDispatch} from 'react-redux';
-import { AuthPanel } from '..';
-import { useResize } from '../../hooks/useResize';
+import {useDispatch, useSelector} from 'react-redux';
+import {AuthPanel} from '..';
+import {useResize} from '../../hooks/useResize';
+import {setAuthPanelVisibility} from '../../../reducers/authSlice';
 
 const Auth = () => {
   const dispatch = useDispatch();
   const size = useResize();
-  const [visibility, setVisibility] = useState(false);
-  const onClick =()=>{setVisibility(!visibility)};
+  const {isAuthPanelVisible,isAuth,user} = useSelector(state => state.authSlice);
+  const openPanel = () => {
+    if (isAuthPanelVisible) {
+      dispatch(setAuthPanelVisibility(false))
+    } else {
+      dispatch(setAuthPanelVisibility(true))
+    }
+  };
+  const openUserPanel = ()=>{
+    dispatch(setAuthPanelVisibility(true))
+  }
   useEffect(() => {
-    setVisibility(false)
+    dispatch(setAuthPanelVisibility(false));
   }, [size]);
+
+  const btnIn = (
+    <button className='auth__btn' onClick={openPanel}>
+      <span>Войти</span>
+    </button>
+  )
+  const userButton = (
+    <button className='auth__btn' onClick={openUserPanel}>
+      <span>{user}</span>
+    </button>
+  )
+
   return (
-    <div className='auth' >
+    <div className='auth'>
       <div className='auth__inner'>
-        <div className='auth__txt' onClick={onClick}>
-          <span>Войти</span>
-        </div>
+        {isAuth
+          ? userButton
+          : btnIn}
       </div>
-      {visibility
+      {isAuthPanelVisible
         ? <AuthPanel/>
         : null}
     </div>

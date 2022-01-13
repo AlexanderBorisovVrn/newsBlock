@@ -5,18 +5,18 @@
   @include flexCenter();
   flex-direction: column;
   background-color: rgb(4, 26, 66);
-  font-size: .75rem;
-
-  &__in,
-  &__up {
-    @include sm {
+  @include xl{
+    z-index: 100;
+  }
+  &__btn{
+      @include sm {
       height: 2rem;
     }
 
     @include flexCenter();
     min-width: 100%;
     color: #ffff;
-    text-transform: none;
+    text-transform: uppercase;
     background-color: $header-color;
 
     &:active {
@@ -24,7 +24,7 @@
     }
   }
 
-  &__up {
+  &__orange{
     background-color: rgb(243, 96, 11);
   }
 
@@ -40,15 +40,13 @@
     top: 2rem;
 
 
-    &__in,
-    &__up {
+    &__btn {
       @include flexCenter();
       min-width: 30%;
       height: 3rem;
       padding: 5px;
       border-radius: 3px;
       color: #ffff;
-      text-transform: none;
       background-color: rgb(144, 143, 143);
 
       &:hover {
@@ -56,10 +54,9 @@
       }
     }
 
-    &__up {
+    &__orange {
       margin-right: 10px;
       background-color: rgb(243, 96, 11);
-
     }
   }
 }

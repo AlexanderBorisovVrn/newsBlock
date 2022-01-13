@@ -1,62 +1,85 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './Login.scss';
-import {logIn, setFormVisibility} from '../../reducers/authSlice';
-import Popup from '../../components/popup/popup';
+import {logIn, setFormVisibility, setAuth,setUser} from '../../reducers/authSlice';
 import CheckBox from '../../components/UI/checkbox/checkbox';
+import {newsError} from '../../reducers/fetchDataSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const {isFormVisible} = useSelector(state => state.authSlice);
-  const userRef = useRef();
-  const passRef = useRef();
+  const state = useSelector(state => state);
+  const {isFormVisible} = state.authSlice;
+  const {error} = state.fetchData;
+  const [username,
+    setUsername] = useState('');
+  const [password,
+    setPassword] = useState('');
   const setVisibility = () => dispatch(setFormVisibility(false))
 
+  const changeUsername = (e) => {
+    dispatch(newsError(false))
+    setUsername(e.target.value)
+  };
+  const changePassword = (e) => {
+    dispatch(newsError(false))
+    setPassword(e.target.value)
+  };
   const onSubmit = () => {
-    let username = userRef.current.value;
-    let password = passRef.current.value;
     dispatch(logIn(username, password))
-    username = '';
-    password = ''
+    setUsername('')
+    setPassword('')
   }
-  return <Popup isOpened={isFormVisible}>
-    <section className='autorization'>
-      <div className='autorization__inner'>
-        <form
-          className='autorization__form'
-          onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit()
-        }}>
-          <div className='autorization__form-top'>
-            <h1 className='autorization__title'>Вход</h1>
-            <span className='close' onClick={setVisibility}>&#215;</span>
-          </div>
-          <input
-            ref={userRef}
-            defaultValue={''}
-            required
-            placeholder='Username'
-            className='autorization__name'
-            type='name'/>
-          <input
-            ref={passRef}
-            defaultValue={''}
-            required
-            type='password'
-            placeholder='Password'
-            className='autorization__password'/>
-          <div className='autorization__remember'>
-            <CheckBox name='Запомнить меня' callback={() => console.log('remember me')}/>
-          </div>
-          <span style={{
-            fontSize: '10px'
-          }}>user:123</span>
-          <button type='submit' className='autorization__btn'>Войти</button>
-        </form>
-      </div>
-    </section>
-  </Popup>
+
+  useEffect(() => {
+    let username = localStorage.getItem('username');
+    if (username) {
+dispatch(setUser(username))
+      dispatch(setAuth(true))
+    }
+  }, []);
+
+  return isFormVisible
+    ? (
+      <section className='autorization'>
+        <div className='autorization__inner'>
+          <form
+            className='autorization__form'
+            onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit()
+          }}>
+            <div className='autorization__form-top'>
+              <h1 className='autorization__title'>Вход</h1>
+              <span className='close' onClick={setVisibility}>&#215;</span>
+            </div>
+            <input
+              onChange={changeUsername}
+              defaultValue={username}
+              required
+              placeholder='Username'
+              className='autorization__name'
+              type='name'/>
+            <input
+              onChange={changePassword}
+              defaultValue={password}
+              required
+              type='password'
+              placeholder='Password'
+              className='autorization__password'/>
+            <div className='autorization__remember'>
+              <CheckBox name='Запомнить меня' callback={() => console.log('remember me')}/>
+            </div>
+            <span
+              style={{
+              fontSize: '12px',
+              color: 'red'
+            }}>{error}</span>
+            <button type='submit' className='autorization__btn'>Войти</button>
+          </form>
+        </div>
+      </section>
+    )
+    : null
 }
 
 export default Login;

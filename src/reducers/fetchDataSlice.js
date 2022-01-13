@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const fetchData = createSlice({
   name: 'fetchData',
   initialState: {
-    loading: true,
+    loading: false,
     error: null,
     news: [],
     headlines: [],
@@ -29,7 +29,10 @@ export const fetchData = createSlice({
 
 export const fetchNewsThunk = (fetchData, params) => dispatch => {
   dispatch(loading(true));
-  fetchData(params).then(newsList => dispatch(newsLoaded(newsList)))
+  fetchData(params).then(newsList => {
+    dispatch(newsLoaded(newsList))
+    dispatch(loading(false))
+  })
 }
 
 export const fetchHeadlines = (fetchData, params) => dispatch => {
