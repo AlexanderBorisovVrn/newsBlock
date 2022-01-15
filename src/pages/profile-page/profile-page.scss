@@ -7,7 +7,6 @@
     @include blockCenter();
     display: flex;
     flex-direction: column;
-    background-color: rgba(128, 128, 128, 0.363);
     @include lg{
       display: grid;
       grid-template-columns: 30% 1fr;

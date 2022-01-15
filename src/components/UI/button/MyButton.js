@@ -1,6 +1,7 @@
 import React from 'react';
 
-const MyButton = ({children,...props}) => {
+const MyButton = ({children,loading=false,...props}) => {
+// const isLoadingButton = loading?
   return (
     <button {...props}>
       {children}

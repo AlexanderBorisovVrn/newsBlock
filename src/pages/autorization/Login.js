@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './Login.scss';
-import {logIn, setFormVisibility, setAuth,setUser} from '../../reducers/authSlice';
+import {logIn, setFormVisibility, setAuth, setUser} from '../../reducers/authSlice';
 import CheckBox from '../../components/UI/checkbox/checkbox';
 import {newsError} from '../../reducers/fetchDataSlice';
+import img from '../../icons/296990.svg'
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -26,17 +27,18 @@ const Login = () => {
   };
   const onSubmit = () => {
     dispatch(logIn(username, password))
-    setUsername('')
-    setPassword('')
+
   }
 
   useEffect(() => {
     let username = localStorage.getItem('username');
+    setUsername('')
+    setPassword('')
     if (username) {
-dispatch(setUser(username))
+      dispatch(setUser(username))
       dispatch(setAuth(true))
     }
-  }, []);
+   }, []);
 
   return isFormVisible
     ? (
@@ -54,14 +56,14 @@ dispatch(setUser(username))
             </div>
             <input
               onChange={changeUsername}
-              defaultValue={username}
+              value={username}
               required
               placeholder='Username'
               className='autorization__name'
               type='name'/>
             <input
               onChange={changePassword}
-              defaultValue={password}
+              value={password}
               required
               type='password'
               placeholder='Password'
@@ -74,7 +76,9 @@ dispatch(setUser(username))
               fontSize: '12px',
               color: 'red'
             }}>{error}</span>
-            <button type='submit' className='autorization__btn'>Войти</button>
+            <button type='submit' className='autorization__btn'>
+              Войти
+            </button>
           </form>
         </div>
       </section>

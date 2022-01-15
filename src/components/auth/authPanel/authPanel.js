@@ -16,7 +16,7 @@ const AuthPanel = () => {
 
   const panel = isAuth
   ?(<>
-    <button type='button' className='sign__btn' onClick={onClick}>
+    <button type='button' className='sign__btn large' onClick={onClick}>
       <span>Выйти</span>
     </button>
   </>)

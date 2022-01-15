@@ -6,10 +6,8 @@ import {Link} from 'react-router-dom';
 import MyImage from '../UI/MyImage/MyImage';
 
 
-
 const ArticleCard = ({children}) => {
-  //отображает превью статей списком
-  //данные из NewsListContainer
+
     const {title, description, urlToImage,id} = children;
 
   return (

@@ -17,7 +17,7 @@ const Header = () => {
   const {isNavVisible} = useSelector(state => state.displayParams);
   useEffect(() => {
     dispatch(setNavVisibility(false));
-  }, [size])
+  }, [size,dispatch])
 
   const onClick = () => {
     if (isNavVisible) {

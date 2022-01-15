@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {newsError, loading} from './fetchDataSlice';
+import {newsError} from './fetchDataSlice';
 import {Users} from '../sercvices/authService';
 import {setNavVisibility} from './displayParamsSlice';
 

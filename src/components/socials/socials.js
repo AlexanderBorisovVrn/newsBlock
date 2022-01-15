@@ -17,13 +17,15 @@ const Socials = () => {
     }
   
   ]
-  const buttonsList = buttons.map(({title, src, href}) =>
-    <a href={href} className={link}>
+  const buttonsList = buttons.map(({title, src, href},idx) =>
+    <a href={href} className={link} target='_blanc' key={idx}>
       <img alt={title} src={src} className={icon}/>
     </a>
 )
 
-  return (<ButtonsGroup buttonsList={buttonsList}/>);
+  return <ButtonsGroup>
+    {buttonsList}
+  </ButtonsGroup>
 }
 
 export default Socials;

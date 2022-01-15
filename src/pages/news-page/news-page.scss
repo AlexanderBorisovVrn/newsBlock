@@ -9,6 +9,7 @@
     @include lg {
       display: grid;
       grid-template-columns: 20% minmax(100px,1fr);
+      gap:10px;
     }
   }
 }
@@ -19,10 +20,9 @@
   @include lg {
     display: flex;
     height: 100%;
-    padding: 10px;
     font-size: .75rem;
-  }
-  @include lg {
     font-size: 1rem;
+
   }
+  
 }

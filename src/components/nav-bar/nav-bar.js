@@ -2,13 +2,14 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {setCategory} from '../../reducers/querySlice';
 import {Link} from 'react-router-dom';
-import {nav, links, item, list,label} from './navBar.module.scss';
-import { AuthPanel } from '../auth';
-import { useResize } from '../hooks/useResize';
+import {nav, links, item, list, label} from './navBar.module.scss';
+import {AuthPanel} from '../auth';
+import {useResize} from '../hooks/useResize';
+import Search from '../UI/search/search';
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const size = useResize();//device width 
+  const size = useResize(); //device width
   const newsTags = [
     'business',
     'entertainment',
@@ -33,15 +34,19 @@ const NavBar = () => {
     )
   })
 
-  const mobileAuthPanel = size<3?<AuthPanel/>:null;
-  
-    return <nav className={nav}>
-        <ul className={list}>
-          {navItems}
-        </ul>
-        {mobileAuthPanel}
-      </nav>
+  const mobileAuthPanel = size < 3
+    ? <AuthPanel/>
+    : null;
+  const mobileSearch = size < 3
+    ? <Search/>
+    : null
 
+  return <nav className={nav}>
+    <ul className={list}>
+      {navItems}
+    </ul>
+    {mobileAuthPanel}
+  </nav>
 
 }
 

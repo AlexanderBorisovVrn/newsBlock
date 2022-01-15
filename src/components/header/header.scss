@@ -12,9 +12,11 @@
 
 .header {
   position: sticky;
+  margin-bottom: 10px;
   top: 0;
   background-color: $header-color;
   min-width: 100%;
+  z-index: 1000;
 
 
   &__wrap {
@@ -63,9 +65,11 @@
   &__logo {
     @include flexible();
     width: 4rem;
+    margin-left: .5rem;
 
     @include md {
       width: 6rem;
+      margin-left: 0;
     }
 
   }
