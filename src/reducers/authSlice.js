@@ -7,7 +7,8 @@ const initialState = {
   isAuth: false,
   user: null,
   isFormVisible: false,
-  isAuthPanelVisible: false
+  isAuthPanelVisible: false,
+  isButtonLoading: false
 }
 
 const authSlice = createSlice({
@@ -25,11 +26,15 @@ const authSlice = createSlice({
     },
     setFormVisibility(state, action) {
       state.isFormVisible = action.payload
+    },
+    setButtonLoading(state, action) {
+      state.isButtonLoading = action.payload
     }
   }
 })
 
 export const logIn = (username, password) => async(dispatch) => {
+  dispatch(setButtonLoading(true))
   try {
     const response = await Users.getUsers();
     const user = response
@@ -51,6 +56,7 @@ export const logIn = (username, password) => async(dispatch) => {
   } catch (error) {
     dispatch(newsError(error))
   }
+  dispatch(setButtonLoading(false))
 }
 export const logOut = () => async(dispatch) => {
   try {
@@ -66,6 +72,7 @@ export const {
   setUser,
   setAuth,
   setFormVisibility,
-  setAuthPanelVisibility
+  setAuthPanelVisibility,
+  setButtonLoading
 } = authSlice.actions
 export default authSlice.reducer

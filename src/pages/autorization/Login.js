@@ -4,12 +4,12 @@ import './Login.scss';
 import {logIn, setFormVisibility, setAuth, setUser} from '../../reducers/authSlice';
 import CheckBox from '../../components/UI/checkbox/checkbox';
 import {newsError} from '../../reducers/fetchDataSlice';
-import img from '../../icons/296990.svg'
+import {MyButton} from '../../components/UI';
 
 const Login = () => {
   const dispatch = useDispatch();
   const state = useSelector(state => state);
-  const {isFormVisible} = state.authSlice;
+  const {isFormVisible,isButtonLoading} = state.authSlice;
   const {error} = state.fetchData;
   const [username,
     setUsername] = useState('');
@@ -27,7 +27,6 @@ const Login = () => {
   };
   const onSubmit = () => {
     dispatch(logIn(username, password))
-
   }
 
   useEffect(() => {
@@ -76,9 +75,13 @@ const Login = () => {
               fontSize: '12px',
               color: 'red'
             }}>{error}</span>
-            <button type='submit' className='autorization__btn'>
+            <MyButton
+              type='submit'
+              className='autorization__btn'
+              loading={isButtonLoading}
+              >
               Войти
-            </button>
+            </MyButton>
           </form>
         </div>
       </section>

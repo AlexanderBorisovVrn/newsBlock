@@ -1,10 +1,11 @@
 import React from 'react';
+import Buttonloader from './buttonLoader';
 
 const MyButton = ({children,loading=false,...props}) => {
-// const isLoadingButton = loading?
+const isLoadingButton = loading?<Buttonloader/>:children;
   return (
-    <button {...props}>
-      {children}
+    <button {...props} style={{borderRadius:'5px'}}>
+      {isLoadingButton}
     </button>
   );
 }

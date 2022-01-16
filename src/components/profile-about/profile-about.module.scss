@@ -49,8 +49,8 @@
     @include xl{
       display: flex;
       width:11rem;
-      padding: 10px 0;
-      height: 4rem;
+      // padding: 10px 0;
+      height: 3rem;
       position: relative;
       visibility: visible;
     }
@@ -67,8 +67,9 @@
 #testimonials {
   display: none;
 
-  @include xl {
+  @include lg {
     display: block;
+    height: 17rem;
   }
 
 }
