@@ -11,7 +11,7 @@ const TopHeadlines = ({children}) => {
       <p className='top-headlines__txt'>
         {children.title}
       </p>
-      <span>{date}</span>
+      <span className='top-headlines__date'>{date}</span>
     </div>
 
   );

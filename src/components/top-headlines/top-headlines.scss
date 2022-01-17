@@ -1,8 +1,13 @@
 .top-headlines {
   font-weight: bold;
   padding: 5px;
-    
-& span{
+&__txt{
+&:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+    }
+&__date{
   font-weight: 100;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.801);

@@ -2,12 +2,6 @@
 $avatar-width:60px;
 $avatar-height:60px;
 
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .wrap{
   // padding: 10px;
 }
@@ -17,10 +11,23 @@ $avatar-height:60px;
 .text{
   padding-bottom: 10px;
   padding-left: $avatar-width;
-  font-size: 14px;
+  font-size: .5rem;
+  @include md{
+    font-size: .75rem
+  }
+  @include lg{
+    font-size: 1rem
+  }
 }
 .name{
-  @include center();
+  @include flexCenter();
+  font-size: .75rem;
+  @include md{
+    font-size: 1rem;
+  }
+  @include lg{
+    font-size: 1.25rem;
+  }
 }
 .avatar{
   width:$avatar-width;
@@ -29,10 +36,16 @@ $avatar-height:60px;
   cursor: pointer;
 }
 .date{
-  @include center();
-  margin-left: 15px;
+  @include flexCenter();
+  margin-left: .75rem;
   color:$news-gray ;
-  text-align: center;
-  font-size: 14px;
-
+  font-size: .5rem;
+  @include md{
+    margin-left: 1rem;
+    font-size: .75rem;
+  }
+  @include lg{
+    font-size: 1rem;
+  }
 }
+

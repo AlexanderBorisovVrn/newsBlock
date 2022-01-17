@@ -1,3 +1,3 @@
 export function toLocaleDate(date){
-return date.toLocaleString().split(',');
+return date.toLocaleString().split('T');
 }

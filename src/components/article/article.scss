@@ -15,12 +15,12 @@ $img-width:100%;
     margin: .5rem 0;
     font-size: 1rem;
     @include md{
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       font-size: 1.5rem;
     }
     @include xl{
-      margin: 1.5rem 0;
-      font-size: 2rem;
+      margin: 2rem 0;
+      font-size: 2.5rem;
     }
   }
 
@@ -29,6 +29,10 @@ $img-width:100%;
     font-size: .75rem;
     @include md{
       font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+    @include lg{
+      font-size: 1.25rem;
     }
   }
 

@@ -13,7 +13,7 @@ const ArticleContainer = ({itemId}) => {
   const idxArticle = news.findIndex(el => el.id === itemId);
   if (!loading) {
     return <div>
-      <Article>
+      <Article id={idxArticle}>
         {news[idxArticle]}
       </Article>
     </div>

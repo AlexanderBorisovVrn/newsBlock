@@ -15,13 +15,11 @@ const HeadlinesContainer = () => {
   useEffect(() => {
     fetchHeadlines(getTopHeadlines,getHeadlinesInCountry(query))(dispatch)
  },[getTopHeadlines,dispatch,query,getHeadlinesInCountry]);
-
+const headlinesList = headlines.map((txt,idx)=><TopHeadlines key={idx}>{txt}</TopHeadlines>)
  return(
    <div>
      <ul style={{ backgroundColor:'rgba(128, 128, 128, 0.335)',borderRadius:'5px',padding:'5px'}}>
-      {
-        headlines.map((txt,idx)=><TopHeadlines key={idx}>{txt}</TopHeadlines>)
-      }
+      {headlinesList}
     </ul>
    </div>
    

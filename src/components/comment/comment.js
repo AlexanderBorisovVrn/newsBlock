@@ -18,7 +18,7 @@ const Comment = ({comment}) => {
        {comment.userName}
         </div>
         <div className = {date}>
-        {fullDateArray[0] + ' в' +fullDateArray[1]}
+        {fullDateArray[0] + ' в ' +fullDateArray[1]}
         </div>
       </div>
       <p className ={text}>

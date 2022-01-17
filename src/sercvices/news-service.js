@@ -1,21 +1,24 @@
+import axios from 'axios';
 import {crypto} from '../utils/crypto';
 
 class NewsService {
   _url = `https://newsapi.org/v2/`;
+  _commentsUrl = 'https://jsonplaceholder.typicode.com/comments'
   _apiKey = '138eac7e07bf49b7815747fa75effa14';
   _initialNewsParams = {
-    q:'everything'
+    q: 'everything'
   }
   _getResourse = async(fetchParams) => {
-    const url =this._url + fetchParams + '&apiKey=' + this._apiKey;
+    const url = this._url + fetchParams + '&apiKey=' + this._apiKey;
     try {
       const response = await fetch(url)
-      if (response.status!==200) {
+      if (response.status !== 200) {
         throw new Error(`Error.Couldn't fetch ${url}.Response status ${response.status}`)
+      } else {
+        return await response.json();
       }
-      return await response.json();
     } catch (error) {
-      console.log(error);
+      throw new Error(error)
     }
 
   }
@@ -42,8 +45,15 @@ class NewsService {
     return articles
   }
 
+  getComments = async()=>{
+    const response = await axios.get(this._commentsUrl);
+    return response.data.map(comment=>{
+     return this.trasnsformCommentsData(comment)
+    });
+  }
+
   trasnsformData = (data) => {
-      return {
+    return {
       author: data.author,
       content: data.content,
       description: data.description,
@@ -51,7 +61,17 @@ class NewsService {
       title: data.title,
       url: data.url,
       urlToImage: data.urlToImage,
-      id:crypto(data.title+data.url)
+      id: crypto(data.title + data.url)
+    }
+  }
+
+  trasnsformCommentsData = (data) => {
+    return {
+     userName:data.email,
+     text:data.body,
+     dateTime:'2018-12-17T03:24:00',
+     id:data.id,
+     postId:data.postId
     }
   }
 }
