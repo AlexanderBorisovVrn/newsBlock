@@ -44,7 +44,7 @@ const CommentsContainer = ({id}) => {
     <section className={commentsBlock}>
       <div className={inner}>
         <div className={header}>
-          <h2 className={title}>Комментарии:<span>&nbsp;1</span>
+          <h2 className={title}>Комментарии:<span>&nbsp;{articleComments.length}</span>
           </h2>
           <button
             type='button'

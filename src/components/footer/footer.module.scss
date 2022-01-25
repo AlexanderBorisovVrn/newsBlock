@@ -12,6 +12,15 @@
       align-items: center;
       font-size: .75rem;  
       padding: 0 .5rem;
+      @include md {
+        font-size: 1rem;  
+      }
+      @include lg {
+        font-size: 1.25rem;  
+      }
+      @include xl {
+        font-size: 1.5rem;  
+      }
     }
   }
 
@@ -31,33 +40,12 @@
     }
     @include lg {
       width: $screen-lg-min;
+      height: 6rem;
     }
     @include xl {
       width: $screen-xl-min;
+      height: 8rem;
     }
   }
 
 
-
-
-// .footer {
-//   width: 100%;
-//   background-color: $footer-color;
-//   color: white;
-
-//   &Logo {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     font-size: 20px;
-//   }
-// }
-
-// .inner {
-//   width: 1200px;
-//   height: 100px;
-//   display: flex;
-//   margin: 0 auto;
-//   justify-content: space-between;
-//   background-color: inherit;
-// }
